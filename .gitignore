@@ -2,14 +2,12 @@ export
 build
 output
 
-# Created by https://www.gitignore.io/api/vim,macos,linux,godot,windows,visualstudiocode
-
-### Godot ###
-
 # Godot-specific ignores
 .import/
 export.cfg
-export_presets.cfg
+# export_presets.cfg Do not ignore this, we want to export in the CI/CD pipeline 😊
+
+# Created by https://www.gitignore.io/api/vim,macos,linux,windows,visualstudiocode
 
 # Mono-specific ignores
 .mono/
