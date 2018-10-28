@@ -8,7 +8,7 @@ mkdir -p /build/output
 
 godot \
     --export "HTML5" \
-    --export-debug \
+    --export-debug "HTML5" \
     --verbose \
     --path /build/src \
     /build/output/index.html
