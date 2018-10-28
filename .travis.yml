@@ -29,7 +29,7 @@ script:
     -v $(pwd):/build/src
     -v $(pwd)/output/html5:/build/output
     mattiascibien/godot-docker:3.0.6
-    /build/src/build-on-server.sh 
+    /bin/bash -c /build/src/build-on-server.sh 
 
 # Now comes deployment related code.
 # To make this work, you need to set a GITHUB_TOKEN environment variable through
