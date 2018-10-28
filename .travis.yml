@@ -28,7 +28,7 @@ script:
     docker run
     -v $(pwd):/build/src
     -v $(pwd)/output/html5:/build/output
-    mattiascibien/godot-docker:3.0.2
+    mattiascibien/godot-docker:3.0.6
     /build/src/build-on-server.sh 
 
 # Now comes deployment related code.
