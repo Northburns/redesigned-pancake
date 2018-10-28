@@ -15,6 +15,7 @@ install:
 # The exported game will be written to the folder specified after the second "-v" flag
 # "-v $(pwd)/output/html5:/build/output" writes the exported game to  the "output/html5" folder.
 script:
+- pwd
 #- > 
 #    docker run 
 #    -e EXPORT_NAME="HTML5"
