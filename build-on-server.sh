@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # https://github.com/godotengine/godot/issues/18057
 mkdir -p ~/.cache
 mkdir -p ~/.config/godot
