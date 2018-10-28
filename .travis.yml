@@ -1,0 +1,51 @@
+# Based on:
+# https://www.reddit.com/r/godot/comments/89cu19/exporting_and_publishing_your_games_automagically/
+
+services:
+- docker
+
+env:
+  - GAME_NAME="RedesignedPancake"
+
+install:
+- docker pull mattiascibien/godot-docker:3.0.2
+
+# Each of the following lines exports the game for a given platform.
+# You can specify the platform in the EXPORT_NAME variable
+# The exported game will be written to the folder specified after the second "-v" flag
+# "-v $(pwd)/output/html5:/build/output" writes the exported game to  the "output/html5" folder.
+script:
+#- > 
+#    docker run 
+#    -e EXPORT_NAME="HTML5"
+#    -e OUTPUT_FILENAME="index.html"
+#    -v $(pwd):/build/src
+#    -v $(pwd)/output/html5:/build/output
+#    gamedrivendesign/godot-export
+- chmod +x $(pwd)/build-on-server.sh
+- >
+    docker run
+    -v $(pwd):/build/src
+    -v $(pwd)/output/html5:/build/output
+    mattiascibien/godot-docker:3.0.2
+    /build/src/build-on-server.sh 
+
+# Now comes deployment related code.
+# To make this work, you need to set a GITHUB_TOKEN environment variable through
+# the TravisCI web ui. For more information take a look at the TravisCI docs:
+# https://docs.travis-ci.com/user/deployment/pages/#Setting-the-GitHub-token
+
+deploy:
+# The following block is responsible for pushing the HTML5 version of the game
+# to GitHub Pages. To do so, Travis will commit the contents specified in "local-dir"
+# to a "gh-pages" branch in your repository. It will then be accessible at:
+# username.github.io/reponame if your repo is at github.com/username/reponame.
+- provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: output/html5
+  on:
+    # This will only update the game with new commits from the master branch
+    # You can optionally only update the game on new git tags.
+    branch: master
+    # tags: true
