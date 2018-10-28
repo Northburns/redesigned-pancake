@@ -6,16 +6,15 @@ mkdir -p ~/.config/godot
 
 mkdir -p /build/output
 
-echo "++++++++++++++++++++++++++++++++++++"
-
-ls ~
-ls ~/.godot
-
-echo "ppppppppppppppppppppppppppppppppppp"
-
 # ..\..\godot\Godot_v3.0.6-stable_win64.exe --export "HTML5" --path . output/index.html
 
 godot \
     --export "HTML5" \
     --path /build/src \
     /build/output/index.html
+
+echo "++++++++++++++++++++++++++++++++++++"
+
+ls /build/output
+
+echo "ppppppppppppppppppppppppppppppppppp"
