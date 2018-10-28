@@ -12,6 +12,9 @@ whoami
 
 ls /home/$(whoami)
 
+echo "$(~)"
+
+ls ~
 
 # ..\..\godot\Godot_v3.0.6-stable_win64.exe --export "HTML5" --path . output/index.html
 
