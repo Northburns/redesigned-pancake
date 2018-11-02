@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/obstacle.png-dfb3e99d3af573251007cdf5e1c252b9.stex"
+path="res://.import/player.png-c47829ee7e106d6090cc024ef8341407.stex"
 
 [deps]
 
-source_file="res://obstacle.png"
-dest_files=[ "res://.import/obstacle.png-dfb3e99d3af573251007cdf5e1c252b9.stex" ]
+source_file="res://builtin_sample/player.png"
+dest_files=[ "res://.import/player.png-c47829ee7e106d6090cc024ef8341407.stex" ]
 
 [params]
 

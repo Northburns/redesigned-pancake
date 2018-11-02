@@ -1,11 +1,17 @@
 [gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://colworld.gd" type="Script" id=1]
-[ext_resource path="res://obstacle.png" type="Texture" id=2]
-[ext_resource path="res://player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://princess.png" type="Texture" id=4]
-[ext_resource path="res://circle.png" type="Texture" id=5]
-[ext_resource path="res://long_obstacle.png" type="Texture" id=6]
+[ext_resource path="res://builtin_sample/colworld.gd" type="Script" id=1]
+[ext_resource path="res://builtin_sample/obstacle.png" type="Texture" id=2]
+[ext_resource path="res://builtin_sample/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://builtin_sample/princess.png" type="Texture" id=4]
+[ext_resource path="res://builtin_sample/circle.png" type="Texture" id=5]
+[ext_resource path="res://builtin_sample/long_obstacle.png" type="Texture" id=6]
+
+
+
+
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 

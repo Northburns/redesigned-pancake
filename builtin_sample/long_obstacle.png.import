@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/princess.png-9b4caf2cfe324ae3734249d5b559d39d.stex"
+path="res://.import/long_obstacle.png-58e38774a63ba2bc93b81e3ea7f0f5a1.stex"
 
 [deps]
 
-source_file="res://princess.png"
-dest_files=[ "res://.import/princess.png-9b4caf2cfe324ae3734249d5b559d39d.stex" ]
+source_file="res://builtin_sample/long_obstacle.png"
+dest_files=[ "res://.import/long_obstacle.png-58e38774a63ba2bc93b81e3ea7f0f5a1.stex" ]
 
 [params]
 
