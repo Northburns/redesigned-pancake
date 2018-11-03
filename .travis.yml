@@ -71,7 +71,7 @@ deploy:
 
 after_success:
 - chmod +x ./shell/discord-webhook-send.sh 
-- ./shell/discord-webhook-send.sh success $DISCORD_WEBHOOK
+- test $TRAVIS_BRANCH = "master" && ./shell/discord-webhook-send.sh success $DISCORD_WEBHOOK
 after_failure:
 - chmod +x ./shell/discord-webhook-send.sh 
 - ./shell/discord-webhook-send.sh failure $DISCORD_WEBHOOK
