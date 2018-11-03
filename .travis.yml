@@ -68,3 +68,8 @@ deploy:
     # You can optionally only update the game on new git tags.
     branch: master
     # tags: true
+
+after_success:
+- ./shell/discord-webhook-send.sh success $WEBHOOK_URL
+after_failure:
+- ./shell/discord-webhook-send.sh failure $WEBHOOK_URL
