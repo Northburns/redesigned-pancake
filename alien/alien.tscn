@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://placeholder_art/kenney_platformer/Players/Variable sizes/Pink/alienPink_front.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 60, 90 )
+_sections_unfolded = [ "Resource" ]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+
+[node name="alienPink_front" type="Sprite" parent="." index="0"]
+
+position = Vector2( 0.692947, -95.7007 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -0.735107, -91.1514 )
+shape = SubResource( 1 )
+
+
