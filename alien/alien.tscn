@@ -5,19 +5,21 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 60, 90 )
+extents = Vector2( 60, 91.6221 )
 _sections_unfolded = [ "Resource" ]
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
+_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
 
 [node name="alienPink_front" type="Sprite" parent="." index="0"]
 
 position = Vector2( 0.692947, -95.7007 )
+rotation = 0.144862
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
