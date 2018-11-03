@@ -33,8 +33,10 @@ before_deploy:
 # No need to zip the mac game, because it already is a zip
 - cp -R output/mac/* .
 - mkdir -p output/pages
+- cp -R ghpages/. output/pages/
 - cp -R output/html5 output/pages/
 - cp *.zip output/pages
+- sed -i "s/@COMMIT@/$TRAVIS_COMMIT/g" output/pages/index.html
 
 deploy:
 # The following block is responsible to upload the zip files
