@@ -70,6 +70,11 @@ WEBHOOK_DATA='{
         "name": "Branch/Tag",
         "value": "'"[\`$TRAVIS_BRANCH\`](https://github.com/$TRAVIS_REPO_SLUG/tree/$TRAVIS_BRANCH)"'",
         "inline": true
+      },
+      {
+        "name": "GH-Pages",
+        "value": "https://northburns.github.io/redesigned-pancake/",
+        "inline": false
       }
     ],
     "timestamp": "'"$TIMESTAMP"'"
