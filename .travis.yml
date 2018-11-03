@@ -32,6 +32,7 @@ before_deploy:
 - zip -j "${GAME_NAME}-windows.zip" output/windows/*
 # No need to zip the mac game, because it already is a zip
 - cp -R output/mac/* .
+- mkdir -p output/html5/desktop
 - cp *.zip output/html5/desktop
 
 deploy:
