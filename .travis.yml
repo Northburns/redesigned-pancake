@@ -32,8 +32,9 @@ before_deploy:
 - zip -j "${GAME_NAME}-windows.zip" output/windows/*
 # No need to zip the mac game, because it already is a zip
 - cp -R output/mac/* .
-- mkdir -p output/html5/desktop
-- cp *.zip output/html5/desktop
+- mkdir -p output/pages
+- cp -R output/html5 output/pages/
+- cp *.zip output/pages
 
 deploy:
 # The following block is responsible to upload the zip files
@@ -59,7 +60,7 @@ deploy:
 - provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
-  local-dir: output/html5
+  local-dir: output/pages
   on:
     # This will only update the game with new commits from the master branch
     # You can optionally only update the game on new git tags.

@@ -160,7 +160,7 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 
 [node name="alien" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 298.691, 299.626 )
+position = Vector2( 349.025, 256.094 )
 scale = Vector2( 0.372729, 0.319534 )
 script = ExtResource( 4 )
 _sections_unfolded = [ "Collision", "Pickable", "collision" ]

@@ -1,6 +1,5 @@
 export
 build
-output
 
 # Godot-specific ignores
 .import/
