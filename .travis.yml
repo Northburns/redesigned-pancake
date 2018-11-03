@@ -70,6 +70,6 @@ deploy:
     # tags: true
 
 after_success:
-- ./shell/discord-webhook-send.sh success $WEBHOOK_URL
+- ./shell/discord-webhook-send.sh success $DISCORD_WEBHOOK
 after_failure:
-- ./shell/discord-webhook-send.sh failure $WEBHOOK_URL
+- ./shell/discord-webhook-send.sh failure $DISCORD_WEBHOOK
