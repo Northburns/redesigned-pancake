@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://builtin_sample/colworld.gd" type="Script" id=1]
 [ext_resource path="res://placeholder_art/kenney_platformer/Backgrounds/colored_desert.png" type="Texture" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://builtin_sample/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://builtin_sample/princess.png" type="Texture" id=5]
 [ext_resource path="res://builtin_sample/circle.png" type="Texture" id=6]
-[ext_resource path="res://builtin_sample/long_obstacle.png" type="Texture" id=7]
+[ext_resource path="res://materials_etc/greyscale_material.tres" type="Material" id=7]
+[ext_resource path="res://builtin_sample/long_obstacle.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -393,7 +394,9 @@ bounce = 0.0
 
 [node name="sprite" type="Sprite" parent="platform" index="0"]
 
-texture = ExtResource( 7 )
+material = ExtResource( 7 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Material" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform" index="1"]
 
@@ -401,6 +404,7 @@ shape = SubResource( 12 )
 
 [node name="platform1" type="StaticBody2D" parent="." index="13"]
 
+material = ExtResource( 7 )
 position = Vector2( 369.116, 394.016 )
 rotation = 0.465931
 input_pickable = false
@@ -410,10 +414,11 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Material" ]
 
 [node name="sprite" type="Sprite" parent="platform1" index="0"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform1" index="1"]
 

@@ -11,13 +11,14 @@ config_version=3
 [application]
 
 config/name="Redesigned Pancake"
-run/main_scene="res://ui_spike/main_ui.tscn"
+run/main_scene="res://work_this/work_this.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/size/width=530
-window/size/height=495
+window/size/width=800
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 stretch/aspect="keep"
 stretch/mode="2d"
 
