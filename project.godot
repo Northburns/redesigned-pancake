@@ -14,9 +14,14 @@ config/name="Redesigned Pancake"
 run/main_scene="res://work_this/work_this.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+root_func="*res://materials_etc/root.gd"
+
 [display]
 
-window/size/width=800
+window/size/height=720
+window/size/resizable=false
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 stretch/aspect="keep"

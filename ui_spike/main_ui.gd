@@ -36,12 +36,7 @@ func myfunc():
 		print("WWWWW " + String(viewport1.get_visible_rect()))
 #		viewport1.set_size_override(true, OS.get_window_size())
 #		viewport1.set_size_override_stretch(true)
-	
-		viewport1.remove_child(world)
-		viewport1.remove_and_skip()
-		var vp = Viewport.new()
-		vp.add_child(world)
-		vpcont1.add_child(vp)
-		viewport1 = vp
-	
+		var cam = viewport1.get_camera()
+#		cam.
+		viewport1.set_size_override(true, OS.get_real_window_size())
 	

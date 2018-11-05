@@ -4,7 +4,7 @@
 [ext_resource path="res://builtin_sample/colworld.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui_spike/Camera2D.gd" type="Script" id=3]
 
-[node name="MarginContainer" type="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -26,8 +26,8 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
-margin_right = 320.0
-margin_bottom = 240.0
+margin_right = 1024.0
+margin_bottom = 720.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -43,7 +43,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 312.0
+margin_right = 1016.0
 margin_bottom = 14.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -63,8 +63,8 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 18.0
-margin_right = 312.0
-margin_bottom = 184.0
+margin_right = 1016.0
+margin_bottom = 584.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -78,7 +78,7 @@ _sections_unfolded = [ "Size Flags" ]
 [node name="Viewport" type="Viewport" parent="VBoxContainer/VpCont_Main" index="0"]
 
 arvr = false
-size = Vector2( 312, 166 )
+size = Vector2( 1016, 566 )
 own_world = false
 world = null
 transparent_bg = false
@@ -109,9 +109,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 188.0
-margin_right = 312.0
-margin_bottom = 202.0
+margin_top = 588.0
+margin_right = 1016.0
+margin_bottom = 602.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -129,9 +129,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 206.0
-margin_right = 312.0
-margin_bottom = 240.0
+margin_top = 606.0
+margin_right = 1016.0
+margin_bottom = 720.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -145,7 +145,7 @@ stretch_shrink = 1
 [node name="Viewport" type="Viewport" parent="VBoxContainer/VpCont_Goal" index="0"]
 
 arvr = false
-size = Vector2( 312, 34 )
+size = Vector2( 1016, 114 )
 own_world = false
 world = null
 transparent_bg = false
