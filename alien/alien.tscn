@@ -1,28 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_jump.png" type="Texture" id=1]
-[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_stand.png" type="Texture" id=2]
-[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_walk1.png" type="Texture" id=3]
-[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_walk2.png" type="Texture" id=4]
-
-[sub_resource type="SpriteFrames" id=2]
-
-animations = [ {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "stand_r",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "walk_r",
-"speed": 5.0
-} ]
+[ext_resource path="res://alien/internal.gd" type="Script" id=1]
+[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_jump.png" type="Texture" id=2]
+[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_stand.png" type="Texture" id=3]
+[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_walk1.png" type="Texture" id=4]
+[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_walk2.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=3]
 
@@ -74,10 +56,29 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1, 0.6 ), Vector2( 1, 1 ) ]
 }
 
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "stand_r",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walk_r",
+"speed": 5.0
+} ]
+
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 60, 91.6221 )
+extents = Vector2( 34.925, 54.8183 )
 _sections_unfolded = [ "Resource" ]
 
 [node name="KinematicBody2D" type="KinematicBody2D" index="0"]
@@ -88,15 +89,9 @@ collision_mask = 1
 collision/safe_margin = 0.08
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+[node name="internal" type="Node2D" parent="." index="0"]
 
-position = Vector2( -1.82874, -3.13443 )
-frames = SubResource( 2 )
-animation = "walk_r"
-frame = 1
-playing = true
-offset = Vector2( -0.392273, -127.697 )
-_sections_unfolded = [ "Transform" ]
+script = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
@@ -109,12 +104,22 @@ playback_speed = 1.0
 "anims/Walk right" = SubResource( 4 )
 blend_times = [  ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
 
-position = Vector2( -0.735107, -91.1514 )
+position = Vector2( -1.82874, -3.13443 )
+scale = Vector2( 1, 0.808132 )
+frames = SubResource( 2 )
+animation = "jump"
+playing = true
+offset = Vector2( -0.392273, -127.697 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( -2.12985, -61.8615 )
 shape = SubResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="." index="3"]
+[node name="Camera2D" type="Camera2D" parent="." index="4"]
 
 anchor_mode = 1
 rotating = false
