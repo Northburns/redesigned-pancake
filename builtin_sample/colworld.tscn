@@ -1,13 +1,15 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://builtin_sample/colworld.gd" type="Script" id=1]
 [ext_resource path="res://placeholder_art/kenney_platformer/Backgrounds/colored_desert.png" type="Texture" id=2]
 [ext_resource path="res://builtin_sample/obstacle.png" type="Texture" id=3]
 [ext_resource path="res://builtin_sample/player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://builtin_sample/princess.png" type="Texture" id=5]
-[ext_resource path="res://builtin_sample/circle.png" type="Texture" id=6]
-[ext_resource path="res://materials_etc/greyscale_material.tres" type="Material" id=7]
-[ext_resource path="res://builtin_sample/long_obstacle.png" type="Texture" id=8]
+[ext_resource path="res://alien/alien.tscn" type="PackedScene" id=5]
+[ext_resource path="res://builtin_sample/player.gd" type="Script" id=6]
+[ext_resource path="res://builtin_sample/princess.png" type="Texture" id=7]
+[ext_resource path="res://builtin_sample/circle.png" type="Texture" id=8]
+[ext_resource path="res://materials_etc/greyscale_material.tres" type="Material" id=9]
+[ext_resource path="res://builtin_sample/long_obstacle.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -135,7 +137,7 @@ extents = Vector2( 8, 8 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 8 )
 
-[node name="colworld" type="Node2D" index="0"]
+[node name="colworld" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -170,9 +172,15 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="player" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 233.06, 223.436 )
+position = Vector2( 306.19, 216.788 )
 
-[node name="moving_platform1" type="KinematicBody2D" parent="." index="3"]
+[node name="KinematicBody2D" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 396.472, 264.964 )
+scale = Vector2( 0.2, 0.2 )
+script = ExtResource( 6 )
+
+[node name="moving_platform1" type="KinematicBody2D" parent="." index="4"]
 
 position = Vector2( 274.142, 152 )
 input_pickable = false
@@ -198,7 +206,7 @@ playback_speed = 1.0
 anims/leftright = SubResource( 4 )
 blend_times = [  ]
 
-[node name="moving_platform2" type="KinematicBody2D" parent="." index="4"]
+[node name="moving_platform2" type="KinematicBody2D" parent="." index="5"]
 
 position = Vector2( 88.3493, 284.689 )
 input_pickable = false
@@ -225,7 +233,7 @@ anims/leftright = SubResource( 5 )
 anims/updown = SubResource( 6 )
 blend_times = [  ]
 
-[node name="princess" type="Area2D" parent="." index="5"]
+[node name="princess" type="Area2D" parent="." index="6"]
 
 position = Vector2( 39.9846, 210.466 )
 input_pickable = true
@@ -246,9 +254,9 @@ shape = SubResource( 7 )
 [node name="Sprite" type="Sprite" parent="princess" index="1"]
 
 position = Vector2( 1.89215, -0.0552826 )
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 
-[node name="youwin" type="Label" parent="." index="6"]
+[node name="youwin" type="Label" parent="." index="7"]
 
 visible = false
 anchor_left = 0.0
@@ -272,7 +280,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="oneway1" type="KinematicBody2D" parent="." index="7"]
+[node name="oneway1" type="KinematicBody2D" parent="." index="8"]
 
 position = Vector2( 439, 308 )
 input_pickable = false
@@ -290,7 +298,7 @@ texture = ExtResource( 3 )
 shape = SubResource( 8 )
 one_way_collision = true
 
-[node name="oneway2" type="KinematicBody2D" parent="." index="8"]
+[node name="oneway2" type="KinematicBody2D" parent="." index="9"]
 
 position = Vector2( 456, 308 )
 input_pickable = false
@@ -308,7 +316,7 @@ texture = ExtResource( 3 )
 shape = SubResource( 8 )
 one_way_collision = true
 
-[node name="oneway3" type="KinematicBody2D" parent="." index="9"]
+[node name="oneway3" type="KinematicBody2D" parent="." index="10"]
 
 position = Vector2( 472, 308 )
 input_pickable = false
@@ -326,7 +334,7 @@ texture = ExtResource( 3 )
 shape = SubResource( 8 )
 one_way_collision = true
 
-[node name="oneway4" type="KinematicBody2D" parent="." index="10"]
+[node name="oneway4" type="KinematicBody2D" parent="." index="11"]
 
 position = Vector2( 487, 308 )
 input_pickable = false
@@ -344,7 +352,7 @@ texture = ExtResource( 3 )
 shape = SubResource( 8 )
 one_way_collision = true
 
-[node name="circle" type="KinematicBody2D" parent="." index="11"]
+[node name="circle" type="KinematicBody2D" parent="." index="12"]
 
 position = Vector2( 241.169, 304.126 )
 input_pickable = false
@@ -354,7 +362,7 @@ collision/safe_margin = 0.08
 
 [node name="sprite" type="Sprite" parent="circle" index="0"]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="circle" index="1"]
 
@@ -380,7 +388,7 @@ shape = SubResource( 11 )
 position = Vector2( 0, -37.4108 )
 texture = ExtResource( 3 )
 
-[node name="platform" type="StaticBody2D" parent="." index="12"]
+[node name="platform" type="StaticBody2D" parent="." index="13"]
 
 position = Vector2( 251.44, 396.557 )
 rotation = -0.428054
@@ -394,17 +402,17 @@ bounce = 0.0
 
 [node name="sprite" type="Sprite" parent="platform" index="0"]
 
-material = ExtResource( 7 )
-texture = ExtResource( 8 )
+material = ExtResource( 9 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Material" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform" index="1"]
 
 shape = SubResource( 12 )
 
-[node name="platform1" type="StaticBody2D" parent="." index="13"]
+[node name="platform1" type="StaticBody2D" parent="." index="14"]
 
-material = ExtResource( 7 )
+material = ExtResource( 9 )
 position = Vector2( 369.116, 394.016 )
 rotation = 0.465931
 input_pickable = false
@@ -418,7 +426,7 @@ _sections_unfolded = [ "Material" ]
 
 [node name="sprite" type="Sprite" parent="platform1" index="0"]
 
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform1" index="1"]
 

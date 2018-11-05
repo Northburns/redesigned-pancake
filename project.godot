@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Redesigned Pancake"
-run/main_scene="res://work_this/work_this.tscn"
+run/main_scene="res://ui_spike/main_ui.tscn"
 config/icon="res://icon.png"
 
 [autoload]
