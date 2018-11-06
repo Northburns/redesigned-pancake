@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://materials_etc/stancoat.shader" type="Shader" id=1]
+[ext_resource path="res://placeholder_art/kenney_platformer/Tiles/boxCoin.png" type="Texture" id=2]
+
+[resource]
+
+render_priority = 0
+shader = ExtResource( 1 )
+shader_param/grain = ExtResource( 2 )
+_sections_unfolded = [ "shader_param" ]
+

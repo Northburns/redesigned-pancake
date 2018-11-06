@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://alien/internal.gd" type="Script" id=1]
-[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_jump.png" type="Texture" id=2]
-[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_stand.png" type="Texture" id=3]
-[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_walk1.png" type="Texture" id=4]
-[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_walk2.png" type="Texture" id=5]
+[ext_resource path="res://materials_etc/stancoat_1.tres" type="Material" id=2]
+[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_walk1.png" type="Texture" id=3]
+[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_walk2.png" type="Texture" id=4]
+[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_jump.png" type="Texture" id=5]
+[ext_resource path="res://placeholder_art/kenney_platformer/Players/128x256/Pink/alienPink_stand.png" type="Texture" id=6]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 
 resource_name = "Standing still"
 length = 1.0
@@ -25,7 +26,7 @@ tracks/0/keys = {
 "values": [ "stand_r" ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 
 resource_name = "Walk right"
 length = 1.0
@@ -56,30 +57,30 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1, 0.6 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="SpriteFrames" id=2]
-
-animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "stand_r",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "walk_r",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 34.925, 54.8183 )
 _sections_unfolded = [ "Resource" ]
+
+[sub_resource type="SpriteFrames" id=6]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "walk_r",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "stand_r",
+"speed": 5.0
+} ]
 
 [node name="KinematicBody2D" type="KinematicBody2D" index="0"]
 
@@ -100,26 +101,16 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Standing still" = SubResource( 3 )
-"anims/Walk right" = SubResource( 4 )
+"anims/Standing still" = SubResource( 1 )
+"anims/Walk right" = SubResource( 2 )
 blend_times = [  ]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
-
-position = Vector2( -1.82874, -3.13443 )
-scale = Vector2( 1, 0.808132 )
-frames = SubResource( 2 )
-animation = "jump"
-playing = true
-offset = Vector2( -0.392273, -127.697 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( -2.12985, -61.8615 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
-[node name="Camera2D" type="Camera2D" parent="." index="4"]
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
 
 anchor_mode = 1
 rotating = false
@@ -144,5 +135,43 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Smoothing" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="4"]
+
+material = ExtResource( 2 )
+position = Vector2( -1.82874, -3.13443 )
+scale = Vector2( 1, 0.808132 )
+frames = SubResource( 6 )
+animation = "jump"
+playing = true
+offset = Vector2( -0.392273, -127.697 )
+_sections_unfolded = [ "Material", "Transform" ]
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite" index="0"]
+
+position = Vector2( 1.82874, 3.87861 )
+scale = Vector2( 1, 1.23742 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
 
 
