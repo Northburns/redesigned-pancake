@@ -315,6 +315,7 @@ texture = ExtResource( 3 )
 
 shape = SubResource( 8 )
 one_way_collision = true
+_sections_unfolded = [ "Transform" ]
 
 [node name="oneway3" type="KinematicBody2D" parent="." index="10"]
 

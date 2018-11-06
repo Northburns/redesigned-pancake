@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Redesigned Pancake"
-run/main_scene="res://ui_spike/main_ui.tscn"
+run/main_scene="res://household/household.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -20,8 +20,7 @@ root_func="*res://materials_etc/root.gd"
 
 [display]
 
-window/size/height=720
-window/size/resizable=false
+window/size/height=500
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 stretch/aspect="keep"
