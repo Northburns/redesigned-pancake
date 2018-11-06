@@ -69,13 +69,16 @@ func set_camera_properties(zoom, topleft, bottomright):
 	
 	#
 	# TODO: Feels a bit wonky, still. Look into this!
+	# 
 	#
+	
 	
 	tween.interpolate_method(camera, "set_zoom", camera.get_zoom(), zoom, duration, trans_type, ease_type)
 	tween.interpolate_property(camera, "limit_left", null, topleft.x, duration, trans_type, ease_type)
 	tween.interpolate_property(camera, "limit_right", null, bottomright.x, duration, trans_type, ease_type)
 	tween.interpolate_property(camera, "limit_top", null, topleft.y, duration, trans_type, ease_type)
-	tween.interpolate_property(camera, "limit_bottom", null, bottomright.x, duration, trans_type, ease_type)
+	tween.interpolate_property(camera, "limit_bottom", null, bottomright.y, duration, trans_type, ease_type)
+	# -> ??? tween.interpolate_method(camera, "force_update_scroll", null, null, duration, trans_type, ease_type)
 	tween.start()
 
 func _process(delta):
