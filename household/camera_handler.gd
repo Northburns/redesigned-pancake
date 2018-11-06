@@ -6,23 +6,25 @@ onready var player = $"../player"
 onready var area_hardcoded = $"../Area2D"
 # We can assume there is exactly one shape for area, that's fine!
 onready var shape_hardcoded = $"../Area2D/shape"
+onready var tween = $tween
 
 #
 # TODO: camera.set_zoom, you know: Zoom is not governed by smoothing. Gotta implement that ourself!
 # Hah, camera limits have to be Tweened ourself as well.
 #
 
-var desired_zoom = Vector2(1.0, 1.0)
-var desired_limits_topleft = Vector2(-INF, -INF)
-var desired_limits_bottomright = Vector2(INF, INF)
+var default_zoom = Vector2(1.0, 1.0)
+var default_limits_topleft = Vector2(-10000000, -10000000)
+var default_limits_bottomright = Vector2(10000000, 10000000)
 
 func _ready():
 	assert(camera != null)
 	assert(area_hardcoded != null)
 	assert(player != null)
+	assert(tween != null)
 	print("=========================================")
 	print(String(camera.get_viewport().get_final_transform()))
-	camera.set_zoom(Vector2(0.5,0.5))
+	#camera.set_zoom(Vector2(0.5,0.5))
 	print(String(camera.get_viewport().get_final_transform()))
 	print((camera.get_viewport()))
 	print((get_node("/root")))
@@ -48,16 +50,35 @@ func _on_Area2D_body_entered(body):
 		zoom.y = zoom.x
 		
 		# Set 'em values
-		camera.set_zoom(zoom)
-		camera.limit_left = topleft.x
-		camera.limit_right = bottomright.x
-		camera.limit_top = topleft.y
-		camera.limit_bottom = bottomright.y
-		print("XXXXX")
-		print(String(topleft))
-		print(String(bottomright))
+		set_camera_properties(zoom, topleft, bottomright)
 
 func _on_Area2D_body_exited(body):
 	if(body == player):
-		print("EXIT")
-		
+		set_camera_properties(default_zoom, default_limits_topleft, default_limits_bottomright)
+
+func set_camera_properties(zoom, topleft, bottomright):
+	#camera.set_zoom(zoom)
+	#camera.limit_left = topleft.x
+	#camera.limit_right = bottomright.x
+	#camera.limit_top = topleft.y
+	#camera.limit_bottom = bottomright.y
+	print("XXXXXXXX" + String(zoom))
+	var duration = 3.0
+	var trans_type = Tween.TRANS_LINEAR
+	var ease_type = Tween.EASE_OUT
+	
+	#
+	# TODO: Feels a bit wonky, still. Look into this!
+	#
+	
+	tween.interpolate_method(camera, "set_zoom", camera.get_zoom(), zoom, duration, trans_type, ease_type)
+	tween.interpolate_property(camera, "limit_left", null, topleft.x, duration, trans_type, ease_type)
+	tween.interpolate_property(camera, "limit_right", null, bottomright.x, duration, trans_type, ease_type)
+	tween.interpolate_property(camera, "limit_top", null, topleft.y, duration, trans_type, ease_type)
+	tween.interpolate_property(camera, "limit_bottom", null, bottomright.x, duration, trans_type, ease_type)
+	tween.start()
+
+func _process(delta):
+	#print("===========================")
+	#print(camera.get_zoom())
+	

@@ -16,7 +16,7 @@ extents = Vector2( 283.763, 237.953 )
 custom_solver_bias = 0.0
 extents = Vector2( 63.5925, 63.9881 )
 
-[node name="household" type="Node2D" index="0"]
+[node name="household" type="Node2D"]
 
 [node name="Background" type="CanvasLayer" parent="." index="0"]
 
@@ -56,6 +56,16 @@ script = ExtResource( 3 )
 [node name="camera_handler" type="Node" parent="." index="2"]
 
 script = ExtResource( 4 )
+
+[node name="tween" type="Tween" parent="camera_handler" index="0"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+_sections_unfolded = [ "Pause", "playback" ]
 
 [node name="Area2D" type="Area2D" parent="." index="3" groups=[
 "camera_area",
@@ -113,15 +123,6 @@ texture = ExtResource( 5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]
 
 shape = SubResource( 1 )
-
-[node name="Tween" type="Tween" parent="." index="5"]
-
-repeat = false
-playback_process_mode = 1
-playback_speed = 1.0
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
 
 [connection signal="body_entered" from="Area2D" to="camera_handler" method="_on_Area2D_body_entered"]
 
