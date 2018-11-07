@@ -91,8 +91,9 @@ script = ExtResource( 4 )
 script = ExtResource( 5 )
 duration_zoom = 0.3
 duration_limits = 0.6
+visible_margin = 0.0
 
-[node name="tween" type="Tween" parent="camera_handler" index="0"]
+[node name="tween_limits" type="Tween" parent="camera_handler" index="0"]
 
 repeat = false
 playback_process_mode = 1
@@ -101,6 +102,15 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 _sections_unfolded = [ "Pause", "playback" ]
+
+[node name="tween_zoom" type="Tween" parent="camera_handler" index="1"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="4"]
 

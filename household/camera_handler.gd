@@ -6,7 +6,9 @@ onready var player = $"../player"
 onready var area_hardcoded = $"../Area2D"
 # We can assume there is exactly one shape for area, that's fine!
 onready var shape_hardcoded = $"../Area2D/shape"
-onready var tween = $tween
+
+onready var tween_limits = $tween_limits
+onready var tween_zoom = $tween_zoom
 
 var trans_type = Tween.TRANS_LINEAR
 var ease_type = Tween.EASE_OUT
@@ -20,19 +22,24 @@ export var duration_limits = 0.6
 #
 # TODO: There has to be some margins. At least for exiting the area.
 #
-
+export var visible_margin = 0.0
 
 
 var default_zoom = Vector2(1.0, 1.0)
-#var default_limits_topleft = Vector2(-10000000, -10000000)
-#var default_limits_bottomright = Vector2(10000000, 10000000)
-#var default_limits = Rect2(default_limits_topleft, default_limits_bottomright - default_limits_topleft)
+var large_number = 10000000
+var default_limits = Rect2(-large_number, -large_number, 2 * large_number, 2 * large_number)
 
 func _ready():
 	assert(camera != null)
 	assert(area_hardcoded != null)
 	assert(player != null)
-	assert(tween != null)
+	assert(tween_limits != null)
+	assert(tween_zoom != null)
+	
+	# SETUP
+	
+	# Takes the worst edge off of limit change jerkiness (when "resetting to defaults")
+	camera.limit_smoothed = true 
 	
 	print("=========================================")
 	print(String(camera.get_viewport().get_final_transform()))
@@ -72,37 +79,42 @@ func _on_Area2D_body_entered(body):
 		
 		# Set 'em values
 #		set_camera_properties(zoom, from, topleft, bottomright)
-		set_camera_zoom(zoom, from, to, true)
+		set_camera_zoom(zoom, from, to, false)
 
 func _on_Area2D_body_exited(body):
 	if(body == player):
+		print("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
 		var topleft = Vector2(camera.limit_left, camera.limit_top)
 		var bottomright = Vector2(camera.limit_right, camera.limit_bottom)
 		var from = Rect2(topleft, bottomright - topleft)
-#		set_camera_properties(default_zoom, from, default_limits_topleft, default_limits_bottomright)
-		set_camera_limits(default_zoom, from, viewport_rect(),  true)
+		set_camera_limits(default_zoom, from, viewport_rect(), true)
 
 
-func set_camera_zoom(zoom, limits_from, limits_to, call_limits):
-	tween.stop_all()
-	tween.interpolate_method(camera, "set_zoom", camera.get_zoom(), zoom, duration_zoom, trans_type, ease_type)
+func set_camera_zoom(zoom, limits_from, limits_to, afterwards_free_limits, call_limits=true):
+	tween_zoom.stop_all()
+	tween_zoom.interpolate_method(camera, "set_zoom", camera.get_zoom(), zoom, duration_zoom, trans_type, ease_type)
 	if(call_limits):
-		tween.interpolate_callback(self, duration_zoom, "set_camera_limits", zoom, limits_from, limits_to, false)
-	tween.start()
+		tween_zoom.interpolate_deferred_callback(self, duration_zoom, "set_camera_limits", zoom, limits_from, limits_to, afterwards_free_limits, false)
+	tween_zoom.start()
 
-func set_camera_limits(zoom, limits_from, limits_to, call_zoom):
-	tween.stop_all()
+func set_camera_limits(zoom, limits_from, limits_to, afterwards_free_limits, call_zoom=true):
+	tween_limits.stop_all()
 #	camera.limit_left = topleft.x
 #	camera.limit_right = bottomright.x
 #	camera.limit_top = topleft.y
 #	camera.limit_bottom = bottomright.y
-	tween.interpolate_property(camera, "limit_left", limits_from.position.x, limits_to.position.x, duration_limits, trans_type, ease_type)
-	tween.interpolate_property(camera, "limit_right", limits_from.end.x, limits_to.end.x, duration_limits, trans_type, ease_type)
-	tween.interpolate_property(camera, "limit_top", limits_from.position.y, limits_to.position.y, duration_limits, trans_type, ease_type)
-	tween.interpolate_property(camera, "limit_bottom", limits_from.end.y, limits_to.end.y, duration_limits, trans_type, ease_type)
+	tween_limits.interpolate_property(camera, "limit_left", limits_from.position.x, limits_to.position.x, duration_limits, trans_type, ease_type)
+	tween_limits.interpolate_property(camera, "limit_right", limits_from.end.x, limits_to.end.x, duration_limits, trans_type, ease_type)
+	tween_limits.interpolate_property(camera, "limit_top", limits_from.position.y, limits_to.position.y, duration_limits, trans_type, ease_type)
+	tween_limits.interpolate_property(camera, "limit_bottom", limits_from.end.y, limits_to.end.y, duration_limits, trans_type, ease_type)
+	print("AAAAA:" +str(call_zoom))
 	if(call_zoom):
-		tween.interpolate_callback(self, duration_limits, "set_camera_zoom", zoom, limits_from, limits_to, false)
-	tween.start()
+		if(afterwards_free_limits):
+			limits_to = default_limits
+		tween_limits.interpolate_deferred_callback(self, duration_limits, "set_camera_zoom", zoom, limits_from, limits_to, false, afterwards_free_limits)
+	#if(afterwards_free_limits):
+	#	tween_limits.interpolate_deferred_callback(self, duration_zoom, "set_camera_limits", zoom, limits_to, default_limits, false, false)
+	tween_limits.start()
 	
 func _process(delta):
 	#print(str(camera.global_position))
