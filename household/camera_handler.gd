@@ -40,13 +40,7 @@ func _ready():
 	
 	# Takes the worst edge off of limit change jerkiness (when "resetting to defaults")
 	camera.limit_smoothed = true 
-	
-	print("=========================================")
-	print(String(camera.get_viewport().get_final_transform()))
-	#camera.set_zoom(Vector2(0.5,0.5))
-	print(String(camera.get_viewport().get_final_transform()))
-	print((camera.get_viewport()))
-	print((get_node("/root")))
+
 
 func viewport_rect():
 	# ViewPort size (visible area when zoom = 1)
@@ -79,25 +73,33 @@ func _on_Area2D_body_entered(body):
 		
 		# Set 'em values
 #		set_camera_properties(zoom, from, topleft, bottomright)
-		set_camera_zoom(zoom, from, to, false)
+		camera_restrict(zoom, from, to)
 
 func _on_Area2D_body_exited(body):
 	if(body == player):
-		print("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
 		var topleft = Vector2(camera.limit_left, camera.limit_top)
 		var bottomright = Vector2(camera.limit_right, camera.limit_bottom)
 		var from = Rect2(topleft, bottomright - topleft)
-		set_camera_limits(default_zoom, from, viewport_rect(), true)
+		camera_unrestrict(default_zoom, from, viewport_rect())
+
+func camera_restrict(zoom, limits_from, limits_to):
+	yielding_camera_zoom(zoom)
+	yielding_camera_limits(limits_from, limits_to)
 
 
-func set_camera_zoom(zoom, limits_from, limits_to, afterwards_free_limits, call_limits=true):
+func camera_unrestrict(zoom, limits_from, limits_to):
+	yielding_camera_limits(limits_from, limits_to)
+	yielding_camera_zoom(zoom)
+	yielding_camera_limits(limits_to, default_limits, false)
+	pass
+
+func yielding_camera_zoom(zoom):
 	tween_zoom.stop_all()
 	tween_zoom.interpolate_method(camera, "set_zoom", camera.get_zoom(), zoom, duration_zoom, trans_type, ease_type)
-	if(call_limits):
-		tween_zoom.interpolate_deferred_callback(self, duration_zoom, "set_camera_limits", zoom, limits_from, limits_to, afterwards_free_limits, false)
 	tween_zoom.start()
+	yield(tween_zoom, "tween_completed")
 
-func set_camera_limits(zoom, limits_from, limits_to, afterwards_free_limits, call_zoom=true):
+func yielding_camera_limits(limits_from, limits_to, do_yield=true):
 	tween_limits.stop_all()
 #	camera.limit_left = topleft.x
 #	camera.limit_right = bottomright.x
@@ -107,15 +109,6 @@ func set_camera_limits(zoom, limits_from, limits_to, afterwards_free_limits, cal
 	tween_limits.interpolate_property(camera, "limit_right", limits_from.end.x, limits_to.end.x, duration_limits, trans_type, ease_type)
 	tween_limits.interpolate_property(camera, "limit_top", limits_from.position.y, limits_to.position.y, duration_limits, trans_type, ease_type)
 	tween_limits.interpolate_property(camera, "limit_bottom", limits_from.end.y, limits_to.end.y, duration_limits, trans_type, ease_type)
-	print("AAAAA:" +str(call_zoom))
-	if(call_zoom):
-		if(afterwards_free_limits):
-			limits_to = default_limits
-		tween_limits.interpolate_deferred_callback(self, duration_limits, "set_camera_zoom", zoom, limits_from, limits_to, false, afterwards_free_limits)
-	#if(afterwards_free_limits):
-	#	tween_limits.interpolate_deferred_callback(self, duration_zoom, "set_camera_limits", zoom, limits_to, default_limits, false, false)
 	tween_limits.start()
-	
-func _process(delta):
-	#print(str(camera.global_position))
-	pass
+	if(do_yield):
+		yield(tween_limits, "tween_completed")
