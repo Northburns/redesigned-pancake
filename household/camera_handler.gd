@@ -2,10 +2,6 @@ extends Node
 
 onready var camera = $"../player/camera"
 onready var player = $"../player"
-# The hardcoded area has been setup to call functions below
-onready var area_hardcoded = $"../CameraArea"
-# We can assume there is exactly one shape for area, that's fine!
-onready var shape_hardcoded = $"../CameraArea/shape"
 
 onready var tween_limits = $tween_limits
 onready var tween_zoom = $tween_zoom
@@ -26,8 +22,8 @@ var large_number = 10000000
 var default_limits = Rect2(-large_number, -large_number, 2 * large_number, 2 * large_number)
 
 func _ready():
+	find_camera_areas()
 	assert(camera != null)
-	assert(area_hardcoded != null)
 	assert(player != null)
 	assert(tween_limits != null)
 	assert(tween_zoom != null)
@@ -37,6 +33,12 @@ func _ready():
 	# Takes the worst edge off of limit change jerkiness (when "resetting to defaults")
 	camera.limit_smoothed = true 
 
+func find_camera_areas():
+	# Also registers signals
+	var camera_areas = get_tree().get_nodes_in_group("CameraArea")
+	for area in camera_areas:
+		area.connect("body_entered", self, "_on_Area2D_body_entered", [area])
+		area.connect("body_exited", self, "_on_Area2D_body_exited", [area])
 
 func viewport_rect():
 	# ViewPort size (visible area when zoom = 1)
@@ -45,13 +47,14 @@ func viewport_rect():
 	var viewport_rect = Rect2(camera.global_position - viewport_size / 2 , viewport_size)
 	return viewport_rect
 
-func _on_Area2D_body_entered(body):
+func _on_Area2D_body_entered(body, area):
+	print("ENTER " + str(area))
 	if(body == player):
 		
 		var viewport_rect = viewport_rect()
 		
 		# Camera constraint area dimensions (global coordinates)
-		var size_for_zoom = area_hardcoded.c_area_for_zoom.size
+		var size_for_zoom = area.c_area_for_zoom.size
 		
 		
 		
@@ -63,13 +66,14 @@ func _on_Area2D_body_entered(body):
 		
 		var from = viewport_rect
 		#from = Rect2(default_limits_topleft,  default_limits_bottomright-default_limits_topleft)
-		var to = area_hardcoded.c_area_for_limits
+		var to = area.c_area_for_limits
 		
 		# Set 'em values
 #		set_camera_properties(zoom, from, topleft, bottomright)
 		camera_restrict(zoom, from, to)
 
-func _on_Area2D_body_exited(body):
+func _on_Area2D_body_exited(body, area):
+	print("EXIT")
 	if(body == player):
 		var topleft = Vector2(camera.limit_left, camera.limit_top)
 		var bottomright = Vector2(camera.limit_right, camera.limit_bottom)
