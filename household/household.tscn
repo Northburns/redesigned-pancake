@@ -13,7 +13,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 63.5925, 63.9881 )
 
-[node name="household" type="Node2D"]
+[node name="household" type="Node2D" index="0"]
 
 [node name="Background" type="CanvasLayer" parent="." index="0"]
 
@@ -82,7 +82,6 @@ texture = ExtResource( 3 )
 
 [node name="Kitchen" parent="Spatial" index="1" instance=ExtResource( 4 )]
 
-visible = false
 position = Vector2( 344.12, -79.7195 )
 _sections_unfolded = [ "Transform" ]
 

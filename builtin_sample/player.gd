@@ -60,7 +60,11 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		on_air_time = 0
-		
+	
+	if jumping and velocity.y < 0 and !jump:
+		# Going up, but let go of jump button
+		velocity.y = 0.0
+	
 	if jumping and velocity.y > 0:
 		# If falling, no longer jumping
 		jumping = false
