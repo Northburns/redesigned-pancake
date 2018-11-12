@@ -51,24 +51,19 @@ func _on_Area2D_body_entered(body):
 		var viewport_rect = viewport_rect()
 		
 		# Camera constraint area dimensions (global coordinates)
-#		var center = shape_hardcoded.global_position
-#		var halfsize = shape_hardcoded.shape.extents # see RectangleShape2D's docs
-#		var topleft = center - halfsize
-#		var bottomright = center + halfsize
-#		var size = bottomright - topleft
-		var c_area = area_hardcoded.c_area
-		var topleft = c_area.position
-		var size = c_area.size
+		var size_for_zoom = area_hardcoded.c_area_for_zoom.size
+		
+		
 		
 		# Set zoom so that only Camera constraint area shows
 		# (uniform zoom, camera may move inside the Camera constraint area)
-		var zoom = size / viewport_rect.size
+		var zoom = size_for_zoom / viewport_rect.size
 		zoom.x = min(zoom.x, zoom.y)
 		zoom.y = zoom.x
 		
 		var from = viewport_rect
 		#from = Rect2(default_limits_topleft,  default_limits_bottomright-default_limits_topleft)
-		var to = Rect2(topleft, size)
+		var to = area_hardcoded.c_area_for_limits
 		
 		# Set 'em values
 #		set_camera_properties(zoom, from, topleft, bottomright)

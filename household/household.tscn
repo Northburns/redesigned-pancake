@@ -65,11 +65,11 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
-c_margin_all = 20.0
-c_margin_top = 0.0
-c_margin_right = 0.0
-c_margin_bottom = 0.0
-c_margin_left = 0.0
+c_padding_all = 20.0
+c_margin_top = 10.0
+c_margin_right = 10.0
+c_margin_bottom = 10.0
+c_margin_left = 10.0
 
 [node name="planet2" type="Sprite" parent="CameraArea" index="0"]
 
