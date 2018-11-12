@@ -102,7 +102,6 @@ script = ExtResource( 4 )
 script = ExtResource( 5 )
 duration_zoom = 0.3
 duration_limits = 0.6
-visible_margin = 0.0
 
 [node name="tween_limits" type="Tween" parent="camera_handler" index="0"]
 
@@ -149,7 +148,7 @@ shape = SubResource( 2 )
 
 [node name="CameraArea3" parent="." index="5" instance=ExtResource( 6 )]
 
-position = Vector2( 644.828, -193.896 )
+position = Vector2( 510.09, -190.738 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraArea3" index="0"]
 

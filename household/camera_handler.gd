@@ -11,15 +11,12 @@ var ease_type = Tween.EASE_OUT
 export var duration_zoom = 0.3
 export var duration_limits = 0.6
 
-#
-# TODO: There has to be some margins. At least for exiting the area.
-#
-export var visible_margin = 0.0
-
-
 var default_zoom = Vector2(1.0, 1.0)
 var large_number = 10000000
 var default_limits = Rect2(-large_number, -large_number, 2 * large_number, 2 * large_number)
+
+var area_current = null
+var areas = []
 
 func _ready():
 	find_camera_areas()
@@ -48,37 +45,50 @@ func viewport_rect():
 	return viewport_rect
 
 func _on_Area2D_body_entered(body, area):
-	print("ENTER " + str(area))
 	if(body == player):
-		
-		var viewport_rect = viewport_rect()
-		
-		# Camera constraint area dimensions (global coordinates)
-		var size_for_zoom = area.c_area_for_zoom.size
-		
-		
-		
-		# Set zoom so that only Camera constraint area shows
-		# (uniform zoom, camera may move inside the Camera constraint area)
-		var zoom = size_for_zoom / viewport_rect.size
-		zoom.x = min(zoom.x, zoom.y)
-		zoom.y = zoom.x
-		
-		var from = viewport_rect
-		#from = Rect2(default_limits_topleft,  default_limits_bottomright-default_limits_topleft)
-		var to = area.c_area_for_limits
-		
-		# Set 'em values
-#		set_camera_properties(zoom, from, topleft, bottomright)
-		camera_restrict(zoom, from, to)
+		if !areas.has(area):
+			areas.append(area)
+		camera_in_area(areas[0])
+
 
 func _on_Area2D_body_exited(body, area):
-	print("EXIT")
 	if(body == player):
-		var topleft = Vector2(camera.limit_left, camera.limit_top)
-		var bottomright = Vector2(camera.limit_right, camera.limit_bottom)
-		var from = Rect2(topleft, bottomright - topleft)
-		camera_unrestrict(default_zoom, from, viewport_rect())
+		while areas.count(area) > 0:
+			areas.erase(area)
+		if areas.empty():
+			camera_out_all_areas(area)
+		else:
+			camera_in_area(areas[0])
+
+func camera_in_area(area):
+	if area_current == area:
+		return
+	area_current = area
+	var viewport_rect = viewport_rect()
+	
+	# Camera constraint area dimensions (global coordinates)
+	var size_for_zoom = area.c_area_for_zoom.size
+	
+	# Set zoom so that only Camera constraint area shows
+	# (uniform zoom, camera may move inside the Camera constraint area)
+	var zoom = size_for_zoom / viewport_rect.size
+	zoom.x = min(zoom.x, zoom.y)
+	zoom.y = zoom.x
+	
+	var from = viewport_rect
+	#from = Rect2(default_limits_topleft,  default_limits_bottomright-default_limits_topleft)
+	var to = area.c_area_for_limits
+	
+	# Set 'em values
+#		set_camera_properties(zoom, from, topleft, bottomright)
+	camera_restrict(zoom, from, to)
+
+func camera_out_all_areas(area):
+	area_current = null
+	var topleft = Vector2(camera.limit_left, camera.limit_top)
+	var bottomright = Vector2(camera.limit_right, camera.limit_bottom)
+	var from = Rect2(topleft, bottomright - topleft)
+	camera_unrestrict(default_zoom, from, viewport_rect())
 
 func camera_restrict(zoom, limits_from, limits_to):
 	yielding_camera_zoom(zoom)
