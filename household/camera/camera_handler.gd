@@ -1,7 +1,7 @@
 extends Node
 
-onready var camera = $"../player/camera"
-onready var player = $"../player"
+onready var camera = $"../Spatial/player/camera"
+onready var player = $"../Spatial/player"
 
 onready var tween_limits = $tween_limits
 onready var tween_zoom = $tween_zoom
@@ -62,7 +62,7 @@ func _on_Area2D_body_exited(body, area):
 
 func camera_in_area(area):
 	if area_current == area:
-		return
+		return # Nothing to do (would just cause jitter)
 	area_current = area
 	var viewport_rect = viewport_rect()
 	
