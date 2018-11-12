@@ -20,6 +20,7 @@ const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
 var velocity = Vector2()
 var on_air_time = 100
 var jumping = false
+var doublejump_usable = false
 
 var prev_jump_pressed = false
 
@@ -60,6 +61,7 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		on_air_time = 0
+		doublejump_usable = true
 	
 	if jumping and velocity.y < 0 and !jump:
 		# Going up, but let go of jump button
@@ -68,6 +70,9 @@ func _physics_process(delta):
 	if jumping and velocity.y > 0:
 		# If falling, no longer jumping
 		jumping = false
+	
+	#if jumping and 
+	
 	
 	if on_air_time < JUMP_MAX_AIRBORNE_TIME and jump and not prev_jump_pressed and not jumping:
 		# Jump must also be allowed to happen if the character left the floor a little bit ago.
