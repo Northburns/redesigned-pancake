@@ -60,7 +60,7 @@ tracks/1/keys = {
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 34.925, 54.8183 )
+extents = Vector2( 34.925, 45 )
 _sections_unfolded = [ "Resource" ]
 
 [sub_resource type="SpriteFrames" id=4]
@@ -107,7 +107,7 @@ blend_times = [  ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( -2.12985, -61.8615 )
+position = Vector2( -2.12985, -48.5 )
 shape = SubResource( 3 )
 
 [node name="camera" type="Camera2D" parent="." index="3"]
