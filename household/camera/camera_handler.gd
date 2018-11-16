@@ -43,7 +43,7 @@ func viewport_rect():
 	var viewport = camera.get_viewport()
 	if viewport == null:
 		return Rect2(0.0, 0.0, 0.0, 0.0)
-	var viewport_size = .get_visible_rect().size
+	var viewport_size = viewport.get_visible_rect().size
 	var viewport_rect = Rect2(camera.global_position - viewport_size / 2 , viewport_size)
 	return viewport_rect
 

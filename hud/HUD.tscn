@@ -1,86 +1,230 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://placeholder_art/game-icons/knife-fork.png" type="Texture" id=1]
-[ext_resource path="res://placeholder_art/kenney_gui_modded/bar_vertical_shadow_6pixels.png" type="Texture" id=2]
-[ext_resource path="res://placeholder_art/kenney_gui_modded/bar_vertical_red_6pixels.png" type="Texture" id=3]
+[ext_resource path="res://placeholder_art/kenney_gui_modded/glassPanel_cornerBR.png" type="Texture" id=1]
+[ext_resource path="res://hud/bar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://hud/bar_batteries.tscn" type="PackedScene" id=3]
+[ext_resource path="res://hud/font_kenvector_future_thin.tres" type="DynamicFont" id=4]
+[ext_resource path="res://placeholder_art/kenney_gui_modded/metalPanel.png" type="Texture" id=5]
+[ext_resource path="res://placeholder_art/kenney_gui_modded/dot_shadow.png" type="Texture" id=6]
+[ext_resource path="res://placeholder_art/kenney_gui_modded/dotBlue.png" type="Texture" id=7]
+[ext_resource path="res://placeholder_art/game-icons/time-trap.png" type="Texture" id=8]
 
-[node name="HUD" type="VBoxContainer" index="0"]
+[node name="HUD" type="Container" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.0
+anchor_right = 1.0
 anchor_bottom = 0.0
-margin_left = -1.0
-margin_right = 639.0
-margin_bottom = 640.0
+margin_left = 23.0
+margin_top = 38.0
+margin_right = -213.0
+margin_bottom = 600.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 1
+mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-alignment = 0
 
-[node name="container" type="GridContainer" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 640.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-columns = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="container" index="0"]
+[node name="glass" type="Container" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 101.0
-margin_bottom = 120.0
+margin_right = 142.0
+margin_bottom = 493.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 1
+mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Size Flags" ]
 
-[node name="TextureRect" type="TextureRect" parent="container/VBoxContainer" index="0"]
+[node name="bg" type="NinePatchRect" parent="glass" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 101.0
-margin_bottom = 38.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -186.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 1
+mouse_filter = 2
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 7
-size_flags_vertical = 7
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 1 )
-expand = true
-stretch_mode = 5
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+_sections_unfolded = [ "Patch Margin", "Size Flags" ]
+
+[node name="bars" type="HBoxContainer" parent="glass" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = 261.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 0
+_sections_unfolded = [ "Anchor", "Margin", "Size Flags", "Theme" ]
+
+[node name="BarFood" parent="glass/bars" index="0" instance=ExtResource( 2 )]
+
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 54.0
+margin_bottom = 246.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Size Flags", "Theme" ]
+
+[node name="BarBatteries" parent="glass/bars" index="1" instance=ExtResource( 3 )]
+
+anchor_bottom = 0.0
+margin_left = 58.0
+margin_top = 0.0
+margin_right = 112.0
+margin_bottom = 246.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Size Flags" ]
+
+[node name="Label" type="Label" parent="glass" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 21.0
+margin_top = 261.0
+margin_right = 123.0
+margin_bottom = 279.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Time"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="glass" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 19.0
+margin_top = 279.0
+margin_right = 121.0
+margin_bottom = 297.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "6542"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="metal" type="Container" parent="." index="1"]
+
+visible = false
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = -264.0
+margin_bottom = 299.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="bg" type="NinePatchRect" parent="metal" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 5 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+_sections_unfolded = [ "Patch Margin" ]
+
+[node name="counters" type="VBoxContainer" parent="metal" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="metal/counters" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 264.0
+margin_bottom = 299.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 0
 _sections_unfolded = [ "Size Flags" ]
 
-[node name="TextureProgress" type="TextureProgress" parent="container/VBoxContainer" index="1"]
+[node name="TextureProgress" type="TextureProgress" parent="metal/counters/HBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 42.0
-margin_right = 101.0
-margin_bottom = 120.0
+margin_right = 173.0
+margin_bottom = 299.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -92,45 +236,39 @@ min_value = 0.0
 max_value = 100.0
 step = 1.0
 page = 0.0
-value = 50.0
-exp_edit = true
+value = 33.0
+exp_edit = false
 rounded = true
-texture_under = ExtResource( 2 )
+texture_under = ExtResource( 6 )
 texture_over = null
-texture_progress = ExtResource( 3 )
-fill_mode = 3
+texture_progress = ExtResource( 7 )
+fill_mode = 5
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
-nine_patch_stretch = true
-stretch_margin_left = 20
-stretch_margin_top = 6
-stretch_margin_right = 6
-stretch_margin_bottom = 6
-_sections_unfolded = [ "Radial Fill", "Size Flags", "Textures" ]
+nine_patch_stretch = false
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Radial Fill", "Rect", "Size Flags", "Textures" ]
 
-[node name="ProgressBar" type="ProgressBar" parent="container" index="1"]
+[node name="TextureRect" type="TextureRect" parent="metal/counters/HBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 30.0
-margin_right = 640.0
-margin_bottom = 16.0
+margin_left = 177.0
+margin_right = 264.0
+margin_bottom = 299.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 0
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
-size_flags_vertical = 4
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
-percent_visible = true
+size_flags_vertical = 3
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
 _sections_unfolded = [ "Size Flags" ]
 
 
