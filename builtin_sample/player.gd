@@ -4,6 +4,7 @@ extends KinematicBody2D
 
 # Member variables
 const GRAVITY = 1500.0 # pixels/second/second
+var gravity = GRAVITY
 
 # Angle in degrees towards either side that the player can consider "floor"
 const FLOOR_ANGLE_TOLERANCE = 40
@@ -27,7 +28,7 @@ var prev_jump_pressed = false
 
 func _physics_process(delta):
 	# Create forces
-	var force = Vector2(0, GRAVITY)
+	var force = Vector2(0, gravity)
 	
 	var walk_left = Input.is_action_pressed("move_left")
 	var walk_right = Input.is_action_pressed("move_right")
@@ -57,11 +58,17 @@ func _physics_process(delta):
 	# Integrate forces to velocity
 	velocity += force * delta	
 	# Integrate velocity into motion and move
-	velocity = move_and_slide(velocity, Vector2(0, -1))
+	var slope_stop_min_velocity = 10 # default 5
+	var max_bounces = 4 # default 4
+	var floor_max_angle = deg2rad(60) # default deg2rad(45)
+	velocity = move_and_slide(velocity, Vector2(0, -1), slope_stop_min_velocity, max_bounces, floor_max_angle)
 	
 	if is_on_floor():
 		on_air_time = 0
 		doublejump_usable = true
+		gravity = 0.0
+	else:
+		gravity = GRAVITY
 	
 	if jumping and velocity.y < 0 and !jump:
 		# Going up, but let go of jump button
