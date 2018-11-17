@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://placeholder_art/kenney_spritesheets/platformer.png" type="Texture" id=1]
 [ext_resource path="res://household/Tileset_OccluderPolygon2D_FullSquare.tres" type="OccluderPolygon2D" id=2]
+[ext_resource path="res://placeholder_art/kenney_spritesheets/grassHill_left.png" type="Texture" id=3]
+[ext_resource path="res://placeholder_art/kenney_spritesheets/grassHill_right.png" type="Texture" id=4]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 
@@ -104,5 +106,51 @@ polygon = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 
 occluder = ExtResource( 2 )
 light_mask = 1
+
+[node name="Hill_left" type="Sprite" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 512, 0 )
+texture = ExtResource( 3 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Hill_left" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hill_left/StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 0, 128, 128, 0, 128 )
+
+[node name="Hill_right" type="Sprite" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 768, 0 )
+texture = ExtResource( 4 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Hill_right" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hill_right/StaticBody2D2" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 128, 0, 128, 128, 0, 128 )
 
 
