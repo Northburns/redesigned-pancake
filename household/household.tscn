@@ -9,7 +9,7 @@
 [ext_resource path="res://placeholder_art/godot_tutorials/light.png" type="Texture" id=7]
 [ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=8]
 
-[node name="household" type="Node2D"]
+[node name="household" type="Node2D" index="0"]
 
 [node name="Background" type="CanvasLayer" parent="." index="0"]
 
