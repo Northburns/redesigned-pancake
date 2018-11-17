@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var pl = $"../AnimationPlayer"
+onready var pl = $"../animation/AnimationPlayer"
 
 func _ready():
 	print("Oh my!")
-	pl.play("Walk right")
+	pl.play("walk")
