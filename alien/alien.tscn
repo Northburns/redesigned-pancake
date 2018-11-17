@@ -56,6 +56,6 @@ _sections_unfolded = [ "Limit", "Smoothing" ]
 
 position = Vector2( 3.06235, -104.447 )
 scale = Vector2( 0.190843, 0.190843 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Pause", "Transform", "Visibility", "Z Index" ]
 
 
