@@ -48,7 +48,8 @@ func _physics_process(delta):
 			anim.set_scale(Vector2(abs(anim.scale.x), anim.scale.y))
 			pl.play("walk")
 	else:
-		pl.play("rest")
+		if pl.current_animation != "rest":
+			pl.play("rest", 0.3)
 	
 	var stop = true
 	

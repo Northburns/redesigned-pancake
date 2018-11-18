@@ -1,4 +1,4 @@
-# Game-Icons credits
+# `game-icons`
 
 Resources from <https://game-icons.net> are shared under CC BY 3.0 license. Here's the credits. Rember to add to the final artifact as well for those in use.
 

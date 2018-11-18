@@ -1,15 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://placeholder_art/kenney_platformer/Backgrounds/colored_grass.png" type="Texture" id=1]
 [ext_resource path="res://household/camera/camera_handler.gd" type="Script" id=2]
 [ext_resource path="res://household/room_kitchen.tscn" type="PackedScene" id=3]
 [ext_resource path="res://household/Tileset.tres" type="TileSet" id=4]
 [ext_resource path="res://alien/alien.tscn" type="PackedScene" id=5]
-[ext_resource path="res://builtin_sample/player.gd" type="Script" id=6]
-[ext_resource path="res://placeholder_art/godot_tutorials/light.png" type="Texture" id=7]
-[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=8]
+[ext_resource path="res://placeholder_art/godot_tutorials/light.png" type="Texture" id=6]
+[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=7]
 
-[node name="household" type="Node2D" index="0"]
+[node name="household" type="Node2D"]
 
 [node name="Background" type="CanvasLayer" parent="." index="0"]
 
@@ -43,7 +42,6 @@ __meta__ = {
 
 [node name="camera_handler" type="Node" parent="." index="1"]
 
-editor/display_folded = true
 script = ExtResource( 2 )
 duration_zoom = 0.3
 duration_limits = 0.6
@@ -98,7 +96,6 @@ _sections_unfolded = [ "Cell" ]
 [node name="player" parent="Spatial" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 150.494, -91.6718 )
-script = ExtResource( 6 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Spatial" index="3"]
 
@@ -110,7 +107,7 @@ color = Color( 0.417969, 0.417969, 0.417969, 1 )
 position = Vector2( 197.939, -329.931 )
 enabled = true
 editor_only = false
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 offset = Vector2( 0, 0 )
 texture_scale = 2.56
 color = Color( 1, 1, 1, 1 )
@@ -139,7 +136,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="HUD" parent="GUI" index="0" instance=ExtResource( 8 )]
+[node name="HUD" parent="GUI" index="0" instance=ExtResource( 7 )]
 
 anchor_bottom = 1.0
 margin_left = 0.0
