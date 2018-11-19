@@ -54,7 +54,7 @@ _sections_unfolded = [ "Limit", "Smoothing" ]
 
 [node name="animation" parent="." index="3" instance=ExtResource( 2 )]
 
-position = Vector2( -38.838, -76.5134 )
+position = Vector2( -2.8184, -75.0432 )
 scale = Vector2( 0.190843, 0.190843 )
 _sections_unfolded = [ "Pause", "Transform", "Visibility", "Z Index" ]
 
