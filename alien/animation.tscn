@@ -429,10 +429,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -94.9806, -36.3375, 35.1445 ]
+"values": [ 0.0, 35.1445 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("hip/Leg_right_a/Leg_right_b:rotation_degrees")
@@ -549,8 +549,8 @@ __meta__ = {
 
 [node name="Leg_right_b" type="Sprite" parent="hip/torso" index="0"]
 
-position = Vector2( -305.71, 187.562 )
-rotation = 0.0408218
+position = Vector2( -378.821, 168.674 )
+rotation = 1.37953
 scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 offset = Vector2( 5, 60 )
@@ -668,7 +668,7 @@ __meta__ = {
 [node name="Leg_right_a" type="Sprite" parent="hip" index="1"]
 
 position = Vector2( -3.85468, 54.793 )
-rotation = 0.0192984
+rotation = 0.519131
 texture = ExtResource( 3 )
 offset = Vector2( 10, 40 )
 _sections_unfolded = [ "Offset" ]
@@ -680,7 +680,7 @@ __meta__ = {
 [node name="Leg_right_b" type="RemoteTransform2D" parent="hip/Leg_right_a" index="0"]
 
 position = Vector2( 6.22457, 152.53 )
-rotation = -0.00286507
+rotation = 0.836012
 remote_path = NodePath("../../torso/Leg_right_b")
 use_global_coordinates = true
 update_position = true
@@ -694,7 +694,7 @@ __meta__ = {
 [node name="knuckle" type="Position2D" parent="hip/Leg_right_a/Leg_right_b" index="0"]
 
 position = Vector2( 16.2164, 146.131 )
-rotation = -0.0682124
+rotation = 0.0421994
 __meta__ = {
 "_edit_bone_": true
 }
