@@ -32,7 +32,6 @@ class Jumping:
 		var walking_r = pinput.is_dpad(PInput.D_R)
 		var walking = walking_l || walking_r
 
-		
 		# GRAVITY
 		if pbody.is_on_floor():
 			print("XXXX")

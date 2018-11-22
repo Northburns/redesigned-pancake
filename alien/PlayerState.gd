@@ -23,7 +23,7 @@ class PState:
 	
 	var state
 	
-	const JUMP_SPEED = 5.0
+	const JUMP_SPEED = 1200.0
 	var GRAVITY = Vector2(0.0, 1500.0) # pixels/second/second
 	
 	# Angle in degrees towards either side that the player can consider "floor"

@@ -66,12 +66,12 @@ class Floor:
 		
 		# print(on_air_time)
 		
-		if pinput.jump_imp:
-			print("Wanna jump, gonna? " + str(on_air_time < pstate.JUMP_MAX_AIRBORNE_TIME))
+#		if pinput.jump_imp:
+#			print("Wanna jump, gonna? " + str(on_air_time < pstate.JUMP_MAX_AIRBORNE_TIME))
 		
 		# TODO Shouldn't the jump be "just pressed jump"?
 		if pinput.jump_imp and  on_air_time < pstate.JUMP_MAX_AIRBORNE_TIME:
-			print("WAIT WHAT")
+#			print("WAIT WHAT")
 			# As the KinematicBody2D tutorial said:
 			# > Jump must also be allowed to happen if the character left the floor a little bit ago.
 			# > Makes controls more snappy.
@@ -79,7 +79,7 @@ class Floor:
 			pstate.s_jumping.activate(true)
 		
 		if on_air_time >= pstate.JUMP_MAX_AIRBORNE_TIME:
-			print("WWWW")
+#			print("WWWW")
 			pstate.s_jumping.activate(false)
 			
 		
