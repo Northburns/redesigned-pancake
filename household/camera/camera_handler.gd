@@ -11,7 +11,7 @@ var ease_type = Tween.EASE_OUT
 export var duration_zoom = 0.3
 export var duration_limits = 0.6
 
-var default_zoom = Vector2(1.0, 1.0)
+var default_zoom = Vector2(2.0, 2.0)
 var large_number = 10000000
 var default_limits = Rect2(-large_number, -large_number, 2 * large_number, 2 * large_number)
 
@@ -29,6 +29,7 @@ func _ready():
 	
 	# Takes the worst edge off of limit change jerkiness (when "resetting to defaults")
 	camera.limit_smoothed = true 
+	camera_unrestrict(default_zoom, null, viewport_rect())
 
 func find_camera_areas():
 	# Also registers signals
@@ -99,7 +100,8 @@ func camera_restrict(zoom, limits_from, limits_to):
 
 
 func camera_unrestrict(zoom, limits_from, limits_to):
-	yielding_camera_limits(limits_from, limits_to)
+	if limits_from != null:
+		yielding_camera_limits(limits_from, limits_to)
 	yielding_camera_zoom(zoom)
 	yielding_camera_limits(limits_to, default_limits, false)
 	pass
