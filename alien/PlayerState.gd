@@ -7,11 +7,11 @@ const PAnim = preload("PlayerAnimator.gd")
 
 # Angle in degrees towards either side that the player can consider "floor"
 const FLOOR_ANGLE_TOLERANCE = 40
-const WALK_FORCE = 600
+const WALK_FORCE = 1200
 const WALK_MIN_SPEED = 10
-const WALK_MAX_SPEED = 200
+const WALK_MAX_SPEED = 900
 const STOP_FORCE = 1300
-const JUMP_SPEED = 1600
+const JUMP_SPEED = 1100
 const JUMP_MAX_AIRBORNE_TIME = 0.2
 
 const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
@@ -59,9 +59,20 @@ class Floor:
 			gravity = GRAVITY
 		pbody.apply_force(gravity)
 		
+		if on_air_time < JUMP_MAX_AIRBORNE_TIME and pinput.jump and not jumping:
+			# Jump must also be allowed to happen if the character left the floor a little bit ago.
+			# Makes controls more snappy.
+			pbody.velocity.y = -JUMP_SPEED # FIXME uhm, applying velocity directly?
+			jumping = true
+		
+		
 		if jumping and pbody.velocity.y < 0 and !pinput.jump:
 			# Going up, but let go of jump button
 			pbody.velocity.y = 0.0 # FIXME no, not like this. Apply a smaller gravity :)
+		
+		if pbody.is_on_ceiling():
+			print("OOF")
+			pbody.velocity.y = 0.0 # Is this really the way to make sure we don't "slide" from a ceiling's edge upwards?
 		
 		if jumping and pbody.velocity.y > 0:
 			# If falling, no longer jumping
@@ -70,11 +81,6 @@ class Floor:
 		#if jumping and 
 		
 		
-		if on_air_time < JUMP_MAX_AIRBORNE_TIME and pinput.jump and not jumping:
-			# Jump must also be allowed to happen if the character left the floor a little bit ago.
-			# Makes controls more snappy.
-			pbody.velocity.y = -JUMP_SPEED # FIXME uhm, applying velocity directly?
-			jumping = true
 		
 		on_air_time += delta
 

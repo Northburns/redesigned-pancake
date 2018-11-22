@@ -23,6 +23,9 @@ class PBody:
 	func is_on_floor():
 		return body.is_on_floor()
 	
+	func is_on_ceiling():
+		return body.is_on_ceiling()
+	
 	func frame_start():
 		self.force = Vector2()
 		self.stopforce = Vector2()
