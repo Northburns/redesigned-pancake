@@ -3,6 +3,7 @@ const PAnim = preload("PlayerAnimator.gd")
 
 const SFloor = preload("player_state/walking.gd")
 const SJumping = preload("player_state/jumping.gd")
+const SLevitate = preload("player_state/levitate.gd")
 
 class PState:
 	
@@ -22,6 +23,7 @@ class PState:
 	# Constant stateless state processors
 	var s_floor = SFloor.Floor.new(self, pinput, pbody, panim)
 	var s_jumping = SJumping.Jumping.new(self, pinput, pbody, panim)
+	var s_levitate = SLevitate.Levitating.new(self, pinput, pbody, panim)
 	
 	var state
 	
@@ -37,6 +39,9 @@ class PState:
 	const STOP_FORCE = 1300
 	const JUMP_MAX_AIRBORNE_TIME = 0.2
 	const MAX_FALL_SPEED = 1800
+	const LEVITATE_FORCE = 1000
+	const LEVITATE_SLOWDOWN_FACTOR = 0.95 # per second
+	const LEVITATE_MAX_SPEED = 1200
 
 	# Angle in degrees towards either side that the player can consider "floor"
 	const FLOOR_ANGLE_TOLERANCE = 40

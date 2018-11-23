@@ -8,8 +8,10 @@ class Jumping:
 	var pbody
 	var panim
 	
+	var just_fall
 	var additional_jumps
 	var additional_jumps_max
+	var levitate_allowed = true
 	
 	func _init(pstate, pinput, pbody, panim):
 		self.pstate = pstate
@@ -17,12 +19,14 @@ class Jumping:
 		self.pbody = pbody
 		self.panim = panim
 		
-	func activate(start_with_jump):
+	func activate(start_with_jump, just_fall = false):
 		#print("STATE_ACTIVATE: Jumping")
 		pstate.state = self
 		
-		additional_jumps = 0
 		self.additional_jumps_max = pstate.i.additional_jumps_max
+		additional_jumps = 0
+		self.just_fall = just_fall
+		
 		if start_with_jump:
 			jump()
 
@@ -51,15 +55,18 @@ class Jumping:
 			elif walking_r and pbody.is_velocity_x_within(-pstate.WALK_MAX_SPEED, pstate.WALK_MAX_SPEED):
 				pbody.apply_force_h(pstate.AIR_WALK_FORCE)
 		
-		if pinput.jump_imp and additional_jumps < additional_jumps_max:
-			# Jump hit and additional jumps left?
-			additional_jumps += 1
-			jump()
-			# Let double jump reverse direction, 'cause that's fun
-			if walking_l and pbody.velocity.x > 0:
-				pbody.velocity.x = 0.0
-			elif walking_r and pbody.velocity.x < 0:
-				pbody.velocity.x = 0.0
+		if not just_fall and pinput.jump_imp:
+			if additional_jumps < additional_jumps_max:
+				# Jump hit and additional jumps left?
+				additional_jumps += 1
+				jump()
+				# Let double jump reverse direction, 'cause that's fun
+				if walking_l and pbody.velocity.x > 0:
+					pbody.velocity.x = 0.0
+				elif walking_r and pbody.velocity.x < 0:
+					pbody.velocity.x = 0.0
+			elif levitate_allowed:
+				pstate.s_levitate.activate()
 
 		
 		# GRAVITY
