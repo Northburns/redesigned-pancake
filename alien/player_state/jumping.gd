@@ -39,16 +39,10 @@ class Jumping:
 		else:
 			pbody.apply_force(pstate.GRAVITY)
 
-		# Commented out, so there's no air control. Wild!
-		# If that is desired, maybe give some on double jump, though.
-		#if walking:
-		#	# TODO no walk anim :)
-		#	panim.let_play("walk")
-		#	if walking_l and pbody.is_velocity_x_within(-WALK_MAX_SPEED, WALK_MIN_SPEED):
-		#		pbody.apply_force_h(-WALK_FORCE)
-		#	elif walking_r and pbody.is_velocity_x_within(-WALK_MIN_SPEED, WALK_MAX_SPEED):
-		#		pbody.apply_force_h(WALK_FORCE)
-		#else:
-		#	# TODO No rest anim :)
-		#	panim.let_play("rest")
+		# AIR CONTROL (L/R)
+		if walking:
+			if walking_l and pbody.is_velocity_x_within(-pstate.WALK_MAX_SPEED, pstate.WALK_MAX_SPEED):
+				pbody.apply_force_h(-pstate.AIR_WALK_FORCE)
+			elif walking_r and pbody.is_velocity_x_within(-pstate.WALK_MAX_SPEED, pstate.WALK_MAX_SPEED):
+				pbody.apply_force_h(pstate.AIR_WALK_FORCE)
 		

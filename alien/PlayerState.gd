@@ -30,6 +30,7 @@ class PState:
 	const FLOOR_ANGLE_TOLERANCE = 40
 
 	const WALK_FORCE = 1200
+	const AIR_WALK_FORCE = 1000
 	const WALK_MIN_SPEED = 10
 	const WALK_MAX_SPEED = 900
 	const STOP_FORCE = 1300
