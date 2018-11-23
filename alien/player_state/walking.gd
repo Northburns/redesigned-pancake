@@ -29,10 +29,6 @@ class Floor:
 		on_air_time = 0.0
 
 	var on_air_time = 0.0
-	var gravity = Vector2(0.0, 0.0) # FIXME always zero when on floor (eeeh, a bit from walking off ledge...)
-	# var jumping = false # FIXME eeeh
-	
-	
 
 
 	func act(delta):
@@ -57,21 +53,13 @@ class Floor:
 			pbody.apply_stopforce_h(pstate.STOP_FORCE)
 		
 		if pbody.is_on_floor():
-			#print("OUUU JEAH " + str(delta))
 			on_air_time = 0
 		else:
 			on_air_time += delta
-			#print(pstate.GRAVITY)
 			pbody.apply_force(pstate.GRAVITY)
 		
-		# print(on_air_time)
 		
-#		if pinput.jump_imp:
-#			print("Wanna jump, gonna? " + str(on_air_time < pstate.JUMP_MAX_AIRBORNE_TIME))
-		
-		# TODO Shouldn't the jump be "just pressed jump"?
 		if pinput.jump_imp and  on_air_time < pstate.JUMP_MAX_AIRBORNE_TIME:
-#			print("WAIT WHAT")
 			# As the KinematicBody2D tutorial said:
 			# > Jump must also be allowed to happen if the character left the floor a little bit ago.
 			# > Makes controls more snappy.
@@ -79,26 +67,8 @@ class Floor:
 			pstate.s_jumping.activate(true)
 		
 		if on_air_time >= pstate.JUMP_MAX_AIRBORNE_TIME:
-#			print("WWWW")
 			pstate.s_jumping.activate(false)
-			
 		
-#		# REST GOES TO jumping.gd
-#		var jumping = false
-#
-#		if jumping and pbody.velocity.y < 0 and !pinput.jump:
-#			# Going up, but let go of jump button
-#			pbody.velocity.y = 0.0 # FIXME no, not like this. Apply a smaller gravity :)
-#
-#		if pbody.is_on_ceiling():
-#			print("OOF")
-#			pbody.velocity.y = 0.0 # Is this really the way to make sure we don't "slide" from a ceiling's edge upwards?
-#
-#		if jumping and pbody.velocity.y > 0:
-#			# If falling, no longer jumping
-#			jumping = false
-#
-#		#if jumping and 
 		
 		
 		
