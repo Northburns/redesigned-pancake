@@ -55,6 +55,11 @@ class Jumping:
 			# Jump hit and additional jumps left?
 			additional_jumps += 1
 			jump()
+			# Let double jump reverse direction, 'cause that's fun
+			if walking_l and pbody.velocity.x > 0:
+				pbody.velocity.x = 0.0
+			elif walking_r and pbody.velocity.x < 0:
+				pbody.velocity.x = 0.0
 
 		
 		# GRAVITY
