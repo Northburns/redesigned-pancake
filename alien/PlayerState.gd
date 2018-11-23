@@ -4,6 +4,7 @@ const PAnim = preload("PlayerAnimator.gd")
 const SFloor = preload("player_state/walking.gd")
 const SJumping = preload("player_state/jumping.gd")
 const SLevitate = preload("player_state/levitate.gd")
+const SRummaging = preload("player_state/rummaging.gd")
 
 class PState:
 	
@@ -24,6 +25,7 @@ class PState:
 	var s_floor = SFloor.Floor.new(self, pinput, pbody, panim)
 	var s_jumping = SJumping.Jumping.new(self, pinput, pbody, panim)
 	var s_levitate = SLevitate.Levitating.new(self, pinput, pbody, panim)
+	var s_rummaging =SRummaging.Rummaging.new(self, pinput, pbody, panim)
 	
 	var state
 	

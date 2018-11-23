@@ -58,6 +58,8 @@ class Floor:
 			on_air_time += delta
 			pbody.apply_force(pstate.GRAVITY)
 		
+		#print("A? " + str(pinput.a_imp))
+		#print("R? " + str(pstate.i.action_area))
 		
 		if pinput.jump_imp and  on_air_time < pstate.JUMP_MAX_AIRBORNE_TIME:
 			# As the KinematicBody2D tutorial said:
@@ -66,9 +68,12 @@ class Floor:
 			# Sure, it's nice :)
 			pstate.s_jumping.activate(true)
 		
-		if on_air_time >= pstate.JUMP_MAX_AIRBORNE_TIME:
+		elif on_air_time >= pstate.JUMP_MAX_AIRBORNE_TIME:
+			# Falling off a ledge
 			pstate.s_jumping.activate(false)
-		
+			
+		elif pinput.a_imp and pstate.i.action_area != null:
+			pstate.s_rummaging.activate(pstate.i.action_area)
 		
 		
 		
