@@ -6,11 +6,13 @@ const SJumping = preload("player_state/jumping.gd")
 
 class PState:
 	
+	var i
 	var pinput
 	var pbody
 	var panim
 	
-	func _init(pinput, pbody, panim):
+	func _init(internal, pinput, pbody, panim):
+		self.i = internal
 		self.pinput = pinput
 		self.pbody = pbody
 		self.panim = panim
@@ -34,6 +36,7 @@ class PState:
 	const WALK_MAX_SPEED = 900
 	const STOP_FORCE = 1300
 	const JUMP_MAX_AIRBORNE_TIME = 0.2
+	const MAX_FALL_SPEED = 1800
 
 	# Angle in degrees towards either side that the player can consider "floor"
 	const FLOOR_ANGLE_TOLERANCE = 40

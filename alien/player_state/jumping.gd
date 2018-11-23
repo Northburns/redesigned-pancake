@@ -8,6 +8,9 @@ class Jumping:
 	var pbody
 	var panim
 	
+	var additional_jumps
+	var additional_jumps_max
+	
 	func _init(pstate, pinput, pbody, panim):
 		self.pstate = pstate
 		self.pinput = pinput
@@ -17,6 +20,9 @@ class Jumping:
 	func activate(start_with_jump):
 		#print("STATE_ACTIVATE: Jumping")
 		pstate.state = self
+		
+		additional_jumps = 0
+		self.additional_jumps_max = pstate.i.additional_jumps_max
 		if start_with_jump:
 			jump()
 
@@ -45,14 +51,21 @@ class Jumping:
 			elif walking_r and pbody.is_velocity_x_within(-pstate.WALK_MAX_SPEED, pstate.WALK_MAX_SPEED):
 				pbody.apply_force_h(pstate.AIR_WALK_FORCE)
 		
+		if pinput.jump_imp and additional_jumps < additional_jumps_max:
+			# Jump hit and additional jumps left?
+			additional_jumps += 1
+			jump()
+
 		
 		# GRAVITY
 		if pinput.jump and pbody.velocity.y < 0:
-			print("OH YEAH" + str(pbody.velocity.y))
+			# Holding jump and going up? Light gravity.
 			pbody.apply_force(pstate.GRAVITY_LIGHT)
 		else:
+			# Jump released or going down? Heavy gravity.
 			pbody.apply_force(pstate.GRAVITY)
 
+		# Limit vertical speed (this is mostly for fall speed)
+		pbody.velocity.y = clamp(pbody.velocity.y, -pstate.MAX_FALL_SPEED, pstate.MAX_FALL_SPEED)
 		
-
-		# TODO limit downwards speed
+		
