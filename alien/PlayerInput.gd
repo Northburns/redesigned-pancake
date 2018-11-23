@@ -20,6 +20,9 @@ class PInput:
 	var jump_imp = false
 	var jump = false
 	var jump_rel = false
+	var a_imp = false
+	var a = false
+	var a_rel = false
 	
 	func is_dpad(direction):
 		return (self.dpad == direction) || (self.dpad & direction == direction)
@@ -36,15 +39,8 @@ class PInput:
 		elif is_dpad(D_R): v.x = 1.0
 		return v.normalized()
 	
-	func reset():
-		self.dpad = DIRECTION.NONE
-		self.jump_imp = false
-		self.jump = false
-
-
-
 	func read_input():
-		self.reset()
+		self.dpad = DIRECTION.NONE
 		
 		# Read inputs
 		self.dpad |= D_L if Input.is_action_pressed("move_left") else 0
@@ -55,6 +51,10 @@ class PInput:
 		self.jump_imp = Input.is_action_just_pressed("jump")
 		self.jump = Input.is_action_pressed("jump")
 		self.jump_rel = Input.is_action_just_released("jump")
+		
+		self.a_imp = Input.is_action_just_pressed("action_a")
+		self.a = Input.is_action_pressed("action_a")
+		self.a_rel = Input.is_action_just_released("action_a")
 		
 		# If dpad is pressed LEFT+RIGHT or UP+DOWN, cancel out
 		if self.is_dpad(D_LR):
