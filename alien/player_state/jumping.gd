@@ -24,20 +24,19 @@ class Jumping:
 		# Modding the velocity directly, eh?
 		# It's like an impulse (not dependant on delta time), 
 		# so yeah, sure :)
+		# (but setting it to a value is a bit wierd, but super fine for this jump)
 		pbody.velocity.y = -pstate.JUMP_SPEED
-		
+
 
 	func act(delta):
+		if pbody.is_on_floor():
+			pstate.s_floor.activate()
+			return
+		
+		
 		var walking_l = pinput.is_dpad(PInput.D_L)
 		var walking_r = pinput.is_dpad(PInput.D_R)
 		var walking = walking_l || walking_r
-
-		# GRAVITY
-		if pbody.is_on_floor():
-			print("XXXX")
-			pstate.s_floor.activate()
-		else:
-			pbody.apply_force(pstate.GRAVITY)
 
 		# AIR CONTROL (L/R)
 		if walking:
@@ -46,3 +45,14 @@ class Jumping:
 			elif walking_r and pbody.is_velocity_x_within(-pstate.WALK_MAX_SPEED, pstate.WALK_MAX_SPEED):
 				pbody.apply_force_h(pstate.AIR_WALK_FORCE)
 		
+		
+		# GRAVITY
+		if pinput.jump and pbody.velocity.y < 0:
+			print("OH YEAH" + str(pbody.velocity.y))
+			pbody.apply_force(pstate.GRAVITY_LIGHT)
+		else:
+			pbody.apply_force(pstate.GRAVITY)
+
+		
+
+		# TODO limit downwards speed

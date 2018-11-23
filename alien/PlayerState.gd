@@ -23,12 +23,11 @@ class PState:
 	
 	var state
 	
-	const JUMP_SPEED = 1200.0
-	var GRAVITY = Vector2(0.0, 1500.0) # pixels/second/second
+	# pixels/second/second
+	var GRAVITY = Vector2(0.0, 5500.0) 
+	var GRAVITY_LIGHT = Vector2(0.0, 1100.0)
 	
-	# Angle in degrees towards either side that the player can consider "floor"
-	const FLOOR_ANGLE_TOLERANCE = 40
-
+	const JUMP_SPEED = 1200.0
 	const WALK_FORCE = 1200
 	const AIR_WALK_FORCE = 1000
 	const WALK_MIN_SPEED = 10
@@ -36,6 +35,8 @@ class PState:
 	const STOP_FORCE = 1300
 	const JUMP_MAX_AIRBORNE_TIME = 0.2
 
+	# Angle in degrees towards either side that the player can consider "floor"
+	const FLOOR_ANGLE_TOLERANCE = 40
 
 
 	const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
