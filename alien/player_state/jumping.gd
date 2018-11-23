@@ -11,7 +11,7 @@ class Jumping:
 	var just_fall
 	var additional_jumps
 	var additional_jumps_max
-	var levitate_allowed = true
+	var levitate_allowed
 	
 	func _init(pstate, pinput, pbody, panim):
 		self.pstate = pstate
@@ -25,6 +25,7 @@ class Jumping:
 		
 		self.additional_jumps_max = pstate.i.additional_jumps_max
 		additional_jumps = 0
+		self.levitate_allowed = pstate.i.levitate_allowed
 		self.just_fall = just_fall
 		
 		if start_with_jump:

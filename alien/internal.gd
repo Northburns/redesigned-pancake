@@ -10,6 +10,7 @@ onready var anim = $"../animation"
 
 # "Player global variables", *eye roll*
 var additional_jumps_max = 1
+var levitate_allowed = true
 
 onready var pinput = PInput.PInput.new()
 onready var panim = PAnim.PAnim.new(anim)
