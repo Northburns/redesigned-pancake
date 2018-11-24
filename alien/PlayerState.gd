@@ -50,6 +50,8 @@ class PState:
 	# Angle in degrees towards either side that the player can consider "floor"
 	const FLOOR_ANGLE_TOLERANCE = 40
 
+	const RUMMAGING_SPEED = 0.09
+
 
 	const SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
 	const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
@@ -73,7 +75,7 @@ class PState:
 			return false
 		if i.action_area.is_in_group("teleport"):
 			s_teleporting.activate(i.action_area)
-		elif i.action_area.is_in_group("rummage"):
+		elif i.action_area.is_in_group("rummage") and i.action_area.available:
 			s_rummaging.activate(i.action_area)
 		else:
 			# Any better way to induce a crash?..

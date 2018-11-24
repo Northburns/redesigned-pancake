@@ -13,10 +13,9 @@ extents = Vector2( 60, 60 )
 "teleport",
 ]]
 
-position = Vector2( 710, -320 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Material", "Visibility" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 target = null
 
 [node name="area" type="Area2D" parent="." index="0"]
@@ -41,9 +40,5 @@ playback_speed = 1.0
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
-
-[connection signal="body_entered" from="area" to="." method="_on_Area2D_body_entered"]
-
-[connection signal="body_exited" from="area" to="." method="_on_Area2D_body_exited"]
 
 

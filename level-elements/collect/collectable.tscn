@@ -45,6 +45,6 @@ audio_bus_name = "Master"
 
 shape = SubResource( 2 )
 
-[connection signal="body_shape_entered" from="Area2D" to="." method="_on_Area2D_body_shape_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
 
