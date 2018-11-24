@@ -17,6 +17,15 @@ class Levitating:
 	func activate():
 		pstate.state = self
 
+		clamp_speed(100) # Holy hardcode, Batman!
+	
+	func clamp_speed(max_speed):
+		# Limit speed (do it by component, 
+		# even though it's not entirely correct, good enough for now)
+		pbody.velocity.x = clamp(pbody.velocity.x, -max_speed, max_speed)
+		pbody.velocity.y = clamp(pbody.velocity.y, -max_speed, max_speed)
+
+
 	func act(delta):
 		if pinput.is_dpad_pressed():
 			# Navigating in air
@@ -29,9 +38,7 @@ class Levitating:
 			#pbody.velocity *= factor
 			pbody.apply_force(-force)
 		
-		# Limit speed (do it by component, even though it's not entirely correct)
-		pbody.velocity.x = clamp(pbody.velocity.x, -pstate.LEVITATE_MAX_SPEED, pstate.LEVITATE_MAX_SPEED)
-		pbody.velocity.y = clamp(pbody.velocity.y, -pstate.LEVITATE_MAX_SPEED, pstate.LEVITATE_MAX_SPEED)
+		clamp_speed(pstate.LEVITATE_MAX_SPEED)
 		
 		# Gotta press that button, though!
 		if not pinput.jump:

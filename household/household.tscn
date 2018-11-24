@@ -16,7 +16,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 70, 30 )
 
-[node name="household" type="Node2D"]
+[node name="household" type="Node2D" index="0"]
 
 [node name="Background" type="CanvasLayer" parent="." index="0"]
 
