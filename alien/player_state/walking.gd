@@ -72,9 +72,6 @@ class Floor:
 			# Falling off a ledge
 			pstate.s_jumping.activate(false)
 			
-		elif pinput.a_imp and pstate.i.action_area != null:
-			pstate.s_rummaging.activate(pstate.i.action_area)
+		elif pinput.a_imp:
+			pstate.maybe_activate_action_area()
 		
-		
-		
-

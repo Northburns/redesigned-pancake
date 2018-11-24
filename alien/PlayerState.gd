@@ -5,6 +5,7 @@ const SFloor = preload("player_state/walking.gd")
 const SJumping = preload("player_state/jumping.gd")
 const SLevitate = preload("player_state/levitate.gd")
 const SRummaging = preload("player_state/rummaging.gd")
+const STeleporting = preload("player_state/teleporting.gd")
 
 class PState:
 	
@@ -26,7 +27,8 @@ class PState:
 	var s_jumping = SJumping.Jumping.new(self, pinput, pbody, panim)
 	var s_levitate = SLevitate.Levitating.new(self, pinput, pbody, panim)
 	var s_rummaging =SRummaging.Rummaging.new(self, pinput, pbody, panim)
-	
+	var s_teleporting = STeleporting.Teleporting.new(self, pinput, pbody, panim)
+
 	var state
 	
 	# pixels/second/second
@@ -65,3 +67,16 @@ class PState:
 			panim.set_mirror(PAnim.MIRROR.LEFT)
 		elif pinput.is_dpad(PInput.D_R):
 			panim.set_mirror(PAnim.MIRROR.RIGHT)
+	
+	func maybe_activate_action_area():
+		if i.action_area == null:
+			return false
+		if i.action_area.is_in_group("teleport"):
+			s_teleporting.activate(i.action_area)
+		elif i.action_area.is_in_group("rummage"):
+			s_rummaging.activate(i.action_area)
+		else:
+			# Any better way to induce a crash?..
+			print("Unkown action area type.")
+			assert(false)
+		return true
