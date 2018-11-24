@@ -16,13 +16,13 @@
 [ext_resource path="res://placeholder_art/kenney_walls/houseDarkTopLeft.png" type="Texture" id=14]
 [ext_resource path="res://placeholder_art/kenney_walls/houseDarkTopMid.png" type="Texture" id=15]
 
-[sub_resource type="OccluderPolygon2D" id=2]
+[sub_resource type="OccluderPolygon2D" id=1]
 
 closed = true
 cull_mode = 0
 polygon = PoolVector2Array( 35, -35, 35, 35, -35, 35, -35, -35 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 35, 35 )
@@ -54,12 +54,12 @@ polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 0/region = Rect2( 0, 0, 70, 70 )
 0/is_autotile = false
 0/occluder_offset = Vector2( 35, 35 )
-0/occluder = SubResource( 2 )
+0/occluder = SubResource( 1 )
 0/navigation_offset = Vector2( 35, 35 )
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 35, 35 )
 } ]
 1/name = "wall_2"
@@ -69,12 +69,12 @@ polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 1/region = Rect2( 0, 0, 70, 70 )
 1/is_autotile = false
 1/occluder_offset = Vector2( 35, 35 )
-1/occluder = SubResource( 2 )
+1/occluder = SubResource( 1 )
 1/navigation_offset = Vector2( 35, 35 )
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 35, 35 )
 } ]
 2/name = "wall_3"
@@ -84,12 +84,12 @@ polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 2/region = Rect2( 0, 0, 70, 70 )
 2/is_autotile = false
 2/occluder_offset = Vector2( 35, 35 )
-2/occluder = SubResource( 2 )
+2/occluder = SubResource( 1 )
 2/navigation_offset = Vector2( 35, 35 )
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 35, 35 )
 } ]
 3/name = "wall_BottomLeft"
@@ -99,12 +99,12 @@ polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 3/region = Rect2( 0, 0, 70, 70 )
 3/is_autotile = false
 3/occluder_offset = Vector2( 35, 35 )
-3/occluder = SubResource( 2 )
+3/occluder = SubResource( 1 )
 3/navigation_offset = Vector2( 35, 35 )
 3/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 35, 35 )
 } ]
 4/name = "wall_BottomMid"
@@ -114,12 +114,12 @@ polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 4/region = Rect2( 0, 0, 70, 70 )
 4/is_autotile = false
 4/occluder_offset = Vector2( 35, 35 )
-4/occluder = SubResource( 2 )
+4/occluder = SubResource( 1 )
 4/navigation_offset = Vector2( 35, 35 )
 4/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 35, 35 )
 } ]
 5/name = "wall_BottomRight"
@@ -129,12 +129,12 @@ polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 5/region = Rect2( 0, 0, 70, 70 )
 5/is_autotile = false
 5/occluder_offset = Vector2( 35, 35 )
-5/occluder = SubResource( 2 )
+5/occluder = SubResource( 1 )
 5/navigation_offset = Vector2( 35, 35 )
 5/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 35, 35 )
 } ]
 6/name = "wall_MidLeft"
@@ -144,12 +144,12 @@ polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 6/region = Rect2( 0, 0, 70, 70 )
 6/is_autotile = false
 6/occluder_offset = Vector2( 35, 35 )
-6/occluder = SubResource( 2 )
+6/occluder = SubResource( 1 )
 6/navigation_offset = Vector2( 35, 35 )
 6/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 35, 35 )
 } ]
 7/name = "wall_MidRight"
@@ -159,12 +159,12 @@ polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 7/region = Rect2( 0, 0, 70, 70 )
 7/is_autotile = false
 7/occluder_offset = Vector2( 35, 35 )
-7/occluder = SubResource( 2 )
+7/occluder = SubResource( 1 )
 7/navigation_offset = Vector2( 35, 35 )
 7/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 35, 35 )
 } ]
 8/name = "wall_TopLeft"
@@ -174,12 +174,12 @@ polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 8/region = Rect2( 0, 0, 70, 70 )
 8/is_autotile = false
 8/occluder_offset = Vector2( 35, 35 )
-8/occluder = SubResource( 2 )
+8/occluder = SubResource( 1 )
 8/navigation_offset = Vector2( 35, 35 )
 8/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 35, 35 )
 } ]
 9/name = "wall_TopMid"
@@ -189,12 +189,12 @@ polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 9/region = Rect2( 0, 0, 70, 70 )
 9/is_autotile = false
 9/occluder_offset = Vector2( 35, 35 )
-9/occluder = SubResource( 2 )
+9/occluder = SubResource( 1 )
 9/navigation_offset = Vector2( 35, 35 )
 9/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 35, 35 )
 } ]
 10/name = "wall_TopRight"
@@ -204,12 +204,12 @@ polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 10/region = Rect2( 0, 0, 70, 70 )
 10/is_autotile = false
 10/occluder_offset = Vector2( 35, 35 )
-10/occluder = SubResource( 2 )
+10/occluder = SubResource( 1 )
 10/navigation_offset = Vector2( 35, 35 )
 10/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 35, 35 )
 } ]
 11/name = "block"
@@ -219,12 +219,12 @@ polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 11/region = Rect2( 0, 0, 70, 70 )
 11/is_autotile = false
 11/occluder_offset = Vector2( 35, 35 )
-11/occluder = SubResource( 2 )
+11/occluder = SubResource( 1 )
 11/navigation_offset = Vector2( 35, 35 )
 11/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 35, 35 )
 } ]
 12/name = "shelf_Left"
@@ -239,7 +239,7 @@ polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 12/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": true,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 35, 35 )
 } ]
 13/name = "shelf_Mid"
@@ -254,7 +254,7 @@ polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 13/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": true,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 35, 35 )
 } ]
 14/name = "shelf_Right"
@@ -269,7 +269,7 @@ polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 14/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": true,
-"shape": SubResource( 1 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 35, 35 )
 } ]
 
