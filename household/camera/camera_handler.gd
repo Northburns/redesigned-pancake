@@ -13,7 +13,7 @@ export var duration_limits = 0.6
 
 var default_zoom = Vector2(2.0, 2.0)
 var large_number = 10000000
-var default_limits = Rect2(-large_number, -large_number, 2 * large_number, 2 * large_number)
+var default_limits = Rect2(0, -large_number, 2 * large_number, 1 * large_number)
 
 var area_current = null
 var areas = []

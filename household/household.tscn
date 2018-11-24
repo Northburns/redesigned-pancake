@@ -1,15 +1,17 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://placeholder_art/kenney_platformer/Backgrounds/colored_grass.png" type="Texture" id=1]
 [ext_resource path="res://household/camera/camera_handler.gd" type="Script" id=2]
 [ext_resource path="res://household/room_kitchen.tscn" type="PackedScene" id=3]
 [ext_resource path="res://household/Tileset.tres" type="TileSet" id=4]
-[ext_resource path="res://level-elements/action-areas/rummage-point.tscn" type="PackedScene" id=5]
-[ext_resource path="res://level-elements/action-areas/teleport-point.tscn" type="PackedScene" id=6]
-[ext_resource path="res://alien/alien.tscn" type="PackedScene" id=7]
-[ext_resource path="res://placeholder_art/godot_tutorials/light.png" type="Texture" id=8]
-[ext_resource path="res://placeholder_art/kenney_platformer/Items/coinGold.png" type="Texture" id=9]
-[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=10]
+[ext_resource path="res://household/Tileset_walls.tres" type="TileSet" id=5]
+[ext_resource path="res://level-elements/action-areas/rummage-point.tscn" type="PackedScene" id=6]
+[ext_resource path="res://level-elements/action-areas/teleport-point.tscn" type="PackedScene" id=7]
+[ext_resource path="res://alien/alien.tscn" type="PackedScene" id=8]
+[ext_resource path="res://placeholder_art/godot_tutorials/light.png" type="Texture" id=9]
+[ext_resource path="res://placeholder_art/kenney_platformer/Items/coinGold.png" type="Texture" id=10]
+[ext_resource path="res://level-elements/collect/collectable.tscn" type="PackedScene" id=11]
+[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -76,9 +78,11 @@ playback/speed = 1.0
 
 [node name="Spatial" type="Node2D" parent="." index="2"]
 
+position = Vector2( 260, -120 )
+
 [node name="Kitchen" parent="Spatial" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 1439.38, -276.373 )
+position = Vector2( 1600, 1350 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="TileMap" type="TileMap" parent="Spatial" index="1"]
@@ -99,33 +103,53 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -589826, 3, 0, -589825, 3, 0, -524290, 3, 0, -524289, 3, 0, -589819, 3, 0, -458754, 3, 0, -458753, 3, 0, -524267, 3, 0, -524266, 3, 0, -393218, 3, 0, -393217, 3, 0, -458745, 3, 0, -327682, 3, 0, -327681, 3, 0, -262146, 3, 0, -262145, 3, 0, -327666, 3, 0, -327663, 3, 0, -327662, 3, 0, -196610, 3, 0, -196609, 3, 0, -131074, 3, 0, -131073, 3, 0, -196594, 3, 0, -65538, 3, 0, -65537, 3, 0, -131068, 5, 0, -131067, 0, 0, -131066, 4, 0, -131063, 3, 0, -131062, 3, 0, -131061, 3, 0, -131060, 3, 0, -131059, 3, 0, -131058, 3, 0, -131057, 3, 0, -131056, 3, 0, -131055, 3, 0, -131054, 3, 0, -131053, 3, 0, -2, 3, 0, -1, 3, 0, -65533, 5, 0, -65529, 4, 0, -65527, 3, 0, 65534, 3, 0, 65535, 3, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 0, 0, 36, 0, 0, 37, 0, 0, 38, 0, 0, 39, 0, 0, 40, 0, 0, 41, 0, 0, 42, 0, 0, 43, 0, 0, 44, 0, 0, 45, 0, 0, 46, 0, 0, 47, 0, 0, 48, 0, 0, 49, 0, 0, 50, 0, 0, 51, 0, 0, 52, 0, 0, 53, 0, 0, 54, 0, 0, 55, 0, 0 )
+tile_data = PoolIntArray( -589826, 3, 0, -589825, 3, 0, -524290, 3, 0, -524289, 3, 0, -458754, 3, 0, -458753, 3, 0, -393218, 3, 0, -393217, 3, 0, -327682, 3, 0, -327681, 3, 0, -262146, 3, 0, -262145, 3, 0, -196610, 3, 0, -196609, 3, 0, -131074, 3, 0, -131073, 3, 0, -65538, 3, 0, -65537, 3, 0, -131068, 5, 0, -131067, 0, 0, -131066, 4, 0, -2, 3, 0, -1, 3, 0, -65533, 5, 0, -65529, 4, 0, 65534, 3, 0, 65535, 3, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 0, 0, 36, 0, 0, 37, 0, 0, 38, 0, 0, 39, 0, 0, 40, 0, 0, 41, 0, 0, 42, 0, 0, 43, 0, 0, 44, 0, 0, 45, 0, 0, 46, 0, 0, 47, 0, 0, 48, 0, 0, 49, 0, 0, 50, 0, 0, 51, 0, 0, 52, 0, 0, 53, 0, 0, 54, 0, 0, 55, 0, 0 )
 _sections_unfolded = [ "Cell" ]
 
-[node name="flagGreen2" parent="Spatial" index="2" instance=ExtResource( 5 )]
+[node name="TileMapW" type="TileMap" parent="Spatial" index="2"]
+
+mode = 0
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray(  )
+
+[node name="flagGreen2" parent="Spatial" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 480, -380 )
 
-[node name="Teleport" parent="Spatial" index="3" instance=ExtResource( 6 )]
+[node name="Teleport" parent="Spatial" index="4" instance=ExtResource( 7 )]
 
 position = Vector2( 290, -60 )
 target = NodePath("../Light2D")
 
-[node name="player" parent="Spatial" index="4" instance=ExtResource( 7 )]
+[node name="player" parent="Spatial" index="5" instance=ExtResource( 8 )]
 
 position = Vector2( 150.494, -91.6718 )
 
-[node name="CanvasModulate" type="CanvasModulate" parent="Spatial" index="5"]
+[node name="CanvasModulate" type="CanvasModulate" parent="Spatial" index="6"]
 
 position = Vector2( -67.5358, 32.2997 )
 color = Color( 0.417969, 0.417969, 0.417969, 1 )
 
-[node name="Light2D" type="Light2D" parent="Spatial" index="6"]
+[node name="Light2D" type="Light2D" parent="Spatial" index="7"]
 
-position = Vector2( 80, -990 )
+position = Vector2( 400, -490 )
 enabled = true
 editor_only = false
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 offset = Vector2( 0, 0 )
 texture_scale = 2.56
 color = Color( 1, 1, 1, 1 )
@@ -146,10 +170,10 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Shadow" ]
 
-[node name="coinGold" type="Sprite" parent="Spatial" index="7"]
+[node name="coinGold" type="Sprite" parent="Spatial" index="8"]
 
 position = Vector2( 580, -1090 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/coinGold" index="0"]
 
@@ -166,6 +190,10 @@ bounce = 0.0
 position = Vector2( -10, 0 )
 shape = SubResource( 1 )
 
+[node name="KinematicBody2D" parent="Spatial" index="9" instance=ExtResource( 11 )]
+
+position = Vector2( 110, -550 )
+
 [node name="GUI" type="CanvasLayer" parent="." index="3"]
 
 layer = 1
@@ -174,7 +202,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="HUD" parent="GUI" index="0" instance=ExtResource( 10 )]
+[node name="HUD" parent="GUI" index="0" instance=ExtResource( 12 )]
 
 anchor_bottom = 1.0
 margin_left = 0.0

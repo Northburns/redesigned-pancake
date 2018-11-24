@@ -76,6 +76,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Brick" type="Sprite" parent="." index="2"]
 
+editor/display_folded = true
 position = Vector2( 0, 256 )
 texture = ExtResource( 1 )
 centered = false
