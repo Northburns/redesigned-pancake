@@ -35,10 +35,8 @@ func rummage_collectable_node():
 func pop_random_type():
 	# Clean empty types
 	for t in left.keys():
-		print("X: " + str(t) + " = " + str(left[t]))
 		if left[t] <= 0:
 			left.erase(t)
-	print("PPP: " + str(left))
 	# If empty, null
 	if left.empty():
 		disable()

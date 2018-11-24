@@ -60,8 +60,4 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 
-[connection signal="body_entered" from="area" to="." method="_on_Area2D_body_entered"]
-
-[connection signal="body_exited" from="area" to="." method="_on_Area2D_body_exited"]
-
 
