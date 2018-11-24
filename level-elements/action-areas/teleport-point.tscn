@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 60, 60 )
 
-[node name="Teleport-Area" type="Sprite" groups=[
+[node name="Teleport-Area" type="Sprite" index="0" groups=[
 "action_area",
 "teleport",
 ]]
@@ -16,6 +16,7 @@ extents = Vector2( 60, 60 )
 position = Vector2( 710, -320 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+_sections_unfolded = [ "Material", "Visibility" ]
 target = null
 
 [node name="area" type="Area2D" parent="." index="0"]
@@ -31,6 +32,15 @@ audio_bus_name = "Master"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area" index="0"]
 
 shape = SubResource( 1 )
+
+[node name="tween" type="Tween" parent="." index="1"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
 
 [connection signal="body_entered" from="area" to="." method="_on_Area2D_body_entered"]
 

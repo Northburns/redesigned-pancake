@@ -104,7 +104,6 @@ func camera_unrestrict(zoom, limits_from, limits_to):
 		yielding_camera_limits(limits_from, limits_to)
 	yielding_camera_zoom(zoom)
 	yielding_camera_limits(limits_to, default_limits, false)
-	pass
 
 func yielding_camera_zoom(zoom):
 	tween_zoom.stop_all()

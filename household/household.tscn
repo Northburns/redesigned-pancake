@@ -11,12 +11,12 @@
 [ext_resource path="res://placeholder_art/kenney_platformer/Items/coinGold.png" type="Texture" id=9]
 [ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=10]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 70, 30 )
 
-[node name="household" type="Node2D" index="0"]
+[node name="household" type="Node2D"]
 
 [node name="Background" type="CanvasLayer" parent="." index="0"]
 
@@ -164,7 +164,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/coinGold/StaticBody2D" index="0"]
 
 position = Vector2( -10, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="GUI" type="CanvasLayer" parent="." index="3"]
 
