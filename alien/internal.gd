@@ -7,11 +7,14 @@ const PBody  = preload("PlayerBody.gd")
 
 onready var body = $".."
 onready var anim = $"../animation"
+onready var vis_point = $"../VisibilityPoint"
 
 # "Player global variables", *eye roll*
 # TODO : MOVE TO GLOBAL
 var additional_jumps_max = 1
 var levitate_allowed = true
+
+var lights = []
 
 # Current action area
 var action_area = null
@@ -32,6 +35,41 @@ func _ready():
 		var area = action_area.get_node("area")
 		area.connect("body_entered", self, "_action_area_entered", [action_area])
 		area.connect("body_exited", self, "_action_area_exited", [action_area])
+	self.lights = get_tree().get_nodes_in_group("vision_light")
+	
+func _process(delta):
+	update_shadow_state()
+
+func update_shadow_state():
+	var plr_pos = vis_point.global_position
+	var in_light = false
+	var result
+	for light in self.lights:
+		if not light.visible:
+			continue
+		var light_pos = light.global_position
+		var space_state = get_world_2d().direct_space_state
+		result = space_state.intersect_ray(light_pos, plr_pos, [], 1)
+		var ray_see = result.empty() or body == result["collider"]
+		var light_r = (light.texture.get_width() * light.texture_scale) / 2
+		var distance = light_pos.distance_to(plr_pos)
+		in_light = ray_see and distance < light_r
+		if in_light:
+			break
+	pglob.in_shadows = !in_light
+	if in_light:
+		print("VISIBLE")
+	else:
+		print("HIDDEN - ")
+	#print("IN SHADOWS: "+ str(!in_light))
+	update()
+
+func _draw():
+	var plr_pos = body.global_position
+	var in_light = false
+	for light in self.lights:
+		var light_pos = light.global_position
+		draw_line(to_local(plr_pos), to_local(light_pos), Color(255,0,255))
 
 func _action_area_entered(p, area):
 	if p == body:

@@ -10,7 +10,9 @@ extends Node
 # This is a sufficient solution :+1:
 #
 # XXX Heck, I could've placed constants here as well. Refactor?
-#
+
+# Updated each tick:
+var in_shadows = false
 
 func find_player():
 	var players = get_tree().get_nodes_in_group("player")

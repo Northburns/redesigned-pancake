@@ -1916,7 +1916,7 @@ tracks/29/keys = {
 "values": [ -4.13401 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 
 length = 7.0
 loop = false
@@ -2282,9 +2282,8 @@ tracks/29/keys = {
 "values": [ -4.13401 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
-resource_name = "walk"
 length = 0.7
 loop = true
 step = 0.1
@@ -2493,7 +2492,7 @@ tracks/16/keys = {
 "values": [ 11.1526, 17.9079 ]
 }
 
-[node name="Nooccar" type="Node2D" index="0"]
+[node name="Nooccar" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -2517,14 +2516,14 @@ anims/jump = SubResource( 2 )
 anims/levitate = SubResource( 3 )
 anims/levitation = SubResource( 4 )
 anims/rest = SubResource( 5 )
-"anims/rest (copy)" = SubResource( 7 )
-anims/walk = SubResource( 6 )
+"anims/rest (copy)" = SubResource( 6 )
+anims/walk = SubResource( 7 )
 blend_times = [  ]
 
 [node name="Leg_left_b" type="Sprite" parent="." index="2"]
 
 position = Vector2( -247.268, 164.268 )
-rotation = 0.0745101
+rotation = 0.07451
 texture = ExtResource( 2 )
 offset = Vector2( 5, 60 )
 _sections_unfolded = [ "Offset" ]
@@ -2533,6 +2532,7 @@ _sections_unfolded = [ "Offset" ]
 
 position = Vector2( 235.796, 221.452 )
 rotation = -0.301501
+scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 offset = Vector2( 5, 60 )
 _sections_unfolded = [ "Offset" ]
@@ -2547,8 +2547,9 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="Arm_left_a" type="Sprite" parent="." index="5"]
 
-position = Vector2( 215.328, 76.7887 )
+position = Vector2( 215.328, 76.7888 )
 rotation = -0.104532
+scale = Vector2( 1, 1 )
 texture = ExtResource( 3 )
 offset = Vector2( 10, 40 )
 _sections_unfolded = [ "Offset" ]
@@ -2557,6 +2558,7 @@ _sections_unfolded = [ "Offset" ]
 
 position = Vector2( -257.961, -65.4238 )
 rotation = 0.302814
+scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 offset = Vector2( -300, -60 )
 _sections_unfolded = [ "Offset" ]
@@ -2714,8 +2716,8 @@ __meta__ = {
 
 [node name="Leg_right_b" type="Sprite" parent="hip" index="1"]
 
-position = Vector2( -144.503, 133.066 )
-rotation = -0.464041
+position = Vector2( -144.503, 133.065 )
+rotation = -0.46404
 scale = Vector2( 0.999999, 0.999999 )
 texture = ExtResource( 2 )
 offset = Vector2( 5, 60 )
