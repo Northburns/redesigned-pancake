@@ -14,6 +14,8 @@ extends Node
 # Updated each tick:
 var in_shadows = false
 
+
+
 func find_player():
 	var players = get_tree().get_nodes_in_group("player")
 	assert(players.size() == 1)

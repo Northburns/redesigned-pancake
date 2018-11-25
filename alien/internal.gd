@@ -43,19 +43,28 @@ func _process(delta):
 func update_shadow_state():
 	var plr_pos = vis_point.global_position
 	var in_light = false
-	var result
+	
 	for light in self.lights:
+		# Skip not visible lights
 		if not light.visible:
 			continue
+		
+		# Skip lights which don't shy up to player ( = player within light radius)
 		var light_pos = light.global_position
-		var space_state = get_world_2d().direct_space_state
-		result = space_state.intersect_ray(light_pos, plr_pos, [], 1)
-		var ray_see = result.empty() or body == result["collider"]
 		var light_r = (light.texture.get_width() * light.texture_scale) / 2
 		var distance = light_pos.distance_to(plr_pos)
-		in_light = ray_see and distance < light_r
+		if distance > light_r:
+			continue
+		
+		# Ray-cast!
+		var space_state = get_world_2d().direct_space_state
+		var result = space_state.intersect_ray(light_pos, plr_pos, [], 1)
+		in_light = result.empty() or body == result["collider"]
+		
+		# Find first hit!
 		if in_light:
 			break
+	
 	pglob.in_shadows = !in_light
 	if in_light:
 		print("VISIBLE")
