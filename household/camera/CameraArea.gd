@@ -14,6 +14,8 @@ export var c_margin_left = 10.0
 var c_area_for_zoom = Rect2(0.0, 0.0, 0.0, 0.0)
 var c_area_for_limits = Rect2(0.0, 0.0, 0.0, 0.0)
 
+func _init():
+	add_to_group("CameraArea")
 
 func _ready():
 	# Find the shape
