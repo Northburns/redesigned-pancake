@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://level-elements/family/EarthlingBase.tscn" type="PackedScene" id=1]
+
+[node name="EarthlingBase" instance=ExtResource( 1 )]
+
+vision_length = 1000.0
+darkvision_length = 400.0
+
+[node name="HitBox" parent="." index="1"]
+
+editor/display_folded = false
+
+[node name="Vicinity" parent="." index="2"]
+
+editor/display_folded = false
+
+

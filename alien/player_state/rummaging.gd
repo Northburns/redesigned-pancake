@@ -48,7 +48,6 @@ class Rummaging:
 		while warmed_up and rummage_time >= rummaging_speed:
 			rummage_time -= rummaging_speed
 			#var t = action_area.pop_random_type()
-			#print("YYY " + str(t))
 			
 			# Check for ref, 'cause the action_area can free itself
 			# `is_instance_valid()` is not yet in 3.0.6 ?
