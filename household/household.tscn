@@ -391,6 +391,10 @@ __meta__ = {
 [node name="Dog_placeholder" parent="Spatial" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 3980, -120 )
+script_idle = "res://level-elements/family/EarthlingBase_idle.gd"
+script_patrol = "res://level-elements/family/EarthlingBase_patrol.gd"
+script_alert = "res://level-elements/family/EarthlingBase_alert.gd"
+script_chase = "res://level-elements/family/EarthlingBase_chase.gd"
 
 [node name="rummage" parent="Spatial" index="7" instance=ExtResource( 14 )]
 

@@ -15,6 +15,10 @@ speed = 50.0
 suspicion_cooldown_speed = 5.0
 vision_length = 1000.0
 darkvision_length = 400.0
+script_idle = "res://level-elements/family/EarthlingBase_idle.gd"
+script_patrol = "res://level-elements/family/EarthlingBase_patrol.gd"
+script_alert = "res://level-elements/family/EarthlingBase_alert.gd"
+script_chase = "res://level-elements/family/EarthlingBase_chase.gd"
 
 [node name="some_sptrite" type="Sprite" parent="." index="0"]
 

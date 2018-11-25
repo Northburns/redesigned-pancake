@@ -66,10 +66,10 @@ func update_shadow_state():
 			break
 	
 	pglob.in_shadows = !in_light
-	if in_light:
-		print("VISIBLE")
-	else:
-		print("HIDDEN - ")
+	#if in_light:
+	#	print("VISIBLE")
+	#else:
+	#	print("HIDDEN - ")
 	#print("IN SHADOWS: "+ str(!in_light))
 	update()
 
