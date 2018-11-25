@@ -39,7 +39,7 @@ class PInput:
 		elif is_dpad(D_R): v.x = 1.0
 		return v.normalized()
 	
-	func read_input():
+	func read_input(pglob):
 		self.dpad = DIRECTION.NONE
 		
 		# Read inputs
@@ -55,6 +55,9 @@ class PInput:
 		self.a_imp = Input.is_action_just_pressed("action_a")
 		self.a = Input.is_action_pressed("action_a")
 		self.a_rel = Input.is_action_just_released("action_a")
+
+		if (Input.is_action_just_pressed("toggle_debug")):
+			pglob.debug_draw = !pglob.debug_draw
 		
 		# If dpad is pressed LEFT+RIGHT or UP+DOWN, cancel out
 		if self.is_dpad(D_LR):

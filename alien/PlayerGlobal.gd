@@ -11,6 +11,8 @@ extends Node
 #
 # XXX Heck, I could've placed constants here as well. Refactor?
 
+var debug_draw = false
+
 # Updated each tick:
 var in_shadows = false
 

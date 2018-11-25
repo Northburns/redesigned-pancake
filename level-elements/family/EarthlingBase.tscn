@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://level-elements/family/EarthlingBase.gd" type="Script" id=1]
 [ext_resource path="res://placeholder_art/kenney_platformer/Enemies/barnacle.png" type="Texture" id=2]
@@ -8,12 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 140, 480 )
 
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 878, 916 )
-
-[node name="EarthlingBase" type="Node2D"]
+[node name="EarthlingBase" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 speed = 50.0
@@ -43,23 +38,7 @@ audio_bus_name = "Master"
 position = Vector2( 20, -490 )
 shape = SubResource( 1 )
 
-[node name="Vicinity" type="Area2D" parent="." index="2"]
-
-editor/display_folded = true
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Vicinity" index="0"]
-
-position = Vector2( -8, -907 )
-shape = SubResource( 2 )
-
-[node name="Eyes" type="Position2D" parent="." index="3"]
+[node name="Eyes" type="Position2D" parent="." index="2"]
 
 position = Vector2( 0, -760 )
 

@@ -126,7 +126,6 @@ texture = ExtResource( 3 )
 "vision_light",
 ]]
 
-visible = false
 position = Vector2( 1850, -990 )
 enabled = true
 editor_only = false
@@ -155,6 +154,7 @@ _sections_unfolded = [ "Range", "Shadow", "Transform" ]
 "vision_light",
 ]]
 
+visible = false
 position = Vector2( 1850, -990 )
 enabled = true
 editor_only = false

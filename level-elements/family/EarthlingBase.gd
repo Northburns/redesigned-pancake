@@ -21,7 +21,8 @@ const THRESHOLD_CHASE = 100.0
 enum STATE { IDLE, PATROL, ALERT, CHASE }
 var state = STATE.IDLE
 
-onready var player = ($"/root/PlayerGlobal").find_player()
+onready var pglob = $"/root/PlayerGlobal"
+onready var player = pglob.find_player()
 onready var area_hitbox = $HitBox
 onready var area_vicinity = $Vicinity
 onready var eyes = $Eyes
@@ -47,7 +48,7 @@ func _process(delta):
 		print("CAN SEE!!!")
 	else:
 		print("Noooo")
-		
+	
 	update()
 	
 func can_see_player():
@@ -60,7 +61,12 @@ func can_see_player():
 	return ray_see and distance < vision_length
 
 func _draw():
-	draw_line(eyes.position, to_local(player.global_position), Color(0, 255, 255))
+	if pglob.debug_draw:
+		draw_circle(eyes.position, vision_length, Color(0.0, 1.0, 1.0, 0.1))
+		draw_circle(eyes.position, darkvision_length, Color(0.0, 1.0, 1.0, 0.1))
+		draw_line(eyes.position, to_local(player.global_position), Color(0, 255, 255))
+		update()
+		
 
 func escalate_state():
 	if state == STATE.IDLE and suspicion_gauge >= THRESHOLD_PATROL:

@@ -59,8 +59,8 @@ class PState:
 	const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
 
 	
-	func do_it_all(delta):
-		pinput.read_input()
+	func do_it_all(pglob, delta):
+		pinput.read_input(pglob)
 		self.anim_defaults(pinput, panim)
 		pbody.frame_start()
 		state.act(delta)
@@ -91,4 +91,3 @@ class PState:
 		# thing is not defined in states. It's ok :smile: )
 		if state == s_floor or state == s_jumping:
 			collectible.queue_free()
-			

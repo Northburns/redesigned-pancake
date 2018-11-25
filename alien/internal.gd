@@ -26,7 +26,7 @@ onready var pbody = PBody.PBody.new(body)
 onready var pstate = PState.PState.new(self, pinput, pbody, panim, pglob)
 
 func _physics_process(delta):
-	pstate.do_it_all(delta)
+	pstate.do_it_all(pglob, delta)
 
 func _ready():
 	# Register on action hotspots
