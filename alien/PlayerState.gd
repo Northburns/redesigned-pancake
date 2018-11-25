@@ -13,12 +13,14 @@ class PState:
 	var pinput
 	var pbody
 	var panim
+	var pglob
 	
-	func _init(internal, pinput, pbody, panim):
+	func _init(internal, pinput, pbody, panim, pglob):
 		self.i = internal
 		self.pinput = pinput
 		self.pbody = pbody
 		self.panim = panim
+		self.pglob = pglob
 		
 		s_floor.activate()
 	
@@ -82,3 +84,11 @@ class PState:
 			print("Unkown action area type.")
 			assert(false)
 		return true
+
+	func pick_collectible_maybe(collectible):
+		# Can only collect when walking or jumping
+		# (It's a tiny bit wierd that this state specific
+		# thing is not defined in states. It's ok :smile: )
+		if state == s_floor or state == s_jumping:
+			collectible.queue_free()
+			print("OOOOO")

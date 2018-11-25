@@ -9,16 +9,18 @@ onready var body = $".."
 onready var anim = $"../animation"
 
 # "Player global variables", *eye roll*
+# TODO : MOVE TO GLOBAL
 var additional_jumps_max = 1
 var levitate_allowed = true
 
 # Current action area
 var action_area = null
 
+onready var pglob = $"/root/PlayerGlobal"
 onready var pinput = PInput.PInput.new()
 onready var panim = PAnim.PAnim.new(anim)
 onready var pbody = PBody.PBody.new(body) 
-onready var pstate = PState.PState.new(self, pinput, pbody, panim)
+onready var pstate = PState.PState.new(self, pinput, pbody, panim, pglob)
 
 func _physics_process(delta):
 	pstate.do_it_all(delta)

@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 root_func="*res://materials_etc/root.gd"
+PlayerGlobal="*res://alien/PlayerGlobal.gd"
 
 [display]
 

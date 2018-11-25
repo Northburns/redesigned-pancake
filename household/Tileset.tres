@@ -6,18 +6,18 @@
 [ext_resource path="res://placeholder_art/kenney_spritesheets/grassHill_right.png" type="Texture" id=4]
 [ext_resource path="res://placeholder_art/kenney_walls/castleCenter_rounded.png" type="Texture" id=5]
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 
-[sub_resource type="OccluderPolygon2D" id=1]
+[sub_resource type="OccluderPolygon2D" id=2]
 
 closed = true
 cull_mode = 0
 polygon = PoolVector2Array( 0, 0, 128, 0, 128, 0, 0, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
@@ -27,22 +27,22 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 
-[sub_resource type="ConvexPolygonShape2D" id=7]
+[sub_resource type="ConvexPolygonShape2D" id=5]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 
-[sub_resource type="ConvexPolygonShape2D" id=8]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, 128, 128, 0, 128 )
 
-[sub_resource type="ConvexPolygonShape2D" id=9]
+[sub_resource type="ConvexPolygonShape2D" id=7]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 128, 0, 128, 128, 0, 128 )
 
-[sub_resource type="ConvexPolygonShape2D" id=10]
+[sub_resource type="ConvexPolygonShape2D" id=8]
 
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
@@ -60,7 +60,7 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 5 ),
+"shape": SubResource( 1 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/name = "Bridge"
@@ -70,12 +70,12 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 1/region = Rect2( 256, 512, 127, 127 )
 1/is_autotile = false
 1/occluder_offset = Vector2( 0, 0 )
-1/occluder = SubResource( 1 )
+1/occluder = SubResource( 2 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": true,
-"shape": SubResource( 6 ),
+"shape": SubResource( 3 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/name = "Bridge2"
@@ -104,7 +104,7 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 3/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 7 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 4/name = "Hill_left"
@@ -118,7 +118,7 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 4/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 8 ),
+"shape": SubResource( 6 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 5/name = "Hill_right"
@@ -132,7 +132,7 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 5/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 9 ),
+"shape": SubResource( 7 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 6/name = "InvisibleWall"
@@ -147,7 +147,7 @@ points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
 6/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 10 ),
+"shape": SubResource( 8 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 
