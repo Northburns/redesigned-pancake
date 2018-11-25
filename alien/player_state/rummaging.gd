@@ -15,6 +15,7 @@ class Rummaging:
 		self.panim = panim
 
 	var action_area
+	var action_area_ref
 	var rummaging_speed
 	var rummage_time = 0.0
 
@@ -25,6 +26,7 @@ class Rummaging:
 		pstate.state = self
 
 		self.action_area = action_area
+		self.action_area_ref = weakref(action_area)
 		self.rummaging_speed = pstate.RUMMAGING_SPEED
 
 		pbody.velocity = Vector2(0.0, 0.0)
@@ -47,7 +49,11 @@ class Rummaging:
 			rummage_time -= rummaging_speed
 			#var t = action_area.pop_random_type()
 			#print("YYY " + str(t))
-			action_area.rummage_collectable_node()
+			
+			# Check for ref, 'cause the action_area can free itself
+			# `is_instance_valid()` is not yet in 3.0.6 ?
+			if action_area_ref.get_ref():
+				action_area.rummage_collectable_node()
 		
 		#action_area.disable()
 

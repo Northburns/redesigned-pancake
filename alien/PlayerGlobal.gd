@@ -19,3 +19,8 @@ func find_player():
 
 func find_playeri():
 	return find_player().get_node("internal")
+
+func find_player_back():
+	var playerback = get_tree().get_nodes_in_group("player_back")
+	assert(playerback.size() == 1)
+	return playerback[0]

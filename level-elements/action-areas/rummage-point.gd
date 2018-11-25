@@ -1,5 +1,6 @@
 extends Sprite
 
+onready var pglob = $"/root/PlayerGlobal"
 onready var light = $Light2D
 
 # Editor will enumerate as THING_1, THING_2, ANOTHER_THING.
@@ -15,6 +16,7 @@ var available = true
 
 var left
 
+onready var player_back = pglob.find_player_back()
 
 func rummage_collectable_node():
 	var type = pop_random_type()
@@ -26,7 +28,8 @@ func rummage_collectable_node():
 		TYPE.FOOD:    n = preload("../collect/collectable.tscn").instance()
 		TYPE.BATTERY: n = preload("../collect/collectable.tscn").instance()
 		TYPE.COINS:   n = preload("../collect/collectable.tscn").instance()
-	add_child(n)
+	n.position = self.position
+	get_parent().add_child_below_node(player_back, n)
 	
 	n.init_random()
 	
@@ -78,3 +81,6 @@ func disable():
 		light.queue_free()
 		light = null
 		available = false
+		# Or you know, just delete whole point 
+		# if it's no longer of any use :+1:
+		self.queue_free()
