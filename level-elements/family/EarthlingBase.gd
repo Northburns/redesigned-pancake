@@ -6,8 +6,11 @@ export var vision_length = 1000.0
 export var darkvision_length = 400.0
 
 
+export var audio_gap_idle = 1.0
+export var audio_gap_alert = 1.0
+export var audio_gap_chase = 1.0
+
 export(String, FILE, "*.gd") var script_idle = "res://level-elements/family/EarthlingBase_idle.gd"
-export(String, FILE, "*.gd") var script_patrol = "res://level-elements/family/EarthlingBase_patrol.gd"
 export(String, FILE, "*.gd") var script_alert = "res://level-elements/family/EarthlingBase_alert.gd"
 export(String, FILE, "*.gd") var script_chase = "res://level-elements/family/EarthlingBase_chase.gd"
 #export(String, FILE, "*.txt") var f
@@ -21,38 +24,35 @@ const STAIRS_FLOOR_2 = 8000
 
 var suspicion_gauge = 0.0
 
-const THRESHOLD_PATROL = 100.0
 const THRESHOLD_ALERT = 100.0
 const THRESHOLD_CHASE = 100.0
 
-enum STATE { IDLE, PATROL, ALERT, CHASE }
+enum STATE { IDLE, ALERT, CHASE }
 var state = STATE.IDLE
 
 onready var pglob = $"/root/PlayerGlobal"
 onready var player = pglob.find_player()
 onready var area_hitbox = $HitBox
 onready var eyes = $Eyes
+onready var audio = $Audio2D
+onready var audioTimerIdle = $Audio2D/Timer
+onready var audios = $AudioListings
 
-onready var gd_idle = load(script_idle)
-onready var gd_patrol = load(script_patrol)
-onready var gd_alert = load(script_alert)
-onready var gd_chase = load(script_chase)
+onready var gd_idle = load(script_idle).new()
+onready var gd_alert = load(script_alert).new()
+onready var gd_chase = load(script_chase).new()
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	assert(gd_idle != null)
-	assert(gd_patrol != null)
-	assert(gd_alert != null)
-	assert(gd_chase != null)
+	play_audio()
 
 func _process(delta):
-	escalate_state()
+	var escalated = escalate_state()
+	if escalated:
+		play_audio()
 	cooldown(delta)
 	var s
 	match state:
 		STATE.IDLE: s = gd_idle
-		STATE.PATROL: s = gd_patrol
 		STATE.ALERT: s = gd_alert
 		STATE.CHASE: s = gd_chase
 	s.act() # Either this way, or they just contain functions which give this script parameters.
@@ -93,18 +93,54 @@ func _draw():
 		
 
 func escalate_state():
-	if state == STATE.IDLE and suspicion_gauge >= THRESHOLD_PATROL:
-		suspicion_gauge -= THRESHOLD_PATROL
+	var escalated = false
+	while state == STATE.IDLE and suspicion_gauge >= THRESHOLD_ALERT:
+		suspicion_gauge -= THRESHOLD_ALERT
 		state = STATE.PATROL
-	if state == STATE.PATROL and suspicion_gauge >= THRESHOLD_ALERT:
-		suspicion_gauge -= THRESHOLD_ALERT
-		state = STATE.ALERT
-	if state == STATE.ALERT and suspicion_gauge >= THRESHOLD_ALERT:
-		suspicion_gauge -= THRESHOLD_ALERT
+		escalated = true
+	while state == STATE.ALERT and suspicion_gauge >= THRESHOLD_CHASE:
+		suspicion_gauge -= THRESHOLD_CHASE
 		state = STATE.CHASE
+		escalated = true
+	return escalated
 
 func act_idle():
 	pass
 
 func cooldown(delta):
 	suspicion_gauge = clamp(suspicion_gauge - delta * suspicion_cooldown_speed, 0.0, INF)
+
+func play_audio():
+	var a
+	match state:
+		STATE.IDLE:
+			a = audios.random_idle()
+		STATE.ALERT: 
+			a = audios.random_alert()
+		STATE.CHASE:
+			a = audios.random_chase()
+
+	assert(a != null)
+	audio.stream = a.stream
+	
+	audio.play(0.0)
+	audio.playing = true
+	
+	audioTimerIdle.stop()
+
+func _on_Audio2D_finished():
+	var gap
+	match state:
+		STATE.IDLE:
+			gap = audio_gap_idle
+		STATE.ALERT: 
+			gap = audio_gap_alert
+		STATE.CHASE:
+			gap = audio_gap_chase
+
+	assert(gap != null)
+	audioTimerIdle.set_wait_time(gap)
+	audioTimerIdle.start()
+
+func _on_Timer_timeout():
+	play_audio()

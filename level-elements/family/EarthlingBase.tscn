@@ -10,15 +10,17 @@
 custom_solver_bias = 0.0
 extents = Vector2( 140, 480 )
 
-[node name="EarthlingBase" type="Node2D" index="0"]
+[node name="EarthlingBase" type="Node2D"]
 
 script = ExtResource( 1 )
 speed = 50.0
 suspicion_cooldown_speed = 5.0
 vision_length = 1000.0
 darkvision_length = 400.0
+audio_gap_idle = 1.0
+audio_gap_alert = 1.0
+audio_gap_chase = 1.0
 script_idle = "res://level-elements/family/EarthlingBase_idle.gd"
-script_patrol = "res://level-elements/family/EarthlingBase_patrol.gd"
 script_alert = "res://level-elements/family/EarthlingBase_alert.gd"
 script_chase = "res://level-elements/family/EarthlingBase_chase.gd"
 
@@ -59,6 +61,13 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Earthlings"
 area_mask = 1
+
+[node name="Timer" type="Timer" parent="Audio2D" index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
 
 [node name="AudioListings" type="Node" parent="." index="4"]
 
@@ -171,5 +180,7 @@ pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Earthlings"
+
+[connection signal="timeout" from="Audio2D/Timer" to="." method="_on_Timer_timeout"]
 
 

@@ -29,7 +29,7 @@ extents = Vector2( 2580, 1020 )
 custom_solver_bias = 0.0
 extents = Vector2( 2000, 250 )
 
-[node name="household" type="Node2D" index="0"]
+[node name="household" type="Node2D"]
 
 [node name="Background" type="CanvasLayer" parent="." index="0"]
 
@@ -437,9 +437,9 @@ position = Vector2( 320, -60 )
 position = Vector2( 710, -1690 )
 target = NodePath("../Light2D")
 
-[node name="EarthlingBase" parent="Spatial" index="8" instance=ExtResource( 15 )]
+[node name="Dog" parent="Spatial" index="8" instance=ExtResource( 15 )]
 
-position = Vector2( 4010, -120 )
+position = Vector2( -290, -290 )
 
 [node name="player_back" type="Node" parent="Spatial" index="9" groups=[
 "player_back",

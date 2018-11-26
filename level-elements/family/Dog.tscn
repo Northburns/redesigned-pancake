@@ -11,6 +11,8 @@
 
 [node name="EarthlingBase" index="0" instance=ExtResource( 1 )]
 
+audio_gap_idle = 0.0
+
 [node name="HitBox" parent="." index="1"]
 
 editor/display_folded = false
@@ -42,5 +44,7 @@ stream = ExtResource( 7 )
 [node name="chase_2" parent="AudioListings" index="7"]
 
 stream = ExtResource( 8 )
+
+[connection signal="finished" from="Audio2D" to="." method="_on_Audio2D_finished"]
 
 
