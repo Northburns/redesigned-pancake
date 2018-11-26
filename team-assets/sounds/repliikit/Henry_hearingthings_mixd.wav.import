@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Henry_hearingthings_mixd.wav-5240f62669237579ca73cf94f6ebb5bf.sample"
+
+[deps]
+
+source_file="res://team-assets/sounds/repliikit/Henry_hearingthings_mixd.wav"
+dest_files=[ "res://.import/Henry_hearingthings_mixd.wav-5240f62669237579ca73cf94f6ebb5bf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

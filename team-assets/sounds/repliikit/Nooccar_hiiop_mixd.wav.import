@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Nooccar_hiiop_mixd.wav-904b61b1c621a50f2730e807059f6d33.sample"
+
+[deps]
+
+source_file="res://team-assets/sounds/repliikit/Nooccar_hiiop_mixd.wav"
+dest_files=[ "res://.import/Nooccar_hiiop_mixd.wav-904b61b1c621a50f2730e807059f6d33.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

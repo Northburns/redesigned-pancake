@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Henry_himself2_mixd.wav-7e23af826405705ccbe8c846b2f96db4.sample"
+
+[deps]
+
+source_file="res://team-assets/sounds/repliikit/Henry_himself2_mixd.wav"
+dest_files=[ "res://.import/Henry_himself2_mixd.wav-7e23af826405705ccbe8c846b2f96db4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

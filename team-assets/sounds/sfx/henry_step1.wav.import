@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/henry_step1.wav-9a6c992755927fa2a9211b608f38368b.sample"
+
+[deps]
+
+source_file="res://team-assets/sounds/sfx/henry_step1.wav"
+dest_files=[ "res://.import/henry_step1.wav-9a6c992755927fa2a9211b608f38368b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

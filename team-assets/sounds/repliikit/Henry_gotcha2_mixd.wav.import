@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Henry_gotcha2_mixd.wav-e560d5aea74da7662e7314d1a8a5af7a.sample"
+
+[deps]
+
+source_file="res://team-assets/sounds/repliikit/Henry_gotcha2_mixd.wav"
+dest_files=[ "res://.import/Henry_gotcha2_mixd.wav-e560d5aea74da7662e7314d1a8a5af7a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

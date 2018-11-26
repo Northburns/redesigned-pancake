@@ -2524,51 +2524,48 @@ blend_times = [  ]
 
 [node name="Leg_left_b" type="Sprite" parent="." index="2"]
 
-position = Vector2( -247.268, 164.268 )
-rotation = 0.07451
+position = Vector2( -267.974, 148.297 )
+rotation = 1.06179
 texture = ExtResource( 2 )
 offset = Vector2( 5, 60 )
 _sections_unfolded = [ "Offset" ]
 
 [node name="Arm_left_b" type="Sprite" parent="." index="3"]
 
-position = Vector2( 235.796, 221.452 )
-rotation = -0.301501
-scale = Vector2( 1, 1 )
+position = Vector2( 365.208, 68.7005 )
+rotation = -1.13038
 texture = ExtResource( 2 )
 offset = Vector2( 5, 60 )
 _sections_unfolded = [ "Offset" ]
 
 [node name="Leg_left_a" type="Sprite" parent="." index="4"]
 
-position = Vector2( -142.307, 53.4267 )
-rotation = 0.798935
+position = Vector2( -138.257, 67.8211 )
+rotation = 1.05629
 texture = ExtResource( 3 )
 offset = Vector2( 10, 40 )
 _sections_unfolded = [ "Offset" ]
 
 [node name="Arm_left_a" type="Sprite" parent="." index="5"]
 
-position = Vector2( 215.328, 76.7888 )
-rotation = -0.104532
-scale = Vector2( 1, 1 )
+position = Vector2( 222.322, 38.2071 )
+rotation = -1.32452
 texture = ExtResource( 3 )
 offset = Vector2( 10, 40 )
 _sections_unfolded = [ "Offset" ]
 
 [node name="Tail" type="Sprite" parent="." index="6"]
 
-position = Vector2( -257.961, -65.4238 )
-rotation = 0.302814
-scale = Vector2( 1, 1 )
+position = Vector2( -265.385, -38.6672 )
+rotation = -0.0630604
 texture = ExtResource( 4 )
 offset = Vector2( -300, -60 )
 _sections_unfolded = [ "Offset" ]
 
 [node name="hip" type="Sprite" parent="." index="7"]
 
-position = Vector2( -178.506, -4.72894 )
-rotation = 0.110841
+position = Vector2( -180.176, 13.6431 )
+rotation = 0.00909168
 texture = ExtResource( 5 )
 offset = Vector2( 120, 0 )
 _sections_unfolded = [ "Offset", "Transform" ]
@@ -2576,7 +2573,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="torso" type="Sprite" parent="hip" index="0"]
 
 position = Vector2( 304.649, 15.8876 )
-rotation = -0.102842
+rotation = -0.273189
 texture = ExtResource( 6 )
 offset = Vector2( 110, -30 )
 _sections_unfolded = [ "Animation", "Offset", "Transform" ]
@@ -2586,9 +2583,8 @@ __meta__ = {
 
 [node name="Arm_right_b" type="Sprite" parent="hip/torso" index="0"]
 
-position = Vector2( -64.5425, 164.221 )
-rotation = 0.190867
-scale = Vector2( 1, 1 )
+position = Vector2( 161.624, 128.49 )
+rotation = -0.857128
 texture = ExtResource( 2 )
 offset = Vector2( 5, 60 )
 _sections_unfolded = [ "Offset" ]
@@ -2596,7 +2592,7 @@ _sections_unfolded = [ "Offset" ]
 [node name="head" type="Sprite" parent="hip/torso" index="1"]
 
 position = Vector2( 235.774, -180.582 )
-rotation = 0.0866037
+rotation = 0.126954
 texture = ExtResource( 7 )
 offset = Vector2( 65, -60 )
 _sections_unfolded = [ "Offset" ]
@@ -2614,7 +2610,7 @@ __meta__ = {
 [node name="Jaw" type="Sprite" parent="hip/torso/head" index="1"]
 
 position = Vector2( 71.0865, 48.1316 )
-rotation = 0.19465
+rotation = 0.382154
 texture = ExtResource( 8 )
 offset = Vector2( 70, 15 )
 _sections_unfolded = [ "Offset", "Transform" ]
@@ -2660,7 +2656,7 @@ script = ExtResource( 10 )
 [node name="Arm_right_a" type="Sprite" parent="hip/torso" index="2"]
 
 position = Vector2( 32.7836, 46.618 )
-rotation = 0.732115
+rotation = -0.963935
 texture = ExtResource( 3 )
 offset = Vector2( 10, 40 )
 _sections_unfolded = [ "Offset" ]
@@ -2672,7 +2668,7 @@ __meta__ = {
 [node name="arm_right_b" type="RemoteTransform2D" parent="hip/torso/Arm_right_a" index="0"]
 
 position = Vector2( 6.22377, 152.526 )
-rotation = -0.541248
+rotation = 0.106806
 remote_path = NodePath("../../Arm_right_b")
 use_global_coordinates = true
 update_position = true
@@ -2686,7 +2682,7 @@ __meta__ = {
 [node name="knuckle" type="Position2D" parent="hip/torso/Arm_right_a/arm_right_b" index="0"]
 
 position = Vector2( 18.8394, 143.019 )
-rotation = -0.35078
+rotation = 0.776153
 __meta__ = {
 "_edit_bone_": true
 }
@@ -2701,7 +2697,7 @@ __meta__ = {
 [node name="Arm_left_a" type="RemoteTransform2D" parent="hip/torso" index="3"]
 
 position = Vector2( 93.0656, 31.2857 )
-rotation = -0.112531
+rotation = -1.06042
 remote_path = NodePath("../../../Arm_left_a")
 use_global_coordinates = true
 update_position = true
@@ -2715,7 +2711,7 @@ __meta__ = {
 [node name="Arm_left_b" type="RemoteTransform2D" parent="hip/torso/Arm_left_a" index="0"]
 
 position = Vector2( 5.26183, 146.009 )
-rotation = -0.196969
+rotation = 0.194135
 remote_path = NodePath("../../../../Arm_left_b")
 use_global_coordinates = true
 update_position = true
@@ -2728,7 +2724,7 @@ __meta__ = {
 [node name="knuckle" type="Position2D" parent="hip/torso/Arm_left_a/Arm_left_b" index="0"]
 
 position = Vector2( 25.3624, 139.473 )
-rotation = 0.309501
+rotation = 0.866285
 __meta__ = {
 "_edit_bone_": true
 }
@@ -2744,8 +2740,8 @@ __meta__ = {
 
 [node name="Leg_right_b" type="Sprite" parent="hip" index="1"]
 
-position = Vector2( -144.503, 133.065 )
-rotation = -0.46404
+position = Vector2( -139.294, 141.424 )
+rotation = 1.27454
 scale = Vector2( 0.999999, 0.999999 )
 texture = ExtResource( 2 )
 offset = Vector2( 5, 60 )
@@ -2754,7 +2750,7 @@ _sections_unfolded = [ "Offset" ]
 [node name="Leg_right_a" type="Sprite" parent="hip" index="2"]
 
 position = Vector2( -12.4016, 56.5517 )
-rotation = 1.08659
+rotation = 1.02206
 texture = ExtResource( 3 )
 offset = Vector2( 10, 40 )
 _sections_unfolded = [ "Animation", "Offset", "Region" ]
@@ -2766,7 +2762,7 @@ __meta__ = {
 [node name="Leg_right_b" type="RemoteTransform2D" parent="hip/Leg_right_a" index="0"]
 
 position = Vector2( 6.22393, 152.533 )
-rotation = -1.55063
+rotation = 0.252478
 scale = Vector2( 0.999999, 0.999999 )
 remote_path = NodePath("../../Leg_right_b")
 use_global_coordinates = true
@@ -2781,7 +2777,7 @@ __meta__ = {
 [node name="knuckle" type="Position2D" parent="hip/Leg_right_a/Leg_right_b" index="0"]
 
 position = Vector2( 18.2506, 147.052 )
-rotation = 0.130004
+rotation = -1.32632
 scale = Vector2( 1.22285, 1 )
 __meta__ = {
 "_edit_bone_": true
@@ -2797,7 +2793,7 @@ __meta__ = {
 [node name="Leg_left_a" type="RemoteTransform2D" parent="hip" index="3"]
 
 position = Vector2( 42.4094, 53.7947 )
-rotation = 0.688094
+rotation = 1.0472
 remote_path = NodePath("../../Leg_left_a")
 use_global_coordinates = true
 update_position = true
@@ -2811,7 +2807,7 @@ __meta__ = {
 [node name="Leg_left_b" type="RemoteTransform2D" parent="hip/Leg_left_a" index="0"]
 
 position = Vector2( 6.22345, 152.525 )
-rotation = -0.724425
+rotation = 0.00549972
 remote_path = NodePath("../../../Leg_left_b")
 use_global_coordinates = true
 update_position = true
@@ -2825,7 +2821,7 @@ __meta__ = {
 [node name="knuckle" type="Position2D" parent="hip/Leg_left_a/Leg_left_b" index="0"]
 
 position = Vector2( 22.3364, 138.69 )
-rotation = 1.32979
+rotation = -1.10803
 scale = Vector2( 0.843469, 1.27862 )
 __meta__ = {
 "_edit_bone_": true
@@ -2841,7 +2837,7 @@ __meta__ = {
 [node name="Tail" type="RemoteTransform2D" parent="hip" index="4"]
 
 position = Vector2( -85.6814, -51.5335 )
-rotation = 0.191973
+rotation = -0.0721521
 remote_path = NodePath("../../Tail")
 use_global_coordinates = true
 update_position = true

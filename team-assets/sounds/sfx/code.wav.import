@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/code.wav-94b271735a957d799036b5d2866d42d7.sample"
+
+[deps]
+
+source_file="res://team-assets/sounds/sfx/code.wav"
+dest_files=[ "res://.import/code.wav-94b271735a957d799036b5d2866d42d7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

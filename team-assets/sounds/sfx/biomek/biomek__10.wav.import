@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/biomek__10.wav-aa5b684255034956f1e0b851e2b6b401.sample"
+
+[deps]
+
+source_file="res://team-assets/sounds/sfx/biomek/biomek__10.wav"
+dest_files=[ "res://.import/biomek__10.wav-aa5b684255034956f1e0b851e2b6b401.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

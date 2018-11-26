@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/rac_step8.wav-0e39253aac9766be0be5a955de1cfefa.sample"
+
+[deps]
+
+source_file="res://team-assets/sounds/sfx/rac_step8.wav"
+dest_files=[ "res://.import/rac_step8.wav-0e39253aac9766be0be5a955de1cfefa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

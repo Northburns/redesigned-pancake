@@ -1,34 +1,35 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://placeholder_art/kenney_platformer/Backgrounds/colored_grass.png" type="Texture" id=1]
 [ext_resource path="res://household/camera/camera_handler.gd" type="Script" id=2]
-[ext_resource path="res://placeholder_art/kenney_misc/bush.png" type="Texture" id=3]
-[ext_resource path="res://placeholder_art/kenney_misc/bush2.png" type="Texture" id=4]
-[ext_resource path="res://placeholder_art/kenney_particles/light_01.png" type="Texture" id=5]
-[ext_resource path="res://household/camera/CameraArea.gd" type="Script" id=6]
-[ext_resource path="res://level-elements/action-areas/teleport-point.tscn" type="PackedScene" id=7]
-[ext_resource path="res://placeholder_art/kenney_misc/foliagePack_011.png" type="Texture" id=8]
-[ext_resource path="res://placeholder_art/kenney_misc/ufoRed.png" type="Texture" id=9]
-[ext_resource path="res://placeholder_art/kenney_particles/light_02.png" type="Texture" id=10]
-[ext_resource path="res://household/Tileset.tres" type="TileSet" id=11]
-[ext_resource path="res://household/Tileset_walls.tres" type="TileSet" id=12]
-[ext_resource path="res://level-elements/family/EarthlingBase.tscn" type="PackedScene" id=13]
+[ext_resource path="res://placeholder_art/kenney_misc/foliagePack_011.png" type="Texture" id=3]
+[ext_resource path="res://placeholder_art/kenney_misc/bush.png" type="Texture" id=4]
+[ext_resource path="res://placeholder_art/kenney_misc/bush2.png" type="Texture" id=5]
+[ext_resource path="res://placeholder_art/kenney_particles/light_01.png" type="Texture" id=6]
+[ext_resource path="res://placeholder_art/kenney_platformer/Backgrounds/blue_land.png" type="Texture" id=7]
+[ext_resource path="res://household/camera/CameraArea.gd" type="Script" id=8]
+[ext_resource path="res://level-elements/action-areas/teleport-point.tscn" type="PackedScene" id=9]
+[ext_resource path="res://placeholder_art/kenney_misc/ufoRed.png" type="Texture" id=10]
+[ext_resource path="res://placeholder_art/kenney_particles/light_02.png" type="Texture" id=11]
+[ext_resource path="res://household/Tileset.tres" type="TileSet" id=12]
+[ext_resource path="res://household/Tileset_walls.tres" type="TileSet" id=13]
 [ext_resource path="res://level-elements/action-areas/rummage-point.tscn" type="PackedScene" id=14]
-[ext_resource path="res://alien/alien.tscn" type="PackedScene" id=15]
-[ext_resource path="res://placeholder_art/godot_tutorials/light.png" type="Texture" id=16]
-[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=17]
+[ext_resource path="res://level-elements/family/Dog.tscn" type="PackedScene" id=15]
+[ext_resource path="res://alien/alien.tscn" type="PackedScene" id=16]
+[ext_resource path="res://placeholder_art/godot_tutorials/light.png" type="Texture" id=17]
+[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=18]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2580, 1020 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2000, 250 )
 
-[node name="household" type="Node2D"]
+[node name="household" type="Node2D" index="0"]
 
 [node name="Background" type="CanvasLayer" parent="." index="0"]
 
@@ -60,7 +61,29 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="camera_handler" type="Node" parent="." index="1"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="1"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+_sections_unfolded = [ "Scroll" ]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="camera_handler" type="Node" parent="." index="2"]
 
 editor/display_folded = true
 script = ExtResource( 2 )
@@ -86,50 +109,58 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="Spatial" type="Node2D" parent="." index="2"]
+[node name="Spatial" type="Node2D" parent="." index="3"]
 
 position = Vector2( 890, -120 )
 
 [node name="Yard" type="Node2D" parent="Spatial" index="0"]
 
-[node name="bush" type="Sprite" parent="Spatial/Yard" index="0"]
+editor/display_folded = true
+
+[node name="foliagePack_011" type="Sprite" parent="Spatial/Yard" index="0"]
+
+position = Vector2( 1600, -800 )
+scale = Vector2( 3.91232, 3.91232 )
+texture = ExtResource( 3 )
+
+[node name="bush" type="Sprite" parent="Spatial/Yard" index="1"]
 
 position = Vector2( 690, -120 )
 scale = Vector2( 4.25335, 3.83705 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="bush2" type="Sprite" parent="Spatial/Yard" index="1"]
+[node name="bush2" type="Sprite" parent="Spatial/Yard" index="2"]
 
 position = Vector2( 440, -160 )
 scale = Vector2( 3.07813, 2.53125 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
-[node name="bush4" type="Sprite" parent="Spatial/Yard" index="2"]
+[node name="bush4" type="Sprite" parent="Spatial/Yard" index="3"]
 
 position = Vector2( -281.5, -324 )
 scale = Vector2( 4.82031, 5.09375 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
-[node name="bush3" type="Sprite" parent="Spatial/Yard" index="3"]
+[node name="bush3" type="Sprite" parent="Spatial/Yard" index="4"]
 
 position = Vector2( 1376.5, -244 )
 scale = Vector2( 4.58594, 4 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
-[node name="bush5" type="Sprite" parent="Spatial/Yard" index="4"]
+[node name="bush5" type="Sprite" parent="Spatial/Yard" index="5"]
 
 position = Vector2( -630.566, -217.852 )
 scale = Vector2( 11.1267, 6.3471 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="PorchLight" type="Light2D" parent="Spatial/Yard" index="5" groups=[
+[node name="PorchLight" type="Light2D" parent="Spatial/Yard" index="6" groups=[
 "vision_light",
 ]]
 
 position = Vector2( 1850, -990 )
 enabled = true
 editor_only = false
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( 0, 0 )
 texture_scale = 8.0
 color = Color( 1, 1, 1, 1 )
@@ -150,7 +181,7 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Range", "Shadow", "Transform" ]
 
-[node name="PorchLight2" type="Light2D" parent="Spatial/Yard" index="6" groups=[
+[node name="PorchLight2" type="Light2D" parent="Spatial/Yard" index="7" groups=[
 "vision_light",
 ]]
 
@@ -158,7 +189,7 @@ visible = false
 position = Vector2( 1850, -990 )
 enabled = true
 editor_only = false
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( 0, 0 )
 texture_scale = 2.0
 color = Color( 1, 1, 1, 1 )
@@ -181,9 +212,18 @@ _sections_unfolded = [ "Range", "Shadow", "Transform", "Visibility" ]
 
 [node name="Kitchen" type="Node2D" parent="Spatial" index="1"]
 
+editor/display_folded = true
 position = Vector2( -120, 120 )
 
-[node name="CameraArea" type="Area2D" parent="Spatial/Kitchen" index="0"]
+[node name="background_placeholder" type="Sprite" parent="Spatial/Kitchen" index="0"]
+
+modulate = Color( 0, 0.0811768, 0.519531, 1 )
+position = Vector2( 4649, -1151 )
+scale = Vector2( 5.04102, 1.89648 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CameraArea" type="Area2D" parent="Spatial/Kitchen" index="1"]
 
 position = Vector2( 1450, 580 )
 input_pickable = true
@@ -193,7 +233,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 6 )
+script = ExtResource( 8 )
 c_padding_all = 20.0
 c_margin_top = 10.0
 c_margin_right = 10.0
@@ -203,9 +243,9 @@ c_margin_left = 10.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/Kitchen/CameraArea" index="0"]
 
 position = Vector2( 1790, 850 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
-[node name="Teleport-Area" parent="Spatial/Kitchen" index="1" instance=ExtResource( 7 )]
+[node name="Teleport-Area" parent="Spatial/Kitchen" index="2" instance=ExtResource( 9 )]
 
 position = Vector2( 2340, -1970 )
 target = NodePath("../../AirDucts/Teleport-Area")
@@ -225,7 +265,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 6 )
+script = ExtResource( 8 )
 c_padding_all = 20.0
 c_margin_top = 10.0
 c_margin_right = 10.0
@@ -235,9 +275,9 @@ c_margin_left = 10.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/AirDucts/Area2D" index="0"]
 
 position = Vector2( 4110, -2260 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
-[node name="Teleport-Area" parent="Spatial/AirDucts" index="1" instance=ExtResource( 7 )]
+[node name="Teleport-Area" parent="Spatial/AirDucts" index="1" instance=ExtResource( 9 )]
 
 position = Vector2( 2340, -2230 )
 target = NodePath("../../Kitchen/Teleport-Area")
@@ -251,14 +291,14 @@ position = Vector2( 14760, -60 )
 
 position = Vector2( -580, -1350 )
 scale = Vector2( 7.28808, 7.01659 )
-texture = ExtResource( 8 )
+texture = ExtResource( 3 )
 
 [node name="ufoRed" type="Sprite" parent="Spatial/Backyard" index="1"]
 
 position = Vector2( -1145.65, -1957.25 )
 rotation = -0.604323
 scale = Vector2( 13.7297, 17.0408 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 91, 60 )
 _sections_unfolded = [ "Region" ]
@@ -268,7 +308,7 @@ _sections_unfolded = [ "Region" ]
 position = Vector2( 35.4584, 15.3077 )
 enabled = true
 editor_only = false
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 offset = Vector2( 0, 0 )
 texture_scale = 0.5
 color = Color( 1, 0, 0, 0.563529 )
@@ -294,7 +334,7 @@ _sections_unfolded = [ "Shadow" ]
 position = Vector2( 18.5514, -15.2459 )
 enabled = true
 editor_only = false
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 offset = Vector2( 0, 0 )
 texture_scale = 0.5
 color = Color( 1, 0, 0, 0.281765 )
@@ -320,7 +360,7 @@ _sections_unfolded = [ "Shadow" ]
 position = Vector2( -22.6921, -14.2029 )
 enabled = true
 editor_only = false
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 offset = Vector2( 0, 0 )
 texture_scale = 0.5
 color = Color( 1, 0, 0, 0.353569 )
@@ -344,7 +384,7 @@ _sections_unfolded = [ "Shadow" ]
 [node name="TileMap" type="TileMap" parent="Spatial" index="4"]
 
 mode = 0
-tile_set = ExtResource( 11 )
+tile_set = ExtResource( 12 )
 cell_size = Vector2( 128, 128 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -368,7 +408,7 @@ __meta__ = {
 [node name="TileMapW" type="TileMap" parent="Spatial" index="5"]
 
 mode = 0
-tile_set = ExtResource( 12 )
+tile_set = ExtResource( 13 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -388,28 +428,24 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Dog_placeholder" parent="Spatial" index="6" instance=ExtResource( 13 )]
-
-position = Vector2( 3980, -120 )
-script_idle = "res://level-elements/family/EarthlingBase_idle.gd"
-script_patrol = "res://level-elements/family/EarthlingBase_patrol.gd"
-script_alert = "res://level-elements/family/EarthlingBase_alert.gd"
-script_chase = "res://level-elements/family/EarthlingBase_chase.gd"
-
-[node name="rummage" parent="Spatial" index="7" instance=ExtResource( 14 )]
+[node name="rummage" parent="Spatial" index="6" instance=ExtResource( 14 )]
 
 position = Vector2( 320, -60 )
 
-[node name="Teleport" parent="Spatial" index="8" instance=ExtResource( 7 )]
+[node name="Teleport" parent="Spatial" index="7" instance=ExtResource( 9 )]
 
 position = Vector2( 710, -1690 )
 target = NodePath("../Light2D")
+
+[node name="EarthlingBase" parent="Spatial" index="8" instance=ExtResource( 15 )]
+
+position = Vector2( 4010, -120 )
 
 [node name="player_back" type="Node" parent="Spatial" index="9" groups=[
 "player_back",
 ]]
 
-[node name="player" parent="Spatial" index="10" instance=ExtResource( 15 )]
+[node name="player" parent="Spatial" index="10" instance=ExtResource( 16 )]
 
 position = Vector2( -640, -30 )
 
@@ -423,7 +459,7 @@ color = Color( 0.417969, 0.417969, 0.417969, 1 )
 position = Vector2( 2630, -1600 )
 enabled = true
 editor_only = false
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 offset = Vector2( 0, 0 )
 texture_scale = 2.56
 color = Color( 1, 1, 1, 1 )
@@ -444,7 +480,7 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Shadow" ]
 
-[node name="GUI" type="CanvasLayer" parent="." index="3"]
+[node name="GUI" type="CanvasLayer" parent="." index="4"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -452,7 +488,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="HUD" parent="GUI" index="0" instance=ExtResource( 17 )]
+[node name="HUD" parent="GUI" index="0" instance=ExtResource( 18 )]
 
 anchor_bottom = 1.0
 margin_left = 0.0

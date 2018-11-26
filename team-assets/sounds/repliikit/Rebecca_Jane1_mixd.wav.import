@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Rebecca_Jane1_mixd.wav-b0bde4a9c93948e4c4b061041b396e5e.sample"
+
+[deps]
+
+source_file="res://team-assets/sounds/repliikit/Rebecca_Jane1_mixd.wav"
+dest_files=[ "res://.import/Rebecca_Jane1_mixd.wav-b0bde4a9c93948e4c4b061041b396e5e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
