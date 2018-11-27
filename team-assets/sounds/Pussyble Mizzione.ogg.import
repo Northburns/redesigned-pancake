@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Pussyble Mizzione.ogg-792468b677701ed0d3663d20c08a3102.oggstr"
+
+[deps]
+
+source_file="res://team-assets/sounds/Pussyble Mizzione.ogg"
+dest_files=[ "res://.import/Pussyble Mizzione.ogg-792468b677701ed0d3663d20c08a3102.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -37,6 +37,7 @@ onready var eyes = $Eyes
 onready var audio = $Audio2D
 onready var audioTimerIdle = $Audio2D/Timer
 onready var audios = $AudioListings
+onready var progress = $progress
 
 onready var gd_idle = load(script_idle).new()
 onready var gd_alert = load(script_alert).new()
@@ -50,6 +51,7 @@ func _process(delta):
 	if escalated:
 		play_audio()
 	cooldown(delta)
+	update_progressbar()
 	var s
 	match state:
 		STATE.IDLE: s = gd_idle
@@ -96,12 +98,14 @@ func escalate_state():
 	var escalated = false
 	while state == STATE.IDLE and suspicion_gauge >= THRESHOLD_ALERT:
 		suspicion_gauge -= THRESHOLD_ALERT
-		state = STATE.PATROL
+		state = STATE.ALERT
 		escalated = true
+		pglob.escalate_music(2)
 	while state == STATE.ALERT and suspicion_gauge >= THRESHOLD_CHASE:
 		suspicion_gauge -= THRESHOLD_CHASE
 		state = STATE.CHASE
 		escalated = true
+		pglob.escalate_music(3)
 	return escalated
 
 func act_idle():
@@ -109,6 +113,17 @@ func act_idle():
 
 func cooldown(delta):
 	suspicion_gauge = clamp(suspicion_gauge - delta * suspicion_cooldown_speed, 0.0, INF)
+
+func update_progressbar():
+	progress.visible = true
+	match state:
+		STATE.IDLE:
+			progress.max_value = THRESHOLD_ALERT
+		STATE.ALERT: 
+			progress.max_value = THRESHOLD_CHASE
+		STATE.CHASE:
+			progress.visible = false
+	progress.value = suspicion_gauge
 
 func play_audio():
 	var a
@@ -139,6 +154,7 @@ func _on_Audio2D_finished():
 			gap = audio_gap_chase
 
 	assert(gap != null)
+	gap = clamp(gap, 0.1, INF)
 	audioTimerIdle.set_wait_time(gap)
 	audioTimerIdle.start()
 

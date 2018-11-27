@@ -432,29 +432,24 @@ __meta__ = {
 
 position = Vector2( 320, -60 )
 
-[node name="Teleport" parent="Spatial" index="7" instance=ExtResource( 9 )]
+[node name="Dog" parent="Spatial" index="7" instance=ExtResource( 15 )]
 
-position = Vector2( 710, -1690 )
-target = NodePath("../Light2D")
+position = Vector2( 340, -300 )
 
-[node name="Dog" parent="Spatial" index="8" instance=ExtResource( 15 )]
-
-position = Vector2( -290, -290 )
-
-[node name="player_back" type="Node" parent="Spatial" index="9" groups=[
+[node name="player_back" type="Node" parent="Spatial" index="8" groups=[
 "player_back",
 ]]
 
-[node name="player" parent="Spatial" index="10" instance=ExtResource( 16 )]
+[node name="player" parent="Spatial" index="9" instance=ExtResource( 16 )]
 
 position = Vector2( -640, -30 )
 
-[node name="CanvasModulate" type="CanvasModulate" parent="Spatial" index="11"]
+[node name="CanvasModulate" type="CanvasModulate" parent="Spatial" index="10"]
 
 position = Vector2( -67.5358, 32.2997 )
 color = Color( 0.417969, 0.417969, 0.417969, 1 )
 
-[node name="Light2D" type="Light2D" parent="Spatial" index="12"]
+[node name="Light2D" type="Light2D" parent="Spatial" index="11"]
 
 position = Vector2( 2630, -1600 )
 enabled = true
