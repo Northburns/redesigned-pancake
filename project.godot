@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 
 root_func="*res://materials_etc/root.gd"
 PlayerGlobal="*res://alien/PlayerGlobal.gd"
+AudioPlayer="*res://level-elements/AudioPlayer.tscn"
 
 [display]
 

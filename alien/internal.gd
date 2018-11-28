@@ -19,6 +19,8 @@ var lights = []
 # Current action area
 var action_area = null
 
+onready var audio = $"/root/AudioPlayer"
+
 onready var pglob = $"/root/PlayerGlobal"
 onready var pinput = PInput.PInput.new()
 onready var panim = PAnim.PAnim.new(anim)
@@ -36,6 +38,9 @@ func _ready():
 		area.connect("body_entered", self, "_action_area_entered", [action_area])
 		area.connect("body_exited", self, "_action_area_exited", [action_area])
 	self.lights = get_tree().get_nodes_in_group("vision_light")
+	
+	# Start music!
+	audio.music(audio.MUSIC.SNEAK)
 	
 func _process(delta):
 	update_shadow_state()
