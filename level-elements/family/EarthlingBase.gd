@@ -37,19 +37,36 @@ onready var eyes = $Eyes
 onready var audio = $Audio2D
 onready var audioTimerIdle = $Audio2D/Timer
 onready var audios = $AudioListings
+onready var animations = $Animations
 onready var progress = $progress
 
 onready var gd_idle = load(script_idle).new()
 onready var gd_alert = load(script_alert).new()
 onready var gd_chase = load(script_chase).new()
 
+onready var initial_position = self.position
+
 func _ready():
 	play_audio()
+	reset()
+
+func reset():
+	position = self.initial_position
+	suspicion_gauge = 0.0
+	animations.play("idle")
+	
 
 func _process(delta):
 	var escalated = escalate_state()
 	if escalated:
 		play_audio()
+		if state == STATE.ALERT:
+			# Woke up
+			animations.play("wakeup")
+			print("XXX")
+			yield(animations, "animation_finished")
+			print("YYY")
+			animations.play("walk")
 	cooldown(delta)
 	update_progressbar()
 	var s
@@ -57,7 +74,7 @@ func _process(delta):
 		STATE.IDLE: s = gd_idle
 		STATE.ALERT: s = gd_alert
 		STATE.CHASE: s = gd_chase
-	s.act() # Either this way, or they just contain functions which give this script parameters.
+	#s.act() # Either this way, or they just contain functions which give this script parameters.
 	# The latter might be simpler.
 	# I mean, in that case, why not just export them all from this script? 
 	# They'd be as easy to set that way. Even more so :)
@@ -72,8 +89,8 @@ func _process(delta):
 		#print("Noooo")
 		pass
 	
-	print("STATE: "+str(state))
-	print("SUSPI: "+str(suspicion_gauge))
+#	print("STATE: "+str(state))
+#	print("SUSPI: "+str(suspicion_gauge))
 	update()
 	
 func can_see_player():

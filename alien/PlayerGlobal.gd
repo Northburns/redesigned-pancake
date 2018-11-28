@@ -36,7 +36,7 @@ func find_player_back():
 
 func escalate_music(level):
 	assert(level == 1 or level == 2 or level == 3)
-	assert(false)
+	#assert(false)
 	# TODO: Call the autloaded "musicplayer" node.
 	# THIS SHOULD ESCALATE THE `escalation` VARIABLE
 	# BUT ONLY UP!!! There are several callers for this.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://level-elements/family/EarthlingBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://team-assets/sounds/repliikit/Bonbon_kuors_mixd.wav" type="AudioStream" id=2]
@@ -8,14 +8,52 @@
 [ext_resource path="res://team-assets/sounds/repliikit/Bonbon_urmurmur2_mixd.wav" type="AudioStream" id=6]
 [ext_resource path="res://team-assets/sounds/repliikit/Bonbon_HAU_mixd.wav" type="AudioStream" id=7]
 [ext_resource path="res://team-assets/sounds/repliikit/Bonbon_haukkumurrr_mixd.wav" type="AudioStream" id=8]
+[ext_resource path="res://team-assets/elbowsczy/bonbon/zzz1.png" type="Texture" id=9]
+[ext_resource path="res://team-assets/elbowsczy/bonbon/zzz2.png" type="Texture" id=10]
+[ext_resource path="res://team-assets/elbowsczy/bonbon/walk1.png" type="Texture" id=11]
+[ext_resource path="res://team-assets/elbowsczy/bonbon/walk2.png" type="Texture" id=12]
+[ext_resource path="res://team-assets/elbowsczy/bonbon/walk3.png" type="Texture" id=13]
+[ext_resource path="res://team-assets/elbowsczy/bonbon/walk4.png" type="Texture" id=14]
+[ext_resource path="res://team-assets/elbowsczy/bonbon/grrrr.png" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "idle",
+"speed": 1.5
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "wakeup",
+"speed": 0.5
+} ]
 
 [node name="EarthlingBase" index="0" instance=ExtResource( 1 )]
 
 audio_gap_idle = 0.0
 
-[node name="HitBox" parent="." index="1"]
+[node name="HitBox" parent="." index="0"]
 
 editor/display_folded = false
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+
+position = Vector2( -19.9449, -234.353 )
+
+[node name="Eyes" parent="." index="1"]
+
+position = Vector2( -3.99451, -348.501 )
+
+[node name="Audio2D" parent="." index="2"]
+
+editor/display_folded = true
 
 [node name="idle_1" parent="AudioListings" index="0"]
 
@@ -44,6 +82,21 @@ stream = ExtResource( 7 )
 [node name="chase_2" parent="AudioListings" index="7"]
 
 stream = ExtResource( 8 )
+
+[node name="Animations" parent="." index="4"]
+
+position = Vector2( -27.5206, -306.576 )
+frames = SubResource( 1 )
+animation = "walk"
+frame = 1
+playing = true
+
+[node name="progress" parent="." index="5"]
+
+margin_left = -116.0
+margin_top = -663.0
+margin_right = 70.0
+margin_bottom = -683.0
 
 [connection signal="finished" from="Audio2D" to="." method="_on_Audio2D_finished"]
 

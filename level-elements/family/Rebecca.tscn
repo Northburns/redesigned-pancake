@@ -13,9 +13,9 @@
 
 [node name="EarthlingBase" instance=ExtResource( 1 )]
 
-audio_gap_idle = 1.0
-audio_gap_alert = 1.0
-audio_gap_chase = 1.0
+[node name="AudioListings" parent="." index="3"]
+
+editor/display_folded = false
 
 [node name="idle_1" parent="AudioListings" index="0"]
 
