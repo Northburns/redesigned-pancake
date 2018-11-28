@@ -25,7 +25,7 @@ onready var pglob = $"/root/PlayerGlobal"
 onready var pinput = PInput.PInput.new()
 onready var panim = PAnim.PAnim.new(anim)
 onready var pbody = PBody.PBody.new(body) 
-onready var pstate = PState.PState.new(self, pinput, pbody, panim, pglob)
+onready var pstate = PState.PState.new(self, pinput, pbody, panim, pglob, audio)
 
 func _physics_process(delta):
 	pstate.do_it_all(pglob, delta)

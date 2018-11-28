@@ -7,12 +7,14 @@ class Rummaging:
 	var pinput
 	var pbody
 	var panim
+	var audio
 	
-	func _init(pstate, pinput, pbody, panim):
+	func _init(pstate, pinput, pbody, panim, audio):
 		self.pstate = pstate
 		self.pinput = pinput
 		self.pbody = pbody
 		self.panim = panim
+		self.audio = audio
 
 	var action_area
 	var action_area_ref
@@ -33,9 +35,12 @@ class Rummaging:
 		warmed_up = false
 		rummage_time = 0.0
 
+		audio.action_rummage()
+
 	func act(delta):
 		if not pinput.a:
 			# player canceled rummaging
+			audio.action_stop()
 			pstate.s_floor.activate()
 			return
 

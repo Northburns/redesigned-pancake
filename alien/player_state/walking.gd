@@ -15,12 +15,14 @@ class Floor:
 	var pinput
 	var pbody
 	var panim
+	var audio
 	
-	func _init(pstate, pinput, pbody, panim):
+	func _init(pstate, pinput, pbody, panim, audio):
 		self.pstate = pstate
 		self.pinput = pinput
 		self.pbody = pbody
 		self.panim = panim
+		self.audio = audio
 
 	func activate():
 		pstate.state = self

@@ -8,12 +8,14 @@ class Teleporting:
 	var pinput
 	var pbody
 	var panim
+	var audio
 	
-	func _init(pstate, pinput, pbody, panim):
+	func _init(pstate, pinput, pbody, panim, audio):
 		self.pstate = pstate
 		self.pinput = pinput
 		self.pbody = pbody
 		self.panim = panim
+		self.audio = audio
 
 	var action_area
 	var tween
@@ -28,12 +30,17 @@ class Teleporting:
 		self.action_area = action_area
 		self.tween = action_area.get_node("tween")
 
+		audio.player_speak(audio.r_hmm1)
+
 		pbody.velocity = Vector2(0.0, 0.0)
 		tween_alpha(1.0, 0.0)
 		yield(tween, "tween_completed")
 		teleport()
 		tween_alpha(0.0, 1.0)
+		audio.player_speak(audio.r_hmm2)
 		yield(tween, "tween_completed")
+
+
 		pstate.s_floor.activate()
 
 	

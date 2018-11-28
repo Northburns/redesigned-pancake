@@ -7,17 +7,19 @@ class Jumping:
 	var pinput
 	var pbody
 	var panim
+	var audio
 	
 	var just_fall
 	var additional_jumps
 	var additional_jumps_max
 	var levitate_allowed
 	
-	func _init(pstate, pinput, pbody, panim):
+	func _init(pstate, pinput, pbody, panim, audio):
 		self.pstate = pstate
 		self.pinput = pinput
 		self.pbody = pbody
 		self.panim = panim
+		self.audio = audio
 		
 	func activate(start_with_jump, just_fall = false):
 		#print("STATE_ACTIVATE: Jumping")
@@ -37,6 +39,12 @@ class Jumping:
 		# so yeah, sure :)
 		# (but setting it to a value is a bit wierd, but super fine for this jump)
 		pbody.velocity.y = -pstate.JUMP_SPEED
+		# Sound
+		match additional_jumps:
+			0:
+				self.audio.player_speak_jump1()
+			1:
+				self.audio.player_speak_jump2()
 
 
 	func act(delta):

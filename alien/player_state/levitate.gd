@@ -7,17 +7,22 @@ class Levitating:
 	var pinput
 	var pbody
 	var panim
+	var audio
 	
-	func _init(pstate, pinput, pbody, panim):
+	func _init(pstate, pinput, pbody, panim, audio):
 		self.pstate = pstate
 		self.pinput = pinput
 		self.pbody = pbody
 		self.panim = panim
+		self.audio = audio
 		
 	func activate():
 		pstate.state = self
 
 		clamp_speed(100) # Holy hardcode, Batman!
+
+		audio.player_speak(audio.r_hiiop)
+		audio.action_play(audio.fl_levitator)
 	
 	func clamp_speed(max_speed):
 		# Limit speed (do it by component, 
@@ -42,5 +47,6 @@ class Levitating:
 		
 		# Gotta press that button, though!
 		if not pinput.jump:
+			audio.action_stop()
 			pstate.s_jumping.activate(false, true)
 		

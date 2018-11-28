@@ -48,7 +48,4 @@ func escalate_music(level):
 			audio.music(audio.m_alert)
 		3:
 			audio.music(audio.m_chase)
-	# TODO: Call the autloaded "musicplayer" node.
-	# THIS SHOULD ESCALATE THE `escalation` VARIABLE
-	# BUT ONLY UP!!! There are several callers for this.
 	

@@ -4,7 +4,7 @@
 [ext_resource path="res://team-assets/sounds/repliikit/Henry_gotcha2_mixd.wav" type="AudioStream" id=2]
 [ext_resource path="res://level-elements/family/AudioListings.gd" type="Script" id=3]
 
-[node name="EarthlingBase" type="Node2D" index="0"]
+[node name="EarthlingBase" type="Node2D"]
 
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 1 )

@@ -14,22 +14,24 @@ class PState:
 	var pbody
 	var panim
 	var pglob
+	var audio
 	
-	func _init(internal, pinput, pbody, panim, pglob):
+	func _init(internal, pinput, pbody, panim, pglob, audio):
 		self.i = internal
 		self.pinput = pinput
 		self.pbody = pbody
 		self.panim = panim
 		self.pglob = pglob
+		self.audio = audio
 		
 		s_floor.activate()
 	
 	# Constant stateless state processors
-	var s_floor = SFloor.Floor.new(self, pinput, pbody, panim)
-	var s_jumping = SJumping.Jumping.new(self, pinput, pbody, panim)
-	var s_levitate = SLevitate.Levitating.new(self, pinput, pbody, panim)
-	var s_rummaging =SRummaging.Rummaging.new(self, pinput, pbody, panim)
-	var s_teleporting = STeleporting.Teleporting.new(self, pinput, pbody, panim)
+	var s_floor = SFloor.Floor.new(self, pinput, pbody, panim, audio)
+	var s_jumping = SJumping.Jumping.new(self, pinput, pbody, panim, audio)
+	var s_levitate = SLevitate.Levitating.new(self, pinput, pbody, panim, audio)
+	var s_rummaging =SRummaging.Rummaging.new(self, pinput, pbody, panim, audio)
+	var s_teleporting = STeleporting.Teleporting.new(self, pinput, pbody, panim, audio)
 
 	var state
 	
