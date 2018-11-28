@@ -44,7 +44,6 @@ animations = [ {
 
 speed = 300.0
 chase_speed_multiplier = 10
-chase_strategy = 1
 audio_gap_idle = 0.0
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
