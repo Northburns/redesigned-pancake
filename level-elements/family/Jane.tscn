@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://level-elements/family/EarthlingBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://team-assets/sounds/repliikit/Jane_herself1_mixd.wav" type="AudioStream" id=2]
@@ -10,12 +10,54 @@
 [ext_resource path="res://team-assets/sounds/repliikit/Jane_dad3_mixd.wav" type="AudioStream" id=8]
 [ext_resource path="res://team-assets/sounds/repliikit/Jane_mom1_mixd.wav" type="AudioStream" id=9]
 [ext_resource path="res://team-assets/sounds/repliikit/Jane_mom2_mixd.wav" type="AudioStream" id=10]
+[ext_resource path="res://team-assets/elbowsczy/jane/play1.png" type="Texture" id=11]
+[ext_resource path="res://team-assets/elbowsczy/jane/play2.png" type="Texture" id=12]
+[ext_resource path="res://team-assets/elbowsczy/jane/walk1.png" type="Texture" id=13]
+[ext_resource path="res://team-assets/elbowsczy/jane/walk2.png" type="Texture" id=14]
+[ext_resource path="res://team-assets/elbowsczy/jane/walk3.png" type="Texture" id=15]
+[ext_resource path="res://team-assets/elbowsczy/jane/walk4.png" type="Texture" id=16]
+[ext_resource path="res://team-assets/elbowsczy/jane/shout0.png" type="Texture" id=17]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 140, 460 )
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "wakeup",
+"speed": 5.0
+} ]
 
 [node name="EarthlingBase" instance=ExtResource( 1 )]
 
-audio_gap_idle = 1.0
-audio_gap_alert = 1.0
-audio_gap_chase = 1.0
+living_floor = 2
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+
+position = Vector2( 30, -450 )
+shape = SubResource( 2 )
+
+[node name="Eyes" parent="." index="1"]
+
+position = Vector2( 0, -750 )
+
+[node name="AudioListings" parent="." index="3"]
+
+editor/display_folded = false
 
 [node name="idle_1" parent="AudioListings" index="0"]
 
@@ -52,5 +94,19 @@ stream = ExtResource( 9 )
 [node name="chase_5" parent="AudioListings" index="10"]
 
 stream = ExtResource( 10 )
+
+[node name="Animations" parent="." index="4"]
+
+position = Vector2( 20, -440 )
+frames = SubResource( 1 )
+animation = "idle"
+playing = true
+
+[node name="progress" parent="." index="5"]
+
+margin_left = -100.0
+margin_top = -1050.0
+margin_right = 86.0
+margin_bottom = -1070.0
 
 

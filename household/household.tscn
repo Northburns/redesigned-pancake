@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://placeholder_art/kenney_platformer/Backgrounds/colored_grass.png" type="Texture" id=1]
 [ext_resource path="res://household/camera/camera_handler.gd" type="Script" id=2]
@@ -15,9 +15,12 @@
 [ext_resource path="res://household/Tileset_walls.tres" type="TileSet" id=13]
 [ext_resource path="res://level-elements/action-areas/rummage-point.tscn" type="PackedScene" id=14]
 [ext_resource path="res://level-elements/family/Dog.tscn" type="PackedScene" id=15]
-[ext_resource path="res://alien/alien.tscn" type="PackedScene" id=16]
-[ext_resource path="res://placeholder_art/godot_tutorials/light.png" type="Texture" id=17]
-[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=18]
+[ext_resource path="res://level-elements/family/Henry.tscn" type="PackedScene" id=16]
+[ext_resource path="res://level-elements/family/Rebecca.tscn" type="PackedScene" id=17]
+[ext_resource path="res://level-elements/family/Jane.tscn" type="PackedScene" id=18]
+[ext_resource path="res://alien/alien.tscn" type="PackedScene" id=19]
+[ext_resource path="res://placeholder_art/godot_tutorials/light.png" type="Texture" id=20]
+[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -29,7 +32,7 @@ extents = Vector2( 2580, 1020 )
 custom_solver_bias = 0.0
 extents = Vector2( 2000, 250 )
 
-[node name="household" type="Node2D"]
+[node name="household" type="Node2D" index="0"]
 
 [node name="Background" type="CanvasLayer" parent="." index="0"]
 
@@ -432,29 +435,45 @@ __meta__ = {
 
 position = Vector2( 320, -60 )
 
-[node name="Dog" parent="Spatial" index="7" instance=ExtResource( 15 )]
+[node name="BonBon" parent="Spatial" index="7" instance=ExtResource( 15 )]
 
-position = Vector2( 340, -300 )
+position = Vector2( 4380, -110 )
+chase_speed_multiplier = 5
 
-[node name="player_back" type="Node" parent="Spatial" index="8" groups=[
+[node name="Henry" parent="Spatial" index="8" instance=ExtResource( 16 )]
+
+position = Vector2( 9450, -110 )
+speed = 50.0
+
+[node name="Rebecca" parent="Spatial" index="9" instance=ExtResource( 17 )]
+
+position = Vector2( 4850, -2280 )
+speed = 50.0
+
+[node name="Jane" parent="Spatial" index="10" instance=ExtResource( 18 )]
+
+position = Vector2( 9480, -2320 )
+speed = 50.0
+
+[node name="player_back" type="Node" parent="Spatial" index="11" groups=[
 "player_back",
 ]]
 
-[node name="player" parent="Spatial" index="9" instance=ExtResource( 16 )]
+[node name="player" parent="Spatial" index="12" instance=ExtResource( 19 )]
 
 position = Vector2( -640, -30 )
 
-[node name="CanvasModulate" type="CanvasModulate" parent="Spatial" index="10"]
+[node name="CanvasModulate" type="CanvasModulate" parent="Spatial" index="13"]
 
 position = Vector2( -67.5358, 32.2997 )
 color = Color( 0.417969, 0.417969, 0.417969, 1 )
 
-[node name="Light2D" type="Light2D" parent="Spatial" index="11"]
+[node name="Light2D" type="Light2D" parent="Spatial" index="14"]
 
 position = Vector2( 2630, -1600 )
 enabled = true
 editor_only = false
-texture = ExtResource( 17 )
+texture = ExtResource( 20 )
 offset = Vector2( 0, 0 )
 texture_scale = 2.56
 color = Color( 1, 1, 1, 1 )
@@ -483,7 +502,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="HUD" parent="GUI" index="0" instance=ExtResource( 18 )]
+[node name="HUD" parent="GUI" index="0" instance=ExtResource( 21 )]
 
 anchor_bottom = 1.0
 margin_left = 0.0

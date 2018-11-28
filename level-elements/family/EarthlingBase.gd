@@ -5,6 +5,8 @@ export var suspicion_cooldown_speed = 5.0
 export var vision_length = 1000.0
 export var darkvision_length = 400.0
 
+export var living_floor = 1
+export var chase_speed_multiplier = 2
 
 export var audio_gap_idle = 1.0
 export var audio_gap_alert = 1.0
@@ -18,7 +20,7 @@ export(String, FILE, "*.gd") var script_chase = "res://level-elements/family/Ear
 # JUST HARDCODE THE LEVEL LIMITS.
 const LEFT_LIMIT_FLOOR_1 = 3000
 const LEFT_LIMIT_FLOOR_2 = 2320
-const RIGHT_LIMIT = 12480
+const RIGHT_LIMIT = 12640
 const STAIRS_FLOOR_1 = 8640
 const STAIRS_FLOOR_2 = 8000
 
@@ -46,6 +48,7 @@ onready var gd_chase = load(script_chase).new()
 
 onready var initial_position = self.position
 
+var moving_left = true
 var paused
 
 func _ready():
@@ -73,7 +76,6 @@ func _process(delta):
 			yield(animations, "animation_finished")
 			self.paused = false
 			animations.play("walk")
-	cooldown(delta)
 	update_progressbar()
 	var s
 	match state:
@@ -85,19 +87,45 @@ func _process(delta):
 	# I mean, in that case, why not just export them all from this script? 
 	# They'd be as easy to set that way. Even more so :)
 	
-	position.x -= delta * speed
+	move_and_flip_animation(delta)
 	
 	# Can see?
 	if can_see_player():
 		suspicion_gauge += delta * 100.0
 		#print("CAN SEE!!!")
 	else:
-		#print("Noooo")
-		pass
+		cooldown(delta)
 	
 #	print("STATE: "+str(state))
 #	print("SUSPI: "+str(suspicion_gauge))
 	update()
+
+func move_and_flip_animation(delta):
+	if state == STATE.IDLE:
+		return
+	
+	var multi = chase_speed_multiplier if state == STATE.CHASE else 1
+	print("SPEED:"+str(speed))
+	print("MULTI: "+str(multi))
+	
+	var limit_left = LEFT_LIMIT_FLOOR_1 if living_floor == 1 else LEFT_LIMIT_FLOOR_2
+	var limit_right = RIGHT_LIMIT
+	var disposition = delta * speed * multi
+	var x = global_position.x
+	
+	if moving_left and x - disposition < limit_left:
+		moving_left = false
+	elif not moving_left and x + disposition > limit_right:
+		moving_left = true
+	
+	var m = 1
+	if moving_left:
+		position.x -= disposition
+	else:
+		position.x += disposition
+		m = -1
+	animations.set_scale(Vector2(m * abs(animations.scale.x), animations.scale.y))
+	
 	
 func can_see_player():
 	var eye_pos = eyes.global_position
@@ -141,8 +169,10 @@ func update_progressbar():
 	progress.visible = true
 	match state:
 		STATE.IDLE:
+			progress.modulate = Color(suspicion_gauge / THRESHOLD_ALERT, 1.0, 0.0)
 			progress.max_value = THRESHOLD_ALERT
 		STATE.ALERT: 
+			progress.modulate = Color(1.0, 1.0 - suspicion_gauge / THRESHOLD_ALERT, 0.0)
 			progress.max_value = THRESHOLD_CHASE
 		STATE.CHASE:
 			progress.visible = false
@@ -159,8 +189,10 @@ func play_audio():
 			a = audios.random_chase()
 
 	assert(a != null)
+	assert(a.stream != null)
 	audio.stream = a.stream
 	
+	audio.stop()
 	audio.play(0.0)
 	audio.playing = true
 	
