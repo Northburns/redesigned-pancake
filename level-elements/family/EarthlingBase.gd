@@ -140,9 +140,11 @@ func move_and_flip_animation(delta):
 		else:
 			position.x += disposition
 			m = -1
-		#position.x = to_local(Vector2(clamp(global_position.x, limit_left, limit_right), 0.0)).x
+		# Ugh, make sure they stay in bounds:
 		if global_position.x < limit_left:
 			global_position.x = limit_left
+		if global_position.x > limit_right:
+			global_position.x = limit_right
 		animations.set_scale(Vector2(m * abs(animations.scale.x), animations.scale.y))
 	
 	

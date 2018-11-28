@@ -40,7 +40,7 @@ func _ready():
 	self.lights = get_tree().get_nodes_in_group("vision_light")
 	
 	# Start music!
-	audio.music(audio.MUSIC.SNEAK)
+	pglob.escalate_music(1)
 	
 func _process(delta):
 	update_shadow_state()

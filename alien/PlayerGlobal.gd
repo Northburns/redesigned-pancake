@@ -11,6 +11,8 @@ extends Node
 #
 # XXX Heck, I could've placed constants here as well. Refactor?
 
+onready var audio = $"/root/AudioPlayer"
+
 var debug_draw = false
 
 # Updated each tick:
@@ -18,7 +20,7 @@ var in_shadows = false
 
 var current_act = 1
 
-var escalation = 1
+var escalation = 0
 
 
 func find_player():
@@ -35,8 +37,17 @@ func find_player_back():
 	return playerback[0]
 
 func escalate_music(level):
+	if level <= escalation:
+		return
+	escalation = level
 	assert(level == 1 or level == 2 or level == 3)
-	#assert(false)
+	match(level):
+		1:
+			audio.music(audio.m_sneak)
+		2:
+			audio.music(audio.m_alert)
+		3:
+			audio.music(audio.m_chase)
 	# TODO: Call the autloaded "musicplayer" node.
 	# THIS SHOULD ESCALATE THE `escalation` VARIABLE
 	# BUT ONLY UP!!! There are several callers for this.
