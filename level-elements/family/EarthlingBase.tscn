@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://level-elements/family/EarthlingBase.gd" type="Script" id=1]
 [ext_resource path="res://team-assets/sounds/repliikit/Henry_gotcha2_mixd.wav" type="AudioStream" id=2]
-[ext_resource path="res://team-assets/sounds/sfx/dog_step__5.wav" type="AudioStream" id=3]
-[ext_resource path="res://level-elements/family/AudioListings.gd" type="Script" id=4]
+[ext_resource path="res://level-elements/family/AudioListings.gd" type="Script" id=3]
 
 [node name="EarthlingBase" type="Node2D" index="0"]
 
@@ -61,29 +60,10 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="Audio2D_Steps" type="AudioStreamPlayer2D" parent="." index="3"]
-
-position = Vector2( 10, -690 )
-stream = ExtResource( 3 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = true
-max_distance = 4000.0
-attenuation = 1.0
-bus = "Earthlings"
-area_mask = 1
-
-[node name="Timer" type="Timer" parent="Audio2D_Steps" index="0"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
-
-[node name="AudioListings" type="Node" parent="." index="4"]
+[node name="AudioListings" type="Node" parent="." index="3"]
 
 editor/display_folded = true
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
 [node name="idle_1" type="AudioStreamPlayer" parent="AudioListings" index="0"]
 
@@ -193,11 +173,11 @@ autoplay = false
 mix_target = 0
 bus = "Earthlings"
 
-[node name="Animations" type="AnimatedSprite" parent="." index="5"]
+[node name="Animations" type="AnimatedSprite" parent="." index="4"]
 
 animation = "default"
 
-[node name="progress" type="ProgressBar" parent="." index="6"]
+[node name="progress" type="ProgressBar" parent="." index="5"]
 
 light_mask = 524288
 anchor_left = 0.0
@@ -227,9 +207,5 @@ _sections_unfolded = [ "Material", "Percent", "Theme", "Visibility", "custom_col
 [connection signal="finished" from="Audio2D" to="." method="_on_Audio2D_finished"]
 
 [connection signal="timeout" from="Audio2D/Timer" to="." method="_on_Timer_timeout"]
-
-[connection signal="finished" from="Audio2D_Steps" to="." method="_on_Audio2D_finished"]
-
-[connection signal="timeout" from="Audio2D_Steps/Timer" to="." method="_on_Timer_timeout"]
 
 
