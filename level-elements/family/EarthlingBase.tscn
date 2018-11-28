@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 318.046, 225.134 )
 
-[node name="EarthlingBase" type="Node2D"]
+[node name="EarthlingBase" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 speed = 50.0

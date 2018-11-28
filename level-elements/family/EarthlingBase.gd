@@ -46,26 +46,32 @@ onready var gd_chase = load(script_chase).new()
 
 onready var initial_position = self.position
 
+var paused
+
 func _ready():
 	play_audio()
 	reset()
 
 func reset():
+	paused = false
 	position = self.initial_position
 	suspicion_gauge = 0.0
 	animations.play("idle")
 	
 
 func _process(delta):
+	if paused:
+		return
 	var escalated = escalate_state()
 	if escalated:
 		play_audio()
 		if state == STATE.ALERT:
 			# Woke up
 			animations.play("wakeup")
-			print("XXX")
+			self.paused = true
+			# Why does "wakeup" have to have two frames for this to work?!
 			yield(animations, "animation_finished")
-			print("YYY")
+			self.paused = false
 			animations.play("walk")
 	cooldown(delta)
 	update_progressbar()
