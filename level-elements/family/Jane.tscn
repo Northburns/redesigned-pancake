@@ -45,6 +45,7 @@ animations = [ {
 [node name="EarthlingBase" instance=ExtResource( 1 )]
 
 living_floor = 2
+chase_strategy = 1
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 

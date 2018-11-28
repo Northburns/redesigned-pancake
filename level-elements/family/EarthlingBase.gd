@@ -7,6 +7,7 @@ export var darkvision_length = 400.0
 
 export var living_floor = 1
 export var chase_speed_multiplier = 2
+export var chase_strategy = 1 # 0 == run around the house / not-zero == chase player's x
 
 export var audio_gap_idle = 1.0
 export var audio_gap_alert = 1.0
@@ -50,6 +51,7 @@ onready var initial_position = self.position
 
 var moving_left = true
 var paused
+var last_seen_x = 0.0
 
 func _ready():
 	play_audio()
@@ -68,6 +70,7 @@ func _process(delta):
 	var escalated = escalate_state()
 	if escalated:
 		play_audio()
+		last_seen_x = player.global_position.x
 		if state == STATE.ALERT:
 			# Woke up
 			animations.play("wakeup")
@@ -92,6 +95,7 @@ func _process(delta):
 	# Can see?
 	if can_see_player():
 		suspicion_gauge += delta * 100.0
+		last_seen_x = player.global_position.x
 		#print("CAN SEE!!!")
 	else:
 		cooldown(delta)
@@ -105,26 +109,41 @@ func move_and_flip_animation(delta):
 		return
 	
 	var multi = chase_speed_multiplier if state == STATE.CHASE else 1
-	print("SPEED:"+str(speed))
-	print("MULTI: "+str(multi))
-	
 	var limit_left = LEFT_LIMIT_FLOOR_1 if living_floor == 1 else LEFT_LIMIT_FLOOR_2
 	var limit_right = RIGHT_LIMIT
 	var disposition = delta * speed * multi
 	var x = global_position.x
 	
-	if moving_left and x - disposition < limit_left:
-		moving_left = false
-	elif not moving_left and x + disposition > limit_right:
-		moving_left = true
 	
-	var m = 1
-	if moving_left:
-		position.x -= disposition
+	var just_stop = false
+	
+	if chase_strategy == 0:
+		if moving_left and x - disposition < limit_left:
+			moving_left = false
+		elif not moving_left and x + disposition > limit_right:
+			moving_left = true
 	else:
-		position.x += disposition
-		m = -1
-	animations.set_scale(Vector2(m * abs(animations.scale.x), animations.scale.y))
+		# TODO: Doesn't work as intended
+		# But works fine, I guess :)
+		if abs(x - last_seen_x) <= 2 * disposition:
+			# Very close to the last seen position,
+			# continue moving, but slower
+			disposition *= 0.2
+		else:
+			# Otherwise, adjust direction
+			moving_left = x > last_seen_x
+	
+	if not just_stop:
+		var m = 1
+		if moving_left:
+			position.x -= disposition
+		else:
+			position.x += disposition
+			m = -1
+		#position.x = to_local(Vector2(clamp(global_position.x, limit_left, limit_right), 0.0)).x
+		if global_position.x < limit_left:
+			global_position.x = limit_left
+		animations.set_scale(Vector2(m * abs(animations.scale.x), animations.scale.y))
 	
 	
 func can_see_player():

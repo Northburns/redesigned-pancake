@@ -15,6 +15,7 @@ vision_length = 1000.0
 darkvision_length = 400.0
 living_floor = 1
 chase_speed_multiplier = 2
+chase_strategy = 1
 audio_gap_idle = 1.0
 audio_gap_alert = 1.0
 audio_gap_chase = 1.0

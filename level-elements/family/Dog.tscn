@@ -44,6 +44,7 @@ animations = [ {
 
 speed = 300.0
 chase_speed_multiplier = 10
+chase_strategy = 1
 audio_gap_idle = 0.0
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
@@ -88,6 +89,7 @@ stream = ExtResource( 8 )
 position = Vector2( -27.5206, -306.576 )
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="progress" parent="." index="5"]

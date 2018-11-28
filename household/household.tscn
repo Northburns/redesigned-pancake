@@ -443,17 +443,14 @@ chase_speed_multiplier = 5
 [node name="Henry" parent="Spatial" index="8" instance=ExtResource( 16 )]
 
 position = Vector2( 9450, -110 )
-speed = 50.0
 
 [node name="Rebecca" parent="Spatial" index="9" instance=ExtResource( 17 )]
 
 position = Vector2( 4850, -2280 )
-speed = 50.0
 
 [node name="Jane" parent="Spatial" index="10" instance=ExtResource( 18 )]
 
 position = Vector2( 9480, -2320 )
-speed = 50.0
 
 [node name="player_back" type="Node" parent="Spatial" index="11" groups=[
 "player_back",
