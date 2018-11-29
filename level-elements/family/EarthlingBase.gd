@@ -42,6 +42,8 @@ onready var audioTimerIdle = $Audio2D/Timer
 onready var audios = $AudioListings
 onready var animations = $Animations
 
+export var escalates = true
+
 onready var gd_idle = load(script_idle).new()
 onready var gd_alert = load(script_alert).new()
 onready var gd_chase = load(script_chase).new()
@@ -154,8 +156,6 @@ func can_see_player():
 	var ray_see = result.empty() or player == result["collider"]
 	var distance = eye_pos.distance_to(plr_pos)
 	var max_length = darkvision_length if pglob.in_shadows else vision_length
-	if name == "BonBon":
-		print("SEE? " + str(ray_see) + " , distance? " + str(distance < max_length))
 		#print(result["collider"].name)
 	return ray_see and distance < max_length
 
@@ -164,11 +164,14 @@ func escalate_state():
 	while state == STATE.IDLE and suspicion_gauge >= THRESHOLD_ALERT:
 		state = STATE.ALERT
 		escalated = true
-		pglob.escalate_music(2)
+		print(escalates)
+		if escalates:
+			pglob.escalate_music(2)
 	while state == STATE.ALERT and suspicion_gauge >= THRESHOLD_CHASE:
 		state = STATE.CHASE
 		escalated = true
-		pglob.escalate_music(3)
+		if escalates:
+			pglob.escalate_music(3)
 	return escalated
 
 func suspicion_percentage():
@@ -178,6 +181,8 @@ func act_idle():
 	pass
 
 func cooldown(delta):
+	if pglob.escalation >= 2:
+		return
 	var minimum = 0.0
 	match state:
 		STATE.ALERT: minimum = THRESHOLD_ALERT

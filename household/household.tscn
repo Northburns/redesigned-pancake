@@ -69,7 +69,7 @@ extents = Vector2( 4992, 256 )
 custom_solver_bias = 0.0
 extents = Vector2( 896, 768 )
 
-[node name="household" type="Node2D" index="0"]
+[node name="household" type="Node2D"]
 
 [node name="Background" type="CanvasLayer" parent="." index="0"]
 
@@ -284,6 +284,7 @@ texture = ExtResource( 3 )
 
 [node name="ufoRed" type="Sprite" parent="Spatial/Backyard" index="1"]
 
+editor/display_folded = true
 position = Vector2( -1145.65, -1957.25 )
 rotation = -0.604323
 scale = Vector2( 13.7297, 17.0408 )
@@ -498,7 +499,7 @@ enabled = true
 editor_only = false
 texture = ExtResource( 22 )
 offset = Vector2( 0, 0 )
-texture_scale = 5.0
+texture_scale = 10.0
 color = Color( 1, 1, 1, 1 )
 energy = 1.0
 mode = 0

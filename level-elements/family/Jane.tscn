@@ -12,18 +12,18 @@
 [ext_resource path="res://team-assets/sounds/repliikit/Jane_mom2_mixd.wav" type="AudioStream" id=10]
 [ext_resource path="res://team-assets/elbowsczy/jane/play1.png" type="Texture" id=11]
 [ext_resource path="res://team-assets/elbowsczy/jane/play2.png" type="Texture" id=12]
-[ext_resource path="res://team-assets/elbowsczy/jane/walk1.png" type="Texture" id=13]
-[ext_resource path="res://team-assets/elbowsczy/jane/walk2.png" type="Texture" id=14]
-[ext_resource path="res://team-assets/elbowsczy/jane/walk3.png" type="Texture" id=15]
-[ext_resource path="res://team-assets/elbowsczy/jane/walk4.png" type="Texture" id=16]
-[ext_resource path="res://team-assets/elbowsczy/jane/shout0.png" type="Texture" id=17]
+[ext_resource path="res://team-assets/elbowsczy/jane/shout0.png" type="Texture" id=13]
+[ext_resource path="res://team-assets/elbowsczy/jane/walk1.png" type="Texture" id=14]
+[ext_resource path="res://team-assets/elbowsczy/jane/walk2.png" type="Texture" id=15]
+[ext_resource path="res://team-assets/elbowsczy/jane/walk3.png" type="Texture" id=16]
+[ext_resource path="res://team-assets/elbowsczy/jane/walk4.png" type="Texture" id=17]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 140, 460 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
@@ -31,26 +31,26 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "wakeup",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
 } ]
 
-[node name="EarthlingBase" instance=ExtResource( 1 )]
+[node name="EarthlingBase" index="0" instance=ExtResource( 1 )]
 
 living_floor = 2
-chase_strategy = 1
+escalates = false
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 
 position = Vector2( 30, -450 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Eyes" parent="." index="1"]
 
@@ -99,15 +99,8 @@ stream = ExtResource( 10 )
 [node name="Animations" parent="." index="4"]
 
 position = Vector2( 20, -440 )
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "idle"
 playing = true
-
-[node name="progress" parent="." index="5"]
-
-margin_left = -100.0
-margin_top = -1050.0
-margin_right = 86.0
-margin_bottom = -1070.0
 
 

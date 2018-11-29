@@ -22,6 +22,7 @@ audio_gap_chase = 1.0
 script_idle = "res://level-elements/family/EarthlingBase_idle.gd"
 script_alert = "res://level-elements/family/EarthlingBase_alert.gd"
 script_chase = "res://level-elements/family/EarthlingBase_chase.gd"
+escalates = true
 
 [node name="HitBox" type="Area2D" parent="." index="0"]
 

@@ -47,6 +47,7 @@ vision_length = 4000.0
 darkvision_length = 1000.0
 chase_speed_multiplier = 10
 audio_gap_idle = 0.0
+escalates = true
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 
