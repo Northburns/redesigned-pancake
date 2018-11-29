@@ -24,6 +24,20 @@ func player_speak_jump2():
 		0: player_speak(r_jump2_a)
 		1: player_speak(r_jump2_b)
 
+func player_speak_rummage():
+	match randi()%3:
+		0: player_speak(r_rumm1)
+		1: player_speak(r_rumm2)
+		2: player_speak(r_rumm3)
+
+func player_speak_omnom():
+	match randi()%5:
+		0: player_speak(r_omnom1)
+		1: player_speak(r_omnom2)
+		2: player_speak(r_omnom3)
+		3: player_speak(r_omnom4)
+		4: player_speak(r_omnom5)
+
 func player_speak(f, interrupt = true):
 	if not interrupt and player.playing:
 		return
@@ -64,7 +78,14 @@ var r_jump2_b = load("res://team-assets/sounds/repliikit/Nooccar_wheheeee_mixd.w
 var r_hiiop = load("res://team-assets/sounds/repliikit/Nooccar_hiiop_mixd.wav")
 var r_hmm1 = load("res://team-assets/sounds/repliikit/Nooccar_hmm1_mixd.wav")
 var r_hmm2 = load("res://team-assets/sounds/repliikit/Nooccar_hmm2_mixd.wav")
-
+var r_rumm1 = load("res://team-assets/sounds/repliikit/Nooccar_haa_mixd.wav")
+var r_rumm2 = load("res://team-assets/sounds/repliikit/Nooccar_wuhuu_mixd.wav")
+var r_rumm3 = load("res://team-assets/sounds/repliikit/Nooccar_yess_mixd.wav")
+var r_omnom1 = load("res://team-assets/sounds/repliikit/Nooccar_eat1_mixd.wav")
+var r_omnom2 = load("res://team-assets/sounds/repliikit/Nooccar_eat2_mixd.wav")
+var r_omnom3 = load("res://team-assets/sounds/repliikit/Nooccar_eat3_mixd.wav")
+var r_omnom4 = load("res://team-assets/sounds/repliikit/Nooccar_omnom1_mixd.wav")
+var r_omnom5 = load("res://team-assets/sounds/repliikit/Nooccar_omnom2_mixd.wav")
 
 var fl_levitator = load("res://team-assets/sounds/sfx/levitator.wav")
 

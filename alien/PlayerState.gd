@@ -93,3 +93,4 @@ class PState:
 		# thing is not defined in states. It's ok :smile: )
 		if state == s_floor or state == s_jumping:
 			collectible.queue_free()
+			audio.player_speak_omnom()

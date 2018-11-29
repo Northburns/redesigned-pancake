@@ -20,6 +20,7 @@ class Rummaging:
 	var action_area_ref
 	var rummaging_speed
 	var rummage_time = 0.0
+	var speaking_timer = 0.0
 
 	const rummage_warmup_time = 0.4
 	var warmed_up = false
@@ -45,10 +46,12 @@ class Rummaging:
 			return
 
 		rummage_time += delta
+		speaking_timer += delta
 
 		if not warmed_up and rummage_time >= rummage_warmup_time:
 			rummage_time -= rummage_warmup_time
 			warmed_up = true
+			audio.player_speak_rummage()
 
 		while warmed_up and rummage_time >= rummaging_speed:
 			rummage_time -= rummaging_speed
@@ -58,6 +61,11 @@ class Rummaging:
 			# `is_instance_valid()` is not yet in 3.0.6 ?
 			if action_area_ref.get_ref():
 				action_area.rummage_collectable_node()
+		
+		while speaking_timer >= 2.0:
+			speaking_timer -= 2.0
+			if action_area_ref.get_ref():
+				audio.player_speak_rummage()
 		
 		#action_area.disable()
 

@@ -457,7 +457,7 @@ chase_speed_multiplier = 5
 
 [node name="Henry" parent="Spatial" index="8" instance=ExtResource( 16 )]
 
-position = Vector2( 9450, -110 )
+position = Vector2( 9478, -95 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="Rebecca" parent="Spatial" index="9" instance=ExtResource( 17 )]
@@ -510,6 +510,9 @@ shadow_item_cull_mask = 1
 _sections_unfolded = [ "Shadow" ]
 
 [node name="CameraAreas" type="Node2D" parent="Spatial" index="15"]
+
+editor/display_folded = true
+visible = false
 
 [node name="Kitchen" type="Area2D" parent="Spatial/CameraAreas" index="0"]
 
