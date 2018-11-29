@@ -32,11 +32,11 @@ func player_speak_rummage():
 
 func player_speak_omnom():
 	match randi()%5:
-		0: player_speak(r_omnom1)
-		1: player_speak(r_omnom2)
-		2: player_speak(r_omnom3)
-		3: player_speak(r_omnom4)
-		4: player_speak(r_omnom5)
+		0: player_speak(r_omnom1, false)
+		1: player_speak(r_omnom2, false)
+		2: player_speak(r_omnom3, false)
+		3: player_speak(r_omnom4, false)
+		4: player_speak(r_omnom5, false)
 
 func player_speak(f, interrupt = true):
 	if not interrupt and player.playing:

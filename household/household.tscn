@@ -24,47 +24,47 @@
 [ext_resource path="res://placeholder_art/godot_tutorials/light.png" type="Texture" id=22]
 [ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=23]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2000, 250 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2688, 1020 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 1792, 1020 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 640, 768 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2560, 896 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 1664, 896 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
 extents = Vector2( 1280, 896 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 
 custom_solver_bias = 0.0
 extents = Vector2( 4992, 256 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=10]
 
 custom_solver_bias = 0.0
 extents = Vector2( 896, 768 )
@@ -294,7 +294,7 @@ c_margin_left = 10.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/AirDucts/Area2D" index="0"]
 
 position = Vector2( 4110, -2260 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Teleport-Area" parent="Spatial/AirDucts" index="1" instance=ExtResource( 8 )]
 
@@ -478,9 +478,12 @@ scale = Vector2( 0.75, 0.75 )
 
 [node name="Television" type="Sprite" parent="Spatial" index="12"]
 
-position = Vector2( 134, -264 )
+position = Vector2( 11270, -392 )
 texture = ExtResource( 19 )
 script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
 color_rotation_speed = 0.6
 energy_change_speed = 0.5
 
@@ -490,7 +493,7 @@ enabled = true
 editor_only = false
 texture = ExtResource( 6 )
 offset = Vector2( 0, 0 )
-texture_scale = 6.0
+texture_scale = 8.0
 color = Color( 1, 1, 1, 1 )
 energy = 1.0
 mode = 0
@@ -572,7 +575,7 @@ c_margin_left = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Kitchen" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="LivingRoom" type="Area2D" parent="Spatial/CameraAreas" index="1"]
@@ -599,7 +602,7 @@ c_margin_left = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/LivingRoom" index="0"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Hall_Down" type="Area2D" parent="Spatial/CameraAreas" index="2"]
@@ -626,7 +629,7 @@ c_margin_left = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Hall_Down" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Study" type="Area2D" parent="Spatial/CameraAreas" index="3"]
@@ -654,7 +657,7 @@ c_margin_left = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Study" index="0"]
 
 position = Vector2( 1024, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="KidRoom" type="Area2D" parent="Spatial/CameraAreas" index="4"]
@@ -682,7 +685,7 @@ c_margin_left = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/KidRoom" index="0"]
 
 position = Vector2( 1024, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Hall_Up" type="Area2D" parent="Spatial/CameraAreas" index="5"]
@@ -710,7 +713,7 @@ c_margin_left = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Hall_Up" index="0"]
 
 position = Vector2( 1024, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Duct_1" type="Area2D" parent="Spatial/CameraAreas" index="6"]
@@ -738,7 +741,7 @@ c_margin_left = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Duct_1" index="0"]
 
 position = Vector2( 1024, 128 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Secret" type="Area2D" parent="Spatial/CameraAreas" index="7"]
@@ -765,7 +768,7 @@ c_margin_left = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Secret" index="0"]
 
 position = Vector2( 128, 0 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="GUI" type="CanvasLayer" parent="." index="4"]
