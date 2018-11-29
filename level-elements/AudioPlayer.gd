@@ -52,7 +52,7 @@ func action_stop():
 
 var m_menu = load("res://team-assets/sounds/Pussyble Mizzione.ogg")
 var m_hiscore= load("res://team-assets/sounds/highscore.ogg")
-var m_sneak = load("res://team-assets/sounds/Pussyble Mizzione.ogg")
+var m_sneak = load("res://team-assets/sounds/hiippailumusaa.ogg")
 var m_chase = load("res://team-assets/sounds/actionmusa.ogg")
 var m_alert = load("res://team-assets/sounds/alerttimusa.ogg")
 
