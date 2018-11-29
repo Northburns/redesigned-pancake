@@ -41,3 +41,8 @@
 #*.svg text
 *.eps binary
 
+# Audio
+*.wav binary
+*.ogg binary
+
+
