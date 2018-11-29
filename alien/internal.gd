@@ -76,14 +76,6 @@ func update_shadow_state():
 	#else:
 	#	print("HIDDEN - ")
 	#print("IN SHADOWS: "+ str(!in_light))
-	update()
-
-func _draw():
-	var plr_pos = body.global_position
-	var in_light = false
-	for light in self.lights:
-		var light_pos = light.global_position
-		draw_line(to_local(plr_pos), to_local(light_pos), Color(255,0,255))
 
 func _action_area_entered(p, area):
 	if p == body:

@@ -102,7 +102,6 @@ func _process(delta):
 	
 #	print("STATE: "+str(state))
 #	print("SUSPI: "+str(suspicion_gauge))
-	update()
 
 func move_and_flip_animation(delta):
 	if state == STATE.IDLE:
@@ -157,14 +156,6 @@ func can_see_player():
 	var distance = eye_pos.distance_to(plr_pos)
 	var max_length = darkvision_length if pglob.in_shadows else vision_length
 	return ray_see and distance < max_length
-
-func _draw():
-	if pglob.debug_draw:
-		draw_circle(eyes.position, vision_length, Color(0.0, 1.0, 1.0, 0.1))
-		draw_circle(eyes.position, darkvision_length, Color(0.0, 1.0, 1.0, 0.1))
-		draw_line(eyes.position, to_local(player.global_position), Color(0, 255, 255))
-		update()
-		
 
 func escalate_state():
 	var escalated = false
