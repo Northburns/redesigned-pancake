@@ -13,4 +13,3 @@ func _process(delta):
 	
 	light.color = color
 	light.energy = wrapf(light.energy + delta * energy_change_speed, 0.6, 0.9)
-	print(light.energy)

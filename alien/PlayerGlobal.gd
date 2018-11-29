@@ -19,6 +19,7 @@ var debug_draw = false
 var in_shadows = false
 
 var current_act = 1
+var time_left = 6500
 
 var escalation = 0
 

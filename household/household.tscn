@@ -786,5 +786,9 @@ margin_left = 0.0
 margin_top = 0.0
 margin_right = 0.0
 margin_bottom = 0.0
+rebecca = NodePath("../../Spatial/Rebecca")
+jane = NodePath("../../Spatial/Jane")
+bonbon = NodePath("../../Spatial/BonBon")
+henry = NodePath("../../Spatial/Henry")
 
 

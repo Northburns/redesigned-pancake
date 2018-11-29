@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://hud/HUD.gd" type="Script" id=1]
 [ext_resource path="res://placeholder_art/kenney_gui_modded/glassPanel_cornerBR.png" type="Texture" id=2]
@@ -6,12 +6,13 @@
 [ext_resource path="res://hud/bar_batteries.tscn" type="PackedScene" id=4]
 [ext_resource path="res://hud/font_kenvector_future_thin.tres" type="DynamicFont" id=5]
 [ext_resource path="res://hud/TimeLabel.gd" type="Script" id=6]
-[ext_resource path="res://placeholder_art/kenney_gui_modded/metalPanel.png" type="Texture" id=7]
-[ext_resource path="res://placeholder_art/kenney_gui_modded/dot_shadow.png" type="Texture" id=8]
-[ext_resource path="res://placeholder_art/kenney_gui_modded/dotBlue.png" type="Texture" id=9]
-[ext_resource path="res://placeholder_art/game-icons/time-trap.png" type="Texture" id=10]
+[ext_resource path="res://hud/DangerLabel.gd" type="Script" id=7]
+[ext_resource path="res://placeholder_art/kenney_gui_modded/metalPanel.png" type="Texture" id=8]
+[ext_resource path="res://placeholder_art/kenney_gui_modded/dot_shadow.png" type="Texture" id=9]
+[ext_resource path="res://placeholder_art/kenney_gui_modded/dotBlue.png" type="Texture" id=10]
+[ext_resource path="res://placeholder_art/game-icons/time-trap.png" type="Texture" id=11]
 
-[node name="HUD" type="Container" index="0"]
+[node name="HUD" type="Container"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -19,8 +20,8 @@ anchor_right = 1.0
 anchor_bottom = 0.0
 margin_left = 23.0
 margin_top = 38.0
-margin_right = -121.0
-margin_bottom = 760.0
+margin_right = -181.0
+margin_bottom = 674.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -28,15 +29,19 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
+rebecca = null
+jane = null
+bonbon = null
+henry = null
 
 [node name="glass" type="Container" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
-anchor_bottom = 1.0
+anchor_bottom = 0.0
 margin_right = 182.0
-margin_bottom = -231.0
+margin_bottom = 503.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -51,7 +56,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -60.0
+margin_bottom = -85.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -154,11 +159,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 67.0
-margin_top = 262.0
-margin_right = 169.0
-margin_bottom = 280.0
-rect_rotation = 1.33117
+margin_left = 69.0
+margin_top = 261.0
+margin_right = 171.0
+margin_bottom = 279.0
+rect_rotation = 4.12199
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -190,17 +195,51 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Label2" type="Label" parent="glass" index="6"]
+[node name="grid" type="HSeparator" parent="glass" index="6"]
 
 anchor_left = 0.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = 12.0
-margin_top = 45.5
-margin_right = 12.0
-margin_bottom = 63.5
-rect_rotation = 6.45672
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 15.0
+margin_top = 354.0
+margin_right = 171.0
+margin_bottom = 366.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="VSeparator" type="VSeparator" parent="glass/grid" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 75.0
+margin_top = -35.0
+margin_right = 79.0
+margin_bottom = 57.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Rebecca" type="Label" parent="glass/grid" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -19.0
+margin_top = -40.0
+margin_right = 83.0
+margin_bottom = -22.0
+rect_rotation = 18.0576
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -208,12 +247,113 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 5 )
-text = "Warning!"
-align = 1
+text = "6542"
+align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="Jane" type="Label" parent="glass/grid" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = -4.0
+margin_right = 152.0
+margin_bottom = 14.0
+rect_rotation = -18.7425
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "6542"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="Bonbon" type="Label" parent="glass/grid" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -28.0
+margin_top = 24.0
+margin_right = 74.0
+margin_bottom = 42.0
+rect_rotation = -0.653054
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "6542"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="Henry" type="Label" parent="glass/grid" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 55.0
+margin_top = 33.0
+margin_right = 157.0
+margin_bottom = 51.0
+rect_rotation = -7.86304
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "6542"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="glass" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 5.0
+margin_top = 46.5
+margin_right = 5.0
+margin_bottom = 64.5
+rect_rotation = 6.45672
+rect_pivot_offset = Vector2( 95, 10 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "Danger!"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 7 )
+_sections_unfolded = [ "Rect", "Theme", "custom_fonts" ]
 
 [node name="glass2" type="Container" parent="." index="1"]
 
@@ -369,7 +509,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
@@ -429,9 +569,9 @@ page = 0.0
 value = 33.0
 exp_edit = false
 rounded = true
-texture_under = ExtResource( 8 )
+texture_under = ExtResource( 9 )
 texture_over = null
-texture_progress = ExtResource( 9 )
+texture_progress = ExtResource( 10 )
 fill_mode = 5
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
@@ -456,7 +596,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 expand = true
 stretch_mode = 6
 _sections_unfolded = [ "Size Flags" ]

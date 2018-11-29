@@ -28,7 +28,7 @@ const STAIRS_FLOOR_2 = 8000
 var suspicion_gauge = 0.0
 
 const THRESHOLD_ALERT = 100.0
-const THRESHOLD_CHASE = 100.0
+const THRESHOLD_CHASE = 200.0
 
 enum STATE { IDLE, ALERT, CHASE }
 var state = STATE.IDLE
@@ -160,22 +160,27 @@ func can_see_player():
 func escalate_state():
 	var escalated = false
 	while state == STATE.IDLE and suspicion_gauge >= THRESHOLD_ALERT:
-		suspicion_gauge -= THRESHOLD_ALERT
 		state = STATE.ALERT
 		escalated = true
 		pglob.escalate_music(2)
 	while state == STATE.ALERT and suspicion_gauge >= THRESHOLD_CHASE:
-		suspicion_gauge -= THRESHOLD_CHASE
 		state = STATE.CHASE
 		escalated = true
 		pglob.escalate_music(3)
 	return escalated
 
+func suspicion_percentage():
+	return clamp(suspicion_gauge / THRESHOLD_CHASE, 0.0, 1.0)
+
 func act_idle():
 	pass
 
 func cooldown(delta):
-	suspicion_gauge = clamp(suspicion_gauge - delta * suspicion_cooldown_speed, 0.0, INF)
+	var minimum = 0.0
+	match state:
+		STATE.ALERT: minimum = THRESHOLD_ALERT
+		STATE.CHASE: minimum = THRESHOLD_CHASE
+	suspicion_gauge = clamp(suspicion_gauge - delta * suspicion_cooldown_speed, minimum, THRESHOLD_CHASE)
 
 func update_progressbar():
 	progress.visible = true
