@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 60, 60 )
 
-[node name="Rummage-Area" type="Sprite" index="0" groups=[
+[node name="Rummage-Area" type="Sprite" groups=[
 "action_area",
 "rummage",
 ]]
