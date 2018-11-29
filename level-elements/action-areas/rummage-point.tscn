@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 60, 60 )
 
-[node name="Rummage-Area" type="Sprite" groups=[
+[node name="Rummage-Area" type="Sprite" index="0" groups=[
 "action_area",
 "rummage",
 ]]
@@ -62,5 +62,14 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
+
+[node name="tween" type="Tween" parent="." index="2"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
 
 
