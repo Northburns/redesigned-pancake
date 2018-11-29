@@ -19,8 +19,6 @@ class Rummaging:
 	var action_area
 	var action_area_ref
 	var rummaging_speed
-	var tween
-	var tween_ref
 	var camera
 	var camera_zoom
 	var rummage_time = 0.0
@@ -38,8 +36,6 @@ class Rummaging:
 		self.rummaging_speed = pstate.RUMMAGING_SPEED
 		self.camera = pbody.body.get_node("camera")
 		self.camera_zoom = self.camera.zoom
-		self.tween = action_area.get_node("tween")
-		self.tween_ref = weakref(tween)
 
 		pbody.velocity = Vector2(0.0, 0.0)
 		warmed_up = false
@@ -48,15 +44,8 @@ class Rummaging:
 		audio.action_rummage()
 		
 		var target_zoom = self.camera_zoom * 0.5
-		tween_camera_zoom(self.camera_zoom, target_zoom)
-		yield(tween, "tween_completed")
+		self.camera.tween_zoom(target_zoom, 0.7)
 	
-	func tween_camera_zoom(from, to):
-		if tween_ref:
-			tween.stop_all()
-			tween.interpolate_method(self.camera, "set_zoom", from, to, 0.7, Tween.TRANS_LINEAR, Tween.EASE_IN)
-			tween.start()
-		
 
 	func act(delta):
 		if not pinput.a:
@@ -64,8 +53,8 @@ class Rummaging:
 			audio.action_stop()
 			pstate.s_floor.activate()
 			
-			tween_camera_zoom(self.camera.zoom, self.camera_zoom)
-			yield(tween, "tween_completed")
+			self.camera.tween_zoom(self.camera_zoom, 0.7)
+			#yield(tween, "tween_completed")
 			
 			return
 
