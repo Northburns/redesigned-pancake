@@ -17,6 +17,9 @@ class PAnim:
 		var m = -1 if mirror == MIRROR.LEFT else 1
 		anim.set_scale(Vector2(m * abs(anim.scale.x), anim.scale.y))
 	
-	func let_play(anim_name, blend = 0.3):
+	func play(anim_name, blend = 0.1):
+		pl.play(anim_name, blend)
+	
+	func let_play(anim_name, blend = 0.1):
 		if pl.current_animation != anim_name:
 			pl.play(anim_name, blend)

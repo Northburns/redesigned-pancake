@@ -23,6 +23,7 @@ class Levitating:
 
 		audio.player_speak(audio.r_hiiop)
 		audio.action_play(audio.fl_levitator)
+		panim.let_play("levitate")
 	
 	func clamp_speed(max_speed):
 		# Limit speed (do it by component, 

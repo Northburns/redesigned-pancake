@@ -771,7 +771,7 @@ tracks/61/keys = {
 "values": [ 23.7271, 3.87985 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 
 length = 0.8
 loop = false
@@ -781,7 +781,7 @@ tracks/0/path = NodePath("hip:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
@@ -1533,7 +1533,7 @@ tracks/62/keys = {
 "values": [ 1.01049, 21.8958 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 
 length = 1.0
 loop = true
@@ -1551,13 +1551,13 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 
 length = 1.0
 loop = false
 step = 0.1
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 
 length = 1.0
 loop = false
@@ -1923,7 +1923,7 @@ tracks/29/keys = {
 "values": [ -4.13401 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 
 length = 7.0
 loop = false
@@ -2289,7 +2289,7 @@ tracks/29/keys = {
 "values": [ -4.13401 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 
 length = 0.7
 loop = true
@@ -2499,7 +2499,7 @@ tracks/16/keys = {
 "values": [ 11.1526, 17.9079 ]
 }
 
-[node name="Nooccar" type="Node2D"]
+[node name="Nooccar" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -2593,12 +2593,12 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/fall = SubResource( 1 )
-anims/jump = SubResource( 3 )
-anims/levitate = SubResource( 4 )
-anims/levitation = SubResource( 5 )
-anims/rest = SubResource( 6 )
-"anims/rest (copy)" = SubResource( 7 )
-anims/walk = SubResource( 8 )
+anims/jump = SubResource( 2 )
+anims/levitate = SubResource( 3 )
+anims/levitation = SubResource( 4 )
+anims/rest = SubResource( 5 )
+"anims/rest (copy)" = SubResource( 6 )
+anims/walk = SubResource( 7 )
 blend_times = [  ]
 
 [node name="Leg_left_b" type="Sprite" parent="." index="3"]

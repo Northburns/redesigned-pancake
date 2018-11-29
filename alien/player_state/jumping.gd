@@ -45,7 +45,7 @@ class Jumping:
 				self.audio.player_speak_jump1()
 			1:
 				self.audio.player_speak_jump2()
-
+		panim.play("jump", 0.0)
 
 	func act(delta):
 		if pbody.is_on_floor():
