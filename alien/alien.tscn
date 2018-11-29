@@ -14,8 +14,8 @@ _sections_unfolded = [ "Resource" ]
 ]]
 
 input_pickable = false
-collision_layer = 4
-collision_mask = 1
+collision_layer = 5
+collision_mask = 524289
 collision/safe_margin = 0.08
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
 

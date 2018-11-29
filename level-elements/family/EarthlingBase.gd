@@ -41,7 +41,6 @@ onready var audio = $Audio2D
 onready var audioTimerIdle = $Audio2D/Timer
 onready var audios = $AudioListings
 onready var animations = $Animations
-onready var progress = $progress
 
 onready var gd_idle = load(script_idle).new()
 onready var gd_alert = load(script_alert).new()
@@ -79,7 +78,7 @@ func _process(delta):
 			yield(animations, "animation_finished")
 			self.paused = false
 			animations.play("walk")
-	update_progressbar()
+	
 	var s
 	match state:
 		STATE.IDLE: s = gd_idle
@@ -151,10 +150,13 @@ func can_see_player():
 	var eye_pos = eyes.global_position
 	var plr_pos = player.global_position
 	var space_state = get_world_2d().direct_space_state
-	var result = space_state.intersect_ray(eye_pos, plr_pos, [area_hitbox])
+	var result = space_state.intersect_ray(eye_pos, plr_pos, [area_hitbox], 1)
 	var ray_see = result.empty() or player == result["collider"]
 	var distance = eye_pos.distance_to(plr_pos)
 	var max_length = darkvision_length if pglob.in_shadows else vision_length
+	if name == "BonBon":
+		print("SEE? " + str(ray_see) + " , distance? " + str(distance < max_length))
+		#print(result["collider"].name)
 	return ray_see and distance < max_length
 
 func escalate_state():
@@ -181,19 +183,6 @@ func cooldown(delta):
 		STATE.ALERT: minimum = THRESHOLD_ALERT
 		STATE.CHASE: minimum = THRESHOLD_CHASE
 	suspicion_gauge = clamp(suspicion_gauge - delta * suspicion_cooldown_speed, minimum, THRESHOLD_CHASE)
-
-func update_progressbar():
-	progress.visible = true
-	match state:
-		STATE.IDLE:
-			progress.modulate = Color(suspicion_gauge / THRESHOLD_ALERT, 1.0, 0.0)
-			progress.max_value = THRESHOLD_ALERT
-		STATE.ALERT: 
-			progress.modulate = Color(1.0, 1.0 - suspicion_gauge / THRESHOLD_ALERT, 0.0)
-			progress.max_value = THRESHOLD_CHASE
-		STATE.CHASE:
-			progress.visible = false
-	progress.value = suspicion_gauge
 
 func play_audio():
 	var a
