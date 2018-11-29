@@ -4,15 +4,15 @@
 [ext_resource path="res://team-assets/sounds/repliikit/Henry_gotcha2_mixd.wav" type="AudioStream" id=2]
 [ext_resource path="res://level-elements/family/AudioListings.gd" type="Script" id=3]
 
-[node name="EarthlingBase" type="Node2D"]
+[node name="EarthlingBase" type="Node2D" index="0"]
 
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 speed = 150.0
 suspicion_cooldown_speed = 5.0
-vision_length = 1000.0
-darkvision_length = 400.0
+vision_length = 4000.0
+darkvision_length = 1000.0
 living_floor = 1
 chase_speed_multiplier = 2
 chase_strategy = 1

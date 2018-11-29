@@ -2,8 +2,8 @@ extends Node2D
 
 export var speed = 50.0
 export var suspicion_cooldown_speed = 5.0
-export var vision_length = 1000.0
-export var darkvision_length = 400.0
+export var vision_length = 4000.0
+export var darkvision_length = 1000.0
 
 export var living_floor = 1
 export var chase_speed_multiplier = 2

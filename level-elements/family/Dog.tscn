@@ -10,18 +10,18 @@
 [ext_resource path="res://team-assets/sounds/repliikit/Bonbon_haukkumurrr_mixd.wav" type="AudioStream" id=8]
 [ext_resource path="res://team-assets/elbowsczy/bonbon/zzz1.png" type="Texture" id=9]
 [ext_resource path="res://team-assets/elbowsczy/bonbon/zzz2.png" type="Texture" id=10]
-[ext_resource path="res://team-assets/elbowsczy/bonbon/walk1.png" type="Texture" id=11]
-[ext_resource path="res://team-assets/elbowsczy/bonbon/walk2.png" type="Texture" id=12]
-[ext_resource path="res://team-assets/elbowsczy/bonbon/walk3.png" type="Texture" id=13]
-[ext_resource path="res://team-assets/elbowsczy/bonbon/walk4.png" type="Texture" id=14]
-[ext_resource path="res://team-assets/elbowsczy/bonbon/grrrr.png" type="Texture" id=15]
+[ext_resource path="res://team-assets/elbowsczy/bonbon/grrrr.png" type="Texture" id=11]
+[ext_resource path="res://team-assets/elbowsczy/bonbon/walk1.png" type="Texture" id=12]
+[ext_resource path="res://team-assets/elbowsczy/bonbon/walk2.png" type="Texture" id=13]
+[ext_resource path="res://team-assets/elbowsczy/bonbon/walk3.png" type="Texture" id=14]
+[ext_resource path="res://team-assets/elbowsczy/bonbon/walk4.png" type="Texture" id=15]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 246.145, 304.958 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
@@ -29,27 +29,29 @@ animations = [ {
 "name": "idle",
 "speed": 1.5
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "walk",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 11 ) ],
 "loop": false,
 "name": "wakeup",
 "speed": 0.5
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
 } ]
 
 [node name="EarthlingBase" instance=ExtResource( 1 )]
 
 speed = 300.0
+vision_length = 4000.0
+darkvision_length = 1000.0
 chase_speed_multiplier = 10
 audio_gap_idle = 0.0
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 
 position = Vector2( -11.9559, -302.259 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Eyes" parent="." index="1"]
 
@@ -86,9 +88,8 @@ stream = ExtResource( 8 )
 [node name="Animations" parent="." index="4"]
 
 position = Vector2( -27.5206, -306.576 )
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="progress" parent="." index="5"]
