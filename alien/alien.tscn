@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://alien/internal.gd" type="Script" id=1]
-[ext_resource path="res://alien/animation.tscn" type="PackedScene" id=2]
+[ext_resource path="res://alien/camera.gd" type="Script" id=2]
+[ext_resource path="res://alien/animation.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -9,13 +10,13 @@ custom_solver_bias = 0.0
 extents = Vector2( 54.4372, 57.2374 )
 _sections_unfolded = [ "Resource" ]
 
-[node name="KinematicBody2D" type="KinematicBody2D" groups=[
+[node name="KinematicBody2D" type="KinematicBody2D" index="0" groups=[
 "player",
 ]]
 
 input_pickable = false
 collision_layer = 4
-collision_mask = 1
+collision_mask = 524289
 collision/safe_margin = 0.08
 _sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
 
@@ -52,9 +53,19 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+script = ExtResource( 2 )
 _sections_unfolded = [ "Limit", "Smoothing" ]
 
-[node name="animation" parent="." index="3" instance=ExtResource( 2 )]
+[node name="tween" type="Tween" parent="camera" index="0"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="animation" parent="." index="3" instance=ExtResource( 3 )]
 
 position = Vector2( -2.8184, -75.0432 )
 scale = Vector2( 0.190843, 0.190843 )

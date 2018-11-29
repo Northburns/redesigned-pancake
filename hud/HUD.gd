@@ -31,7 +31,6 @@ func _ready():
 	assert(henry != null)
 
 func _process(delta):
-	print("WHAT!")
 	# Food, Batteris
 	# TODO
 	

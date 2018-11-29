@@ -19,11 +19,14 @@ class Rummaging:
 	var action_area
 	var action_area_ref
 	var rummaging_speed
+	var camera
+	var camera_zoom
 	var rummage_time = 0.0
 	var speaking_timer = 0.0
 
 	const rummage_warmup_time = 0.4
 	var warmed_up = false
+
 		
 	func activate(action_area):
 		pstate.state = self
@@ -31,18 +34,28 @@ class Rummaging:
 		self.action_area = action_area
 		self.action_area_ref = weakref(action_area)
 		self.rummaging_speed = pstate.RUMMAGING_SPEED
+		self.camera = pbody.body.get_node("camera")
+		self.camera_zoom = self.camera.zoom
 
 		pbody.velocity = Vector2(0.0, 0.0)
 		warmed_up = false
 		rummage_time = 0.0
 
 		audio.action_rummage()
+		
+		var target_zoom = self.camera_zoom * 0.5
+		self.camera.tween_zoom(target_zoom, 0.7)
+	
 
 	func act(delta):
 		if not pinput.a:
 			# player canceled rummaging
 			audio.action_stop()
 			pstate.s_floor.activate()
+			
+			self.camera.tween_zoom(self.camera_zoom, 0.7)
+			#yield(tween, "tween_completed")
+			
 			return
 
 		rummage_time += delta

@@ -2,8 +2,8 @@ extends Node2D
 
 export var speed = 50.0
 export var suspicion_cooldown_speed = 5.0
-export var vision_length = 1000.0
-export var darkvision_length = 400.0
+export var vision_length = 4000.0
+export var darkvision_length = 1000.0
 
 export var living_floor = 1
 export var chase_speed_multiplier = 2
@@ -41,7 +41,8 @@ onready var audio = $Audio2D
 onready var audioTimerIdle = $Audio2D/Timer
 onready var audios = $AudioListings
 onready var animations = $Animations
-onready var progress = $progress
+
+export var escalates = true
 
 onready var gd_idle = load(script_idle).new()
 onready var gd_alert = load(script_alert).new()
@@ -79,7 +80,7 @@ func _process(delta):
 			yield(animations, "animation_finished")
 			self.paused = false
 			animations.play("walk")
-	update_progressbar()
+	
 	var s
 	match state:
 		STATE.IDLE: s = gd_idle
@@ -94,7 +95,7 @@ func _process(delta):
 	
 	# Can see?
 	if can_see_player():
-		suspicion_gauge += delta * 100.0
+		suspicion_gauge += delta * 30.0
 		last_seen_x = player.global_position.x
 		#print("CAN SEE!!!")
 	else:
@@ -151,10 +152,11 @@ func can_see_player():
 	var eye_pos = eyes.global_position
 	var plr_pos = player.global_position
 	var space_state = get_world_2d().direct_space_state
-	var result = space_state.intersect_ray(eye_pos, plr_pos, [area_hitbox])
+	var result = space_state.intersect_ray(eye_pos, plr_pos, [area_hitbox], 1)
 	var ray_see = result.empty() or player == result["collider"]
 	var distance = eye_pos.distance_to(plr_pos)
 	var max_length = darkvision_length if pglob.in_shadows else vision_length
+		#print(result["collider"].name)
 	return ray_see and distance < max_length
 
 func escalate_state():
@@ -162,11 +164,14 @@ func escalate_state():
 	while state == STATE.IDLE and suspicion_gauge >= THRESHOLD_ALERT:
 		state = STATE.ALERT
 		escalated = true
-		pglob.escalate_music(2)
+		print(escalates)
+		if escalates:
+			pglob.escalate_music(2)
 	while state == STATE.ALERT and suspicion_gauge >= THRESHOLD_CHASE:
 		state = STATE.CHASE
 		escalated = true
-		pglob.escalate_music(3)
+		if escalates:
+			pglob.escalate_music(3)
 	return escalated
 
 func suspicion_percentage():
@@ -176,24 +181,13 @@ func act_idle():
 	pass
 
 func cooldown(delta):
+	if pglob.escalation >= 2:
+		return
 	var minimum = 0.0
 	match state:
 		STATE.ALERT: minimum = THRESHOLD_ALERT
 		STATE.CHASE: minimum = THRESHOLD_CHASE
 	suspicion_gauge = clamp(suspicion_gauge - delta * suspicion_cooldown_speed, minimum, THRESHOLD_CHASE)
-
-func update_progressbar():
-	progress.visible = true
-	match state:
-		STATE.IDLE:
-			progress.modulate = Color(suspicion_gauge / THRESHOLD_ALERT, 1.0, 0.0)
-			progress.max_value = THRESHOLD_ALERT
-		STATE.ALERT: 
-			progress.modulate = Color(1.0, 1.0 - suspicion_gauge / THRESHOLD_ALERT, 0.0)
-			progress.max_value = THRESHOLD_CHASE
-		STATE.CHASE:
-			progress.visible = false
-	progress.value = suspicion_gauge
 
 func play_audio():
 	var a
