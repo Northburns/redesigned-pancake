@@ -9,4 +9,4 @@ func _ready():
 
 func _process(delta):
 #	pass
-	visible = pglob.in_shadows
+	enabled = pglob.in_shadows
