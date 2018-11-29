@@ -42,7 +42,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="EarthlingBase" index="0" instance=ExtResource( 1 )]
+[node name="EarthlingBase" instance=ExtResource( 1 )]
 
 living_floor = 2
 escalates = false

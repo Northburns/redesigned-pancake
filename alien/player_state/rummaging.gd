@@ -20,6 +20,7 @@ class Rummaging:
 	var action_area_ref
 	var rummaging_speed
 	var tween
+	var tween_ref
 	var camera
 	var camera_zoom
 	var rummage_time = 0.0
@@ -38,6 +39,7 @@ class Rummaging:
 		self.camera = pbody.body.get_node("camera")
 		self.camera_zoom = self.camera.zoom
 		self.tween = action_area.get_node("tween")
+		self.tween_ref = weakref(tween)
 
 		pbody.velocity = Vector2(0.0, 0.0)
 		warmed_up = false
@@ -50,9 +52,10 @@ class Rummaging:
 		yield(tween, "tween_completed")
 	
 	func tween_camera_zoom(from, to):
-		tween.stop_all()
-		tween.interpolate_method(self.camera, "set_zoom", from, to, 0.7, Tween.TRANS_LINEAR, Tween.EASE_IN)
-		tween.start()
+		if tween_ref:
+			tween.stop_all()
+			tween.interpolate_method(self.camera, "set_zoom", from, to, 0.7, Tween.TRANS_LINEAR, Tween.EASE_IN)
+			tween.start()
 		
 
 	func act(delta):

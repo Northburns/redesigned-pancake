@@ -95,7 +95,7 @@ func _process(delta):
 	
 	# Can see?
 	if can_see_player():
-		suspicion_gauge += delta * 100.0
+		suspicion_gauge += delta * 30.0
 		last_seen_x = player.global_position.x
 		#print("CAN SEE!!!")
 	else:
