@@ -44,8 +44,13 @@ class Rummaging:
 		audio.action_rummage()
 		panim.play("dig")
 		
-		var target_zoom = self.camera_zoom * 0.8
-		self.camera.tween_zoom(target_zoom, 0.7)
+		# This introduces a nasty bug which I 
+		# don't believe I can fix in this time frame.
+		# It would require a (much needed) rewrite
+		# of `camera_handler.gd`. At a later time, then :smile:
+		# See also below
+		#var target_zoom = self.camera_zoom * 0.8
+		#self.camera.tween_zoom(target_zoom, 0.7)
 	
 
 	func act(delta):
@@ -54,8 +59,8 @@ class Rummaging:
 			audio.action_stop()
 			pstate.s_floor.activate()
 			
-			self.camera.tween_zoom(self.camera_zoom, 0.7)
-			#yield(tween, "tween_completed")
+			# See above
+			#self.camera.tween_zoom(self.camera_zoom, 0.7)
 			
 			return
 
