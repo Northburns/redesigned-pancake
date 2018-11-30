@@ -3,6 +3,8 @@ extends Container
 onready var anim = $AnimationPlayer
 onready var label = $Container/Label
 onready var tick = $TextTimer
+onready var sfx_talk = $sfx_talk
+onready var sfx_haa = $sfx_haa
 
 signal next_message
 
@@ -14,6 +16,9 @@ func do_texts(texts):
 	anim.play("Appear")
 	yield(anim, "animation_finished")
 	for text in texts:
+		sfx_talk.stop()
+		sfx_talk.pitch_scale = 0.9 + 0.2 * randf()
+		sfx_talk.play()
 		for i in range(text.length() + 1):
 			var subtext = text.substr(0, i)
 			label.text = subtext
@@ -25,6 +30,7 @@ func do_texts(texts):
 	# yield!
 	label.text = ""
 	anim.play("Disappear")
+	sfx_haa.play()
 	yield(anim, "animation_finished")
 	get_tree().paused = false
 
