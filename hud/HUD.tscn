@@ -50,6 +50,7 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Size Flags" ]
 
 [node name="bg" type="NinePatchRect" parent="glass" index="0"]
 
+modulate = Color( 0.5625, 0.5625, 0.5625, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -66,7 +67,7 @@ patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
-_sections_unfolded = [ "Axis Stretch", "Patch Margin", "Size Flags" ]
+_sections_unfolded = [ "Axis Stretch", "Patch Margin", "Size Flags", "Visibility" ]
 
 [node name="bars" type="HBoxContainer" parent="glass" index="1"]
 
