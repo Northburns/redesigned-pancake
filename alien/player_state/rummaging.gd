@@ -42,6 +42,7 @@ class Rummaging:
 		rummage_time = 0.0
 
 		audio.action_rummage()
+		panim.play("dig")
 		
 		var target_zoom = self.camera_zoom * 0.5
 		self.camera.tween_zoom(target_zoom, 0.7)
