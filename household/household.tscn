@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://team-assets/backgrounds/nightsky.png" type="Texture" id=1]
 [ext_resource path="res://household/camera/camera_handler.gd" type="Script" id=2]
@@ -25,7 +25,7 @@
 [ext_resource path="res://level-elements/family/Henry.tscn" type="PackedScene" id=23]
 [ext_resource path="res://level-elements/family/Rebecca.tscn" type="PackedScene" id=24]
 [ext_resource path="res://level-elements/family/Jane.tscn" type="PackedScene" id=25]
-[ext_resource path="res://placeholder_art/game-icons/wrench.png" type="Texture" id=26]
+[ext_resource path="res://team-assets/furniture/tv.png" type="Texture" id=26]
 [ext_resource path="res://household/Television.gd" type="Script" id=27]
 [ext_resource path="res://alien/alien.tscn" type="PackedScene" id=28]
 [ext_resource path="res://placeholder_art/kenney_particles/light_03.png" type="Texture" id=29]
@@ -36,6 +36,12 @@
 
 custom_solver_bias = 0.0
 extents = Vector2( 2000, 250 )
+
+[sub_resource type="OccluderPolygon2D" id=11]
+
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( -9.50586, -1128.64, 31.9063, -1154.41, 42.8672, -763.85, 32.0918, -430.854 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -508,9 +514,83 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="TileMap_invisible" type="TileMap" parent="Spatial" index="9"]
+[node name="BonBon" parent="Spatial" index="9" instance=ExtResource( 22 )]
 
-visible = false
+position = Vector2( 4380, -110 )
+scale = Vector2( 0.75, 0.75 )
+chase_speed_multiplier = 5
+
+[node name="Henry" parent="Spatial" index="10" instance=ExtResource( 23 )]
+
+position = Vector2( 9478, -95 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Rebecca" parent="Spatial" index="11" instance=ExtResource( 24 )]
+
+position = Vector2( 4850, -2408 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Jane" parent="Spatial" index="12" instance=ExtResource( 25 )]
+
+position = Vector2( 9480, -2448 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="player_back" type="Node" parent="Spatial" index="13" groups=[
+"player_back",
+]]
+
+[node name="Television" type="Sprite" parent="Spatial" index="14"]
+
+position = Vector2( 11353.1, -607.614 )
+scale = Vector2( 0.473663, 0.473663 )
+texture = ExtResource( 26 )
+script = ExtResource( 27 )
+__meta__ = {
+"_edit_group_": true
+}
+color_rotation_speed = 0.6
+energy_change_speed = 0.5
+
+[node name="TelevisionLight" type="Light2D" parent="Spatial/Television" index="0"]
+
+position = Vector2( -449.188, -630.18 )
+scale = Vector2( 2.11121, 2.11121 )
+enabled = true
+editor_only = false
+texture = ExtResource( 7 )
+offset = Vector2( 0, 0 )
+texture_scale = 8.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Shadow", "Transform" ]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Television" index="1"]
+
+position = Vector2( -470.146, 146.214 )
+occluder = SubResource( 11 )
+light_mask = 1
+
+[node name="player" parent="Spatial" index="15" instance=ExtResource( 28 )]
+
+position = Vector2( -640, -30 )
+scale = Vector2( 1.75, 1.75 )
+
+[node name="TileMap_invisible" type="TileMap" parent="Spatial" index="16"]
+
 mode = 0
 tile_set = ExtResource( 21 )
 cell_size = Vector2( 64, 64 )
@@ -527,76 +607,10 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -1114085, 8, 0, -1114084, 9, 0, -1114083, 9, 0, -1048549, 6, 0, -458745, 13, 0, -458744, 13, 0, -458743, 13, 0 )
+tile_data = PoolIntArray( -1114085, 8, 0, -1114084, 9, 0, -1114083, 9, 0, -1048549, 6, 0, -655188, 11, 0, -655187, 11, 0, -655186, 11, 0, -655185, 11, 0, -655184, 11, 0, -655183, 11, 0, -655182, 11, 0, -589652, 11, 0, -589646, 11, 0, -524116, 11, 0, -524110, 11, 0, -458745, 13, 0, -458744, 13, 0, -458743, 13, 0, -458580, 11, 0, -458574, 11, 0, -393044, 11, 0, -393038, 11, 0, -327508, 11, 0, -327502, 11, 0, -261972, 11, 0, -261966, 11, 0, -196436, 11, 0, -196430, 11, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="BonBon" parent="Spatial" index="10" instance=ExtResource( 22 )]
-
-position = Vector2( 4380, -110 )
-scale = Vector2( 0.75, 0.75 )
-chase_speed_multiplier = 5
-
-[node name="Henry" parent="Spatial" index="11" instance=ExtResource( 23 )]
-
-position = Vector2( 9478, -95 )
-scale = Vector2( 0.75, 0.75 )
-
-[node name="Rebecca" parent="Spatial" index="12" instance=ExtResource( 24 )]
-
-position = Vector2( 4850, -2408 )
-scale = Vector2( 0.75, 0.75 )
-
-[node name="Jane" parent="Spatial" index="13" instance=ExtResource( 25 )]
-
-position = Vector2( 9480, -2448 )
-scale = Vector2( 0.75, 0.75 )
-
-[node name="player_back" type="Node" parent="Spatial" index="14" groups=[
-"player_back",
-]]
-
-[node name="Television" type="Sprite" parent="Spatial" index="15"]
-
-editor/display_folded = true
-position = Vector2( 11270, -392 )
-texture = ExtResource( 26 )
-script = ExtResource( 27 )
-__meta__ = {
-"_edit_group_": true
-}
-color_rotation_speed = 0.6
-energy_change_speed = 0.5
-
-[node name="Light2D" type="Light2D" parent="Spatial/Television" index="0"]
-
-enabled = true
-editor_only = false
-texture = ExtResource( 7 )
-offset = Vector2( 0, 0 )
-texture_scale = 8.0
-color = Color( 1, 1, 1, 1 )
-energy = 1.0
-mode = 0
-range_height = 0.0
-range_z_min = -1024
-range_z_max = 1024
-range_layer_min = 0
-range_layer_max = 0
-range_item_cull_mask = 1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 0 )
-shadow_buffer_size = 2048
-shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 1
-
-[node name="player" parent="Spatial" index="16" instance=ExtResource( 28 )]
-
-position = Vector2( -640, -30 )
-scale = Vector2( 1.75, 1.75 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Spatial" index="17"]
 
@@ -657,6 +671,7 @@ _sections_unfolded = [ "Shadow" ]
 
 [node name="CameraAreas" type="Node2D" parent="Spatial" index="20"]
 
+editor/display_folded = true
 visible = false
 script = ExtResource( 30 )
 rummage_in_this = NodePath("../Yard/rummage_SPECIAL")
