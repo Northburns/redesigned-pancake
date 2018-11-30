@@ -263,7 +263,6 @@ position = Vector2( 1042.66, 589.274 )
 scale = Vector2( 0.425366, 0.425366 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
 playing = true
 offset = Vector2( -512, -95 )
 _sections_unfolded = [ "Transform" ]
@@ -327,6 +326,7 @@ custom_fonts/font = ExtResource( 5 )
 text = "Foobar foobar
 
 What a lovely snafu!"
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
