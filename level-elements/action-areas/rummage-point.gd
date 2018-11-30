@@ -29,7 +29,7 @@ func rummage_collectable_node():
 		TYPE.BATTERY: n = preload("../collect/collectable.tscn").instance()
 		TYPE.COINS:   n = preload("../collect/collectable.tscn").instance()
 	n.position = self.position
-	get_parent().add_child_below_node(player_back, n)
+	player_back.get_parent().add_child_below_node(player_back, n)
 	
 	n.init_random()
 	

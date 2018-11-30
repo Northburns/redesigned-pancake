@@ -24,6 +24,7 @@ class Levitating:
 		audio.player_speak(audio.r_hiiop)
 		audio.action_play(audio.fl_levitator)
 		panim.let_play("levitate")
+		panim.anim.set_drone_visible(true)
 	
 	func clamp_speed(max_speed):
 		# Limit speed (do it by component, 
@@ -49,5 +50,6 @@ class Levitating:
 		# Gotta press that button, though!
 		if not pinput.jump:
 			audio.action_stop()
+			panim.anim.set_drone_visible(false)
 			pstate.s_jumping.activate(false, true)
 		
