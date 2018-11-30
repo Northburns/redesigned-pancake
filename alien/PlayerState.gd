@@ -15,14 +15,16 @@ class PState:
 	var panim
 	var pglob
 	var audio
+	var message_node
 	
-	func _init(internal, pinput, pbody, panim, pglob, audio):
+	func _init(internal, pinput, pbody, panim, pglob, audio, message_node):
 		self.i = internal
 		self.pinput = pinput
 		self.pbody = pbody
 		self.panim = panim
 		self.pglob = pglob
 		self.audio = audio
+		self.message_node = message_node
 		
 		s_floor.activate()
 	

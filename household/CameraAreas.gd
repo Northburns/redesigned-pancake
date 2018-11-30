@@ -16,5 +16,6 @@ func _process(delta):
 
 func _on_FrontYard_SPECIAL_body_exited(body):
 	if body == pglob.find_playeri().pbody.body:
+		ref = null
 		special.call_deferred("free")
 	

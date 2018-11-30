@@ -10,7 +10,6 @@ func _ready():
 	set_drone_visible(false)
 
 func step():
-	print("OH YEA")
 	var s = steps[randi()%steps.size()]
 	s.play()
 

@@ -10,6 +10,7 @@
 
 [node name="HUD" type="Container"]
 
+pause_mode = 2
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -25,6 +26,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
 rebecca = null
 jane = null
 bonbon = null
@@ -32,7 +34,6 @@ henry = null
 
 [node name="glass" type="Container" parent="." index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -65,7 +66,7 @@ patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
-_sections_unfolded = [ "Patch Margin", "Size Flags" ]
+_sections_unfolded = [ "Axis Stretch", "Patch Margin", "Size Flags" ]
 
 [node name="bars" type="HBoxContainer" parent="glass" index="1"]
 

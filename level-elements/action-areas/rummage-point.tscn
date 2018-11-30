@@ -14,9 +14,10 @@ extents = Vector2( 60, 60 )
 "rummage",
 ]]
 
+pause_mode = 2
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Pause", "Transform" ]
 food_level = 2
 battery_level = 1
 coins_level = null
@@ -45,7 +46,7 @@ enabled = true
 editor_only = false
 texture = ExtResource( 3 )
 offset = Vector2( 0, 0 )
-texture_scale = 1.0
+texture_scale = 0.5
 color = Color( 0.957031, 0.643005, 0.643005, 1 )
 energy = 1.0
 mode = 0

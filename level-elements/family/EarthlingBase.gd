@@ -50,7 +50,7 @@ onready var gd_chase = load(script_chase).new()
 
 onready var initial_position = self.position
 
-var moving_left = true
+var moving_left = false
 var paused
 var last_seen_x = 0.0
 
@@ -150,10 +150,12 @@ func move_and_flip_animation(delta):
 	
 func can_see_player():
 	var eye_pos = eyes.global_position
-	var plr_pos = player.global_position
+	var plr_pos = player.get_node("VisibilityPoint").global_position
 	var space_state = get_world_2d().direct_space_state
 	var result = space_state.intersect_ray(eye_pos, plr_pos, [area_hitbox], 1)
 	var ray_see = result.empty() or player == result["collider"]
+	#if not result.empty():
+	#	print(result["collider"].name)
 	var distance = eye_pos.distance_to(plr_pos)
 	var max_length = darkvision_length if pglob.in_shadows else vision_length
 		#print(result["collider"].name)
@@ -164,7 +166,7 @@ func escalate_state():
 	while state == STATE.IDLE and suspicion_gauge >= THRESHOLD_ALERT:
 		state = STATE.ALERT
 		escalated = true
-		print(escalates)
+		#print(escalates)
 		if escalates:
 			pglob.escalate_music(2)
 	while state == STATE.ALERT and suspicion_gauge >= THRESHOLD_CHASE:

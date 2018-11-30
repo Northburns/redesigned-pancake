@@ -50,3 +50,8 @@ func escalate_music(level):
 		3:
 			audio.music(audio.m_chase)
 	
+
+func message_begin(message_node):
+	#message_node.do_texts("Oh my!")
+	# Comment out for now
+	pass
