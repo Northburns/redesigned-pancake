@@ -348,7 +348,7 @@ blend_times = [  ]
 [node name="TextTimer" type="Timer" parent="." index="3"]
 
 process_mode = 1
-wait_time = 0.1
+wait_time = 0.04
 one_shot = false
 autostart = true
 _sections_unfolded = [ "Pause" ]
