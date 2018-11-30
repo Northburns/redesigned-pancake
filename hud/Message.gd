@@ -5,29 +5,30 @@ onready var label = $Container/Label
 onready var tick = $TextTimer
 onready var sfx_talk = $sfx_talk
 onready var sfx_haa = $sfx_haa
+onready var sfx_upgrade = $sfx_upgrade
 
 signal next_message
 
 var next_message_actions = [ "ui_accept", "ui_select", "jump", "action_a" ]
 
-func do_texts(texts):
+func do_texts(texts, index_with_upgrade = -1):
 	get_tree().paused = true
 	label.text = ""
 	anim.play("Appear")
 	yield(anim, "animation_finished")
+	var i = 0
 	for text in texts:
 		sfx_talk.stop()
-		sfx_talk.pitch_scale = 0.9 + 0.2 * randf()
+		sfx_talk.pitch_scale = 0.7 + 0.6 * randf()
 		sfx_talk.play()
+		if i == index_with_upgrade:
+			sfx_upgrade.play()
 		for i in range(text.length() + 1):
 			var subtext = text.substr(0, i)
 			label.text = subtext
 			yield(tick, "timeout")
-		# HERE WAIT FOR KEYBOARD
 		yield(self, "next_message")
-	# DO TEXTS
-	# yield
-	# yield!
+		i += 1
 	label.text = ""
 	anim.play("Disappear")
 	sfx_haa.play()

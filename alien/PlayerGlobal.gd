@@ -56,5 +56,5 @@ func message_begin(message_node):
 			"Oh my!\n\nI have noquamls",
 			"What is this?",
 			"FFFFFF FFFFF FFFF FFFFFF FF FFF F F  FFFFFFF FFFFFFFFF FFFFFFFF FFFFFFFFFFFFFFFFFF"
-			])
+			], 1)
 	

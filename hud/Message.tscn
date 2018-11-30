@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://hud/Message.gd" type="Script" id=1]
 [ext_resource path="res://team-assets/AI/ai1.png" type="Texture" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://hud/font_kenvector_future_thin.tres" type="DynamicFont" id=5]
 [ext_resource path="res://hud/Label.gd" type="Script" id=6]
 [ext_resource path="res://team-assets/sounds/sfx/roboty.wav" type="AudioStream" id=7]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_haa_mixd.wav" type="AudioStream" id=8]
+[ext_resource path="res://team-assets/sounds/sfx/upgrades.wav" type="AudioStream" id=8]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_haa_mixd.wav" type="AudioStream" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -265,7 +266,6 @@ position = Vector2( 1042.66, 589.274 )
 scale = Vector2( 0.425366, 0.425366 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
 playing = true
 offset = Vector2( -512, -95 )
 _sections_unfolded = [ "Transform" ]
@@ -363,15 +363,24 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "Nooccar"
 
-[node name="sfx_haa" type="AudioStreamPlayer" parent="." index="5"]
+[node name="sfx_upgrade" type="AudioStreamPlayer" parent="." index="5"]
 
 stream = ExtResource( 8 )
+volume_db = 10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Nooccar"
+
+[node name="sfx_haa" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 9 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "Nooccar"
 
 
