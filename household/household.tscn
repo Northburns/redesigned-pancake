@@ -1,34 +1,35 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
-[ext_resource path="res://placeholder_art/kenney_platformer/Backgrounds/colored_grass.png" type="Texture" id=1]
+[ext_resource path="res://team-assets/backgrounds/nightsky.png" type="Texture" id=1]
 [ext_resource path="res://household/camera/camera_handler.gd" type="Script" id=2]
-[ext_resource path="res://team-assets/backgrounds/huone.png" type="Texture" id=3]
-[ext_resource path="res://team-assets/backgrounds/kitchen1.png" type="Texture" id=4]
-[ext_resource path="res://team-assets/backgrounds/olohuone.png" type="Texture" id=5]
-[ext_resource path="res://team-assets/backgrounds/huone1.png" type="Texture" id=6]
-[ext_resource path="res://team-assets/backgrounds/työhuone1.png" type="Texture" id=7]
-[ext_resource path="res://team-assets/backgrounds/janesroom.png" type="Texture" id=8]
-[ext_resource path="res://placeholder_art/kenney_misc/foliagePack_011.png" type="Texture" id=9]
-[ext_resource path="res://placeholder_art/kenney_misc/bush.png" type="Texture" id=10]
-[ext_resource path="res://placeholder_art/kenney_misc/bush2.png" type="Texture" id=11]
-[ext_resource path="res://placeholder_art/kenney_particles/light_01.png" type="Texture" id=12]
-[ext_resource path="res://level-elements/action-areas/teleport-point.tscn" type="PackedScene" id=13]
-[ext_resource path="res://household/camera/CameraArea.gd" type="Script" id=14]
-[ext_resource path="res://placeholder_art/kenney_misc/ufoRed.png" type="Texture" id=15]
-[ext_resource path="res://placeholder_art/kenney_particles/light_02.png" type="Texture" id=16]
-[ext_resource path="res://household/Tileset.tres" type="TileSet" id=17]
-[ext_resource path="res://household/Tileset_walls.tres" type="TileSet" id=18]
-[ext_resource path="res://level-elements/action-areas/rummage-point.tscn" type="PackedScene" id=19]
-[ext_resource path="res://level-elements/family/Dog.tscn" type="PackedScene" id=20]
-[ext_resource path="res://level-elements/family/Henry.tscn" type="PackedScene" id=21]
-[ext_resource path="res://level-elements/family/Rebecca.tscn" type="PackedScene" id=22]
-[ext_resource path="res://level-elements/family/Jane.tscn" type="PackedScene" id=23]
-[ext_resource path="res://placeholder_art/game-icons/wrench.png" type="Texture" id=24]
-[ext_resource path="res://household/Television.gd" type="Script" id=25]
-[ext_resource path="res://alien/alien.tscn" type="PackedScene" id=26]
-[ext_resource path="res://placeholder_art/kenney_particles/light_03.png" type="Texture" id=27]
-[ext_resource path="res://household/CameraAreas.gd" type="Script" id=28]
-[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=29]
+[ext_resource path="res://team-assets/backgrounds/neighbours.png" type="Texture" id=3]
+[ext_resource path="res://placeholder_art/kenney_misc/foliagePack_011.png" type="Texture" id=4]
+[ext_resource path="res://placeholder_art/kenney_misc/bush.png" type="Texture" id=5]
+[ext_resource path="res://placeholder_art/kenney_misc/bush2.png" type="Texture" id=6]
+[ext_resource path="res://placeholder_art/kenney_particles/light_01.png" type="Texture" id=7]
+[ext_resource path="res://team-assets/backgrounds/huone.png" type="Texture" id=8]
+[ext_resource path="res://team-assets/backgrounds/kitchen1.png" type="Texture" id=9]
+[ext_resource path="res://team-assets/backgrounds/olohuone.png" type="Texture" id=10]
+[ext_resource path="res://team-assets/backgrounds/huone1.png" type="Texture" id=11]
+[ext_resource path="res://team-assets/backgrounds/työhuone1.png" type="Texture" id=12]
+[ext_resource path="res://team-assets/backgrounds/janesroom.png" type="Texture" id=13]
+[ext_resource path="res://level-elements/action-areas/teleport-point.tscn" type="PackedScene" id=14]
+[ext_resource path="res://household/camera/CameraArea.gd" type="Script" id=15]
+[ext_resource path="res://placeholder_art/kenney_misc/ufoRed.png" type="Texture" id=16]
+[ext_resource path="res://placeholder_art/kenney_particles/light_02.png" type="Texture" id=17]
+[ext_resource path="res://household/Tileset.tres" type="TileSet" id=18]
+[ext_resource path="res://household/Tileset_walls.tres" type="TileSet" id=19]
+[ext_resource path="res://level-elements/action-areas/rummage-point.tscn" type="PackedScene" id=20]
+[ext_resource path="res://level-elements/family/Dog.tscn" type="PackedScene" id=21]
+[ext_resource path="res://level-elements/family/Henry.tscn" type="PackedScene" id=22]
+[ext_resource path="res://level-elements/family/Rebecca.tscn" type="PackedScene" id=23]
+[ext_resource path="res://level-elements/family/Jane.tscn" type="PackedScene" id=24]
+[ext_resource path="res://placeholder_art/game-icons/wrench.png" type="Texture" id=25]
+[ext_resource path="res://household/Television.gd" type="Script" id=26]
+[ext_resource path="res://alien/alien.tscn" type="PackedScene" id=27]
+[ext_resource path="res://placeholder_art/kenney_particles/light_03.png" type="Texture" id=28]
+[ext_resource path="res://household/CameraAreas.gd" type="Script" id=29]
+[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=30]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -92,7 +93,6 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="TextureRect" type="TextureRect" parent="Background" index="0"]
 
-modulate = Color( 0.246094, 0.246094, 0.246094, 1 )
 anchor_left = 0.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -112,7 +112,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="1"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Background" index="1"]
 
 layer = -1
 offset = Vector2( 0, 0 )
@@ -127,14 +127,15 @@ scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = true
 _sections_unfolded = [ "Scroll" ]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background/ParallaxBackground" index="0"]
 
-motion_scale = Vector2( 1, 1 )
+position = Vector2( 1792, -1024 )
+motion_scale = Vector2( 0.1, 0.1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
-_sections_unfolded = [ "Motion" ]
+_sections_unfolded = [ "Motion", "Transform" ]
 
-[node name="camera_handler" type="Node" parent="." index="2"]
+[node name="camera_handler" type="Node" parent="." index="1"]
 
 editor/display_folded = true
 script = ExtResource( 2 )
@@ -160,64 +161,27 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="Spatial" type="Node2D" parent="." index="3"]
+[node name="Spatial" type="Node2D" parent="." index="2"]
 
 position = Vector2( 890, -120 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="backgrounds" type="Node2D" parent="Spatial" index="0"]
+[node name="neighbours" type="Sprite" parent="Spatial" index="0"]
 
-[node name="huone" type="Sprite" parent="Spatial/backgrounds" index="0"]
-
-position = Vector2( 7558, -648 )
-scale = Vector2( 1.75516, 1.75516 )
+position = Vector2( 15110, -1288 )
+scale = Vector2( 3.16667, 3.16667 )
 texture = ExtResource( 3 )
 
-[node name="kitchen" type="Sprite" parent="Spatial/backgrounds" index="1"]
+[node name="Neighbours" type="Sprite" parent="Spatial" index="1"]
 
-position = Vector2( 1926, -2696 )
-scale = Vector2( 3.82661, 3.82661 )
-texture = ExtResource( 4 )
-centered = false
-region_rect = Rect2( 0, 768, 1338, 500 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="olohuone" type="Sprite" parent="Spatial/backgrounds" index="2"]
-
-position = Vector2( 8454, -2184 )
-scale = Vector2( 2.88889, 2.88889 )
-texture = ExtResource( 5 )
-centered = false
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="huone1" type="Sprite" parent="Spatial/backgrounds" index="3"]
-
-position = Vector2( 7302, -3336 )
-scale = Vector2( 2.76647, 2.76647 )
-texture = ExtResource( 6 )
+position = Vector2( -1658, -1160 )
+scale = Vector2( 3.16667, 3.16667 )
+texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 100, 1152, 668 )
+region_rect = Rect2( 0, 0, 2300, 768 )
 _sections_unfolded = [ "Region" ]
 
-[node name="työhuone1" type="Sprite" parent="Spatial/backgrounds" index="4"]
-
-position = Vector2( 2566, -4360 )
-scale = Vector2( 3.9778, 3.9778 )
-texture = ExtResource( 7 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 0, 100, 901, 500 )
-_sections_unfolded = [ "Offset", "Region", "Transform" ]
-
-[node name="janesroom" type="Sprite" parent="Spatial/backgrounds" index="5"]
-
-position = Vector2( 7942, -4391.79 )
-scale = Vector2( 2.85253, 2.85253 )
-texture = ExtResource( 8 )
-centered = false
-_sections_unfolded = [ "Offset" ]
-
-[node name="Yard" type="Node2D" parent="Spatial" index="1"]
+[node name="Yard" type="Node2D" parent="Spatial" index="2"]
 
 editor/display_folded = true
 
@@ -225,37 +189,37 @@ editor/display_folded = true
 
 position = Vector2( 1600, -800 )
 scale = Vector2( 3.91232, 3.91232 )
-texture = ExtResource( 9 )
+texture = ExtResource( 4 )
 
 [node name="bush" type="Sprite" parent="Spatial/Yard" index="1"]
 
 position = Vector2( 690, -120 )
 scale = Vector2( 4.25335, 3.83705 )
-texture = ExtResource( 10 )
+texture = ExtResource( 5 )
 
 [node name="bush2" type="Sprite" parent="Spatial/Yard" index="2"]
 
 position = Vector2( 440, -160 )
 scale = Vector2( 3.07813, 2.53125 )
-texture = ExtResource( 11 )
+texture = ExtResource( 6 )
 
 [node name="bush4" type="Sprite" parent="Spatial/Yard" index="3"]
 
 position = Vector2( -281.5, -324 )
 scale = Vector2( 4.82031, 5.09375 )
-texture = ExtResource( 11 )
+texture = ExtResource( 6 )
 
 [node name="bush3" type="Sprite" parent="Spatial/Yard" index="4"]
 
 position = Vector2( 1376.5, -244 )
 scale = Vector2( 4.58594, 4 )
-texture = ExtResource( 11 )
+texture = ExtResource( 6 )
 
 [node name="bush5" type="Sprite" parent="Spatial/Yard" index="5"]
 
 position = Vector2( -630.566, -217.852 )
 scale = Vector2( 11.1267, 6.3471 )
-texture = ExtResource( 10 )
+texture = ExtResource( 5 )
 
 [node name="PorchLight" type="Light2D" parent="Spatial/Yard" index="6" groups=[
 "vision_light",
@@ -264,7 +228,7 @@ texture = ExtResource( 10 )
 position = Vector2( 1850, -990 )
 enabled = true
 editor_only = false
-texture = ExtResource( 12 )
+texture = ExtResource( 7 )
 offset = Vector2( 0, 0 )
 texture_scale = 8.0
 color = Color( 1, 1, 1, 1 )
@@ -285,18 +249,72 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Range", "Shadow", "Transform" ]
 
-[node name="Kitchen" type="Node2D" parent="Spatial" index="2"]
+[node name="backgrounds" type="Node2D" parent="Spatial" index="3"]
+
+editor/display_folded = true
+
+[node name="huone" type="Sprite" parent="Spatial/backgrounds" index="0"]
+
+position = Vector2( 7558, -648 )
+scale = Vector2( 1.75516, 1.75516 )
+texture = ExtResource( 8 )
+
+[node name="kitchen" type="Sprite" parent="Spatial/backgrounds" index="1"]
+
+position = Vector2( 1926, -2696 )
+scale = Vector2( 3.82661, 3.82661 )
+texture = ExtResource( 9 )
+centered = false
+region_rect = Rect2( 0, 768, 1338, 500 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+
+[node name="olohuone" type="Sprite" parent="Spatial/backgrounds" index="2"]
+
+position = Vector2( 8454, -2184 )
+scale = Vector2( 2.88889, 2.88889 )
+texture = ExtResource( 10 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="huone1" type="Sprite" parent="Spatial/backgrounds" index="3"]
+
+position = Vector2( 7302, -3336 )
+scale = Vector2( 2.76647, 2.76647 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 0, 100, 1152, 668 )
+_sections_unfolded = [ "Region" ]
+
+[node name="työhuone1" type="Sprite" parent="Spatial/backgrounds" index="4"]
+
+position = Vector2( 2566, -4360 )
+scale = Vector2( 3.9778, 3.9778 )
+texture = ExtResource( 12 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 100, 901, 500 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="janesroom" type="Sprite" parent="Spatial/backgrounds" index="5"]
+
+position = Vector2( 7942, -4391.79 )
+scale = Vector2( 2.85253, 2.85253 )
+texture = ExtResource( 13 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="Kitchen" type="Node2D" parent="Spatial" index="4"]
 
 editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="Teleport-Area" parent="Spatial/Kitchen" index="0" instance=ExtResource( 13 )]
+[node name="Teleport-Area" parent="Spatial/Kitchen" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( 2349.7, -1843.15 )
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 target = NodePath("../../AirDucts/Teleport-Area")
 
-[node name="AirDucts" type="Node2D" parent="Spatial" index="3"]
+[node name="AirDucts" type="Node2D" parent="Spatial" index="5"]
 
 editor/display_folded = true
 position = Vector2( -80, 120 )
@@ -311,7 +329,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 c_padding_all = 20.0
 c_margin_top = 10.0
 c_margin_right = 10.0
@@ -323,12 +341,12 @@ c_margin_left = 10.0
 position = Vector2( 4110, -2260 )
 shape = SubResource( 1 )
 
-[node name="Teleport-Area" parent="Spatial/AirDucts" index="1" instance=ExtResource( 13 )]
+[node name="Teleport-Area" parent="Spatial/AirDucts" index="1" instance=ExtResource( 14 )]
 
 position = Vector2( 2340, -2230 )
 target = NodePath("../../Kitchen/Teleport-Area")
 
-[node name="Backyard" type="Node2D" parent="Spatial" index="4"]
+[node name="Backyard" type="Node2D" parent="Spatial" index="6"]
 
 editor/display_folded = true
 position = Vector2( 14760, -60 )
@@ -337,14 +355,14 @@ position = Vector2( 14760, -60 )
 
 position = Vector2( -580, -1350 )
 scale = Vector2( 7.28808, 7.01659 )
-texture = ExtResource( 9 )
+texture = ExtResource( 4 )
 
 [node name="ufoRed" type="Sprite" parent="Spatial/Backyard" index="1"]
 
 position = Vector2( -1145.65, -1957.25 )
 rotation = -0.604323
 scale = Vector2( 13.7297, 17.0408 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 91, 60 )
 _sections_unfolded = [ "Region" ]
@@ -354,7 +372,7 @@ _sections_unfolded = [ "Region" ]
 position = Vector2( 35.4584, 15.3077 )
 enabled = true
 editor_only = false
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 offset = Vector2( 0, 0 )
 texture_scale = 0.5
 color = Color( 1, 0, 0, 0.563529 )
@@ -380,7 +398,7 @@ _sections_unfolded = [ "Shadow" ]
 position = Vector2( 18.5514, -15.2459 )
 enabled = true
 editor_only = false
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 offset = Vector2( 0, 0 )
 texture_scale = 0.5
 color = Color( 1, 0, 0, 0.281765 )
@@ -406,7 +424,7 @@ _sections_unfolded = [ "Shadow" ]
 position = Vector2( -22.6921, -14.2029 )
 enabled = true
 editor_only = false
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 offset = Vector2( 0, 0 )
 texture_scale = 0.5
 color = Color( 1, 0, 0, 0.353569 )
@@ -427,10 +445,10 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Shadow" ]
 
-[node name="TileMap" type="TileMap" parent="Spatial" index="5"]
+[node name="TileMap" type="TileMap" parent="Spatial" index="7"]
 
 mode = 0
-tile_set = ExtResource( 17 )
+tile_set = ExtResource( 18 )
 cell_size = Vector2( 128, 128 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -451,10 +469,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="TileMapW" type="TileMap" parent="Spatial" index="6"]
+[node name="TileMapW" type="TileMap" parent="Spatial" index="8"]
 
 mode = 0
-tile_set = ExtResource( 18 )
+tile_set = ExtResource( 19 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -474,41 +492,41 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="rummage" parent="Spatial" index="7" instance=ExtResource( 19 )]
+[node name="rummage" parent="Spatial" index="9" instance=ExtResource( 20 )]
 
 position = Vector2( 320, -60 )
 
-[node name="BonBon" parent="Spatial" index="8" instance=ExtResource( 20 )]
+[node name="BonBon" parent="Spatial" index="10" instance=ExtResource( 21 )]
 
 position = Vector2( 4380, -110 )
 scale = Vector2( 0.75, 0.75 )
 chase_speed_multiplier = 5
 
-[node name="Henry" parent="Spatial" index="9" instance=ExtResource( 21 )]
+[node name="Henry" parent="Spatial" index="11" instance=ExtResource( 22 )]
 
 position = Vector2( 9478, -95 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="Rebecca" parent="Spatial" index="10" instance=ExtResource( 22 )]
+[node name="Rebecca" parent="Spatial" index="12" instance=ExtResource( 23 )]
 
 position = Vector2( 4850, -2408 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="Jane" parent="Spatial" index="11" instance=ExtResource( 23 )]
+[node name="Jane" parent="Spatial" index="13" instance=ExtResource( 24 )]
 
 position = Vector2( 9480, -2448 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="player_back" type="Node" parent="Spatial" index="12" groups=[
+[node name="player_back" type="Node" parent="Spatial" index="14" groups=[
 "player_back",
 ]]
 
-[node name="Television" type="Sprite" parent="Spatial" index="13"]
+[node name="Television" type="Sprite" parent="Spatial" index="15"]
 
 editor/display_folded = true
 position = Vector2( 11270, -392 )
-texture = ExtResource( 24 )
-script = ExtResource( 25 )
+texture = ExtResource( 25 )
+script = ExtResource( 26 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -519,7 +537,7 @@ energy_change_speed = 0.5
 
 enabled = true
 editor_only = false
-texture = ExtResource( 12 )
+texture = ExtResource( 7 )
 offset = Vector2( 0, 0 )
 texture_scale = 8.0
 color = Color( 1, 1, 1, 1 )
@@ -539,22 +557,22 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 
-[node name="player" parent="Spatial" index="14" instance=ExtResource( 26 )]
+[node name="player" parent="Spatial" index="16" instance=ExtResource( 27 )]
 
 position = Vector2( -640, -30 )
 scale = Vector2( 1.75, 1.75 )
 
-[node name="CanvasModulate" type="CanvasModulate" parent="Spatial" index="15"]
+[node name="CanvasModulate" type="CanvasModulate" parent="Spatial" index="17"]
 
 position = Vector2( -67.5358, 32.2997 )
 color = Color( 0.417969, 0.417969, 0.417969, 1 )
 
-[node name="Light2D" type="Light2D" parent="Spatial" index="16"]
+[node name="Light2D" type="Light2D" parent="Spatial" index="18"]
 
 position = Vector2( 3206, -1416 )
 enabled = true
 editor_only = false
-texture = ExtResource( 27 )
+texture = ExtResource( 28 )
 offset = Vector2( 0, 0 )
 texture_scale = 10.0
 color = Color( 1, 1, 1, 1 )
@@ -575,12 +593,12 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Shadow" ]
 
-[node name="Light2D2" type="Light2D" parent="Spatial" index="17"]
+[node name="Light2D2" type="Light2D" parent="Spatial" index="19"]
 
 position = Vector2( 5894, -1288 )
 enabled = true
 editor_only = false
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 offset = Vector2( 0, 0 )
 texture_scale = 5.0
 color = Color( 1, 1, 1, 1 )
@@ -601,11 +619,11 @@ shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Shadow" ]
 
-[node name="CameraAreas" type="Node2D" parent="Spatial" index="18"]
+[node name="CameraAreas" type="Node2D" parent="Spatial" index="20"]
 
 editor/display_folded = true
 visible = false
-script = ExtResource( 28 )
+script = ExtResource( 29 )
 
 [node name="FrontYard_SPECIAL" type="Area2D" parent="Spatial/CameraAreas" index="0"]
 
@@ -618,7 +636,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -646,7 +664,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -674,7 +692,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -703,7 +721,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -730,7 +748,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -758,7 +776,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -787,7 +805,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -815,7 +833,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -844,7 +862,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -861,7 +879,7 @@ position = Vector2( 128, 0 )
 shape = SubResource( 10 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="GUI" type="CanvasLayer" parent="." index="4"]
+[node name="GUI" type="CanvasLayer" parent="." index="3"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -869,7 +887,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="HUD" parent="GUI" index="0" instance=ExtResource( 29 )]
+[node name="HUD" parent="GUI" index="0" instance=ExtResource( 30 )]
 
 anchor_bottom = 1.0
 margin_left = 0.0
