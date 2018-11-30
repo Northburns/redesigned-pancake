@@ -1,3 +1,3 @@
 
 func act():
-	print("FUUUUCK YEAH!")
+	pass
