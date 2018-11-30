@@ -263,6 +263,8 @@ position = Vector2( 1042.66, 589.274 )
 scale = Vector2( 0.425366, 0.425366 )
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
+playing = true
 offset = Vector2( -512, -95 )
 _sections_unfolded = [ "Transform" ]
 
@@ -342,5 +344,13 @@ anims/Appear = SubResource( 2 )
 anims/Disappear = SubResource( 3 )
 anims/Initial = SubResource( 4 )
 blend_times = [  ]
+
+[node name="TextTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 0.1
+one_shot = false
+autostart = true
+_sections_unfolded = [ "Pause" ]
 
 
