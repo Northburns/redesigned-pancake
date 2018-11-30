@@ -12,7 +12,7 @@ bus/1/name = "Earthlings"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = 0.0
+bus/1/volume_db = 10.1
 bus/1/send = "Master"
 bus/2/name = "Nooccar"
 bus/2/solo = false
@@ -24,6 +24,6 @@ bus/3/name = "Music"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
-bus/3/volume_db = -9.4
+bus/3/volume_db = -13.1
 bus/3/send = "Master"
 

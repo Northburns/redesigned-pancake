@@ -244,7 +244,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0.425366, 0.425366 ) ]
 }
 
-[node name="Message" type="Container" index="0"]
+[node name="Message" type="Container"]
 
 pause_mode = 2
 anchor_left = 0.0
