@@ -3,7 +3,7 @@ extends Sprite
 export var color_rotation_speed = 0.6
 export var energy_change_speed = 0.5
 
-onready var light = $Light2D
+onready var light = $TelevisionLight
 
 var color = Color(1.0, 0.0, 0.0)
 
