@@ -16,6 +16,8 @@
 [ext_resource path="res://team-assets/elbowsczy/bonbon/walk3.png" type="Texture" id=14]
 [ext_resource path="res://team-assets/elbowsczy/bonbon/walk4.png" type="Texture" id=15]
 
+
+
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0

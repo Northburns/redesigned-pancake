@@ -30,19 +30,19 @@ polygon = PoolVector2Array( 35, -35, 35, 35, -35, 35, -35, -35 )
 [sub_resource type="OccluderPolygon2D" id=3]
 
 closed = true
-cull_mode = 1
+cull_mode = 0
 polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 
 [sub_resource type="OccluderPolygon2D" id=4]
 
 closed = true
-cull_mode = 1
+cull_mode = 0
 polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
 
 closed = true
-cull_mode = 1
+cull_mode = 0
 polygon = PoolVector2Array( 35, -35, 35, 0, -35, 0, -35, -35 )
 
 [node name="wall_1" type="Node"]
@@ -326,6 +326,7 @@ light_mask = 1
 
 [node name="block" type="Sprite" parent="." index="11"]
 
+editor/display_folded = true
 position = Vector2( 350, 35 )
 texture = ExtResource( 12 )
 
