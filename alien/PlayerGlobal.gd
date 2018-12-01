@@ -99,7 +99,7 @@ func message_begin(message_node):
 	skill_levitate = false
 	food_max = RESOURCES_ACT2
 	battery_max = RESOURCES_ACT2
-	
+
 	message_node.do_texts([
 			"Nooccar!... Nooccar! Can you hear me? " +
 			"Is that you? Thank the stars you're ok!",
@@ -158,5 +158,7 @@ func talk_to_ufo_to_fin(message_node):
 			"***",
 			"Let's go! I couldn't ask for a better pilot, Nooccar <3"
 			], 2)
-	pass
+	yield(message_node, "message_done")
+	# TODO QUIT THIS SCENE AND GO TO VICTORY SCENE!
+	get_tree().change_scene("res://path/to/scene.scn")
 		

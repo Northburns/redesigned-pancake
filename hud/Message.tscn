@@ -292,7 +292,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0.425366, 0.425366 ) ]
 }
 
-[node name="Message" type="Container" index="0"]
+[node name="Message" type="Container"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -314,6 +314,7 @@ position = Vector2( 1042.66, 589.274 )
 scale = Vector2( 0.425366, 0.425366 )
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
 playing = true
 offset = Vector2( -512, -95 )
 _sections_unfolded = [ "Transform" ]

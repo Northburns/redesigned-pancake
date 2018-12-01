@@ -10,6 +10,7 @@ onready var sfx_upgrade = $sfx_upgrade
 onready var tween = $Tween
 
 signal next_message
+signal message_done
 
 const next_message_actions = [ "ui_accept", "ui_select", "jump", "action_a" ]
 
@@ -45,6 +46,7 @@ func do_texts(texts, index_with_upgrade = -1):
 	sfx_haa.play()
 	yield(anim, "animation_finished")
 	get_tree().paused = false
+	emit_signal("message_done")
 
 func _process(delta):
 	for action in next_message_actions:

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/highscore.ogg-d5137d03e240ac5dcd2d96f33add62d3.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

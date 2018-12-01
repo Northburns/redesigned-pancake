@@ -65,7 +65,6 @@ func reset():
 	self.suspicion_gauge = 0.0
 	self.state = STATE.IDLE
 	self.animations.play("idle")
-	self.just_reset = true
 
 func _process(delta):
 	if paused:
