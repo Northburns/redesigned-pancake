@@ -179,7 +179,7 @@ extents = Vector2( 5319.85, 1024 )
 custom_solver_bias = 0.0
 extents = Vector2( 1518.9, 2218.42 )
 
-[node name="household" type="Node2D"]
+[node name="household" type="Node2D" index="0"]
 
 [node name="Background" type="CanvasLayer" parent="." index="0"]
 
@@ -1733,6 +1733,9 @@ color = Color( 0.417969, 0.417969, 0.417969, 1 )
 editor/display_folded = true
 visible = false
 script = ExtResource( 50 )
+__meta__ = {
+"_edit_lock_": true
+}
 rummage_in_this = NodePath("../Yard/rummage_SPECIAL")
 
 [node name="FrontYard_SPECIAL" type="Area2D" parent="Spatial/CameraAreas" index="0"]
@@ -1850,7 +1853,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Study" type="Area2D" parent="Spatial/CameraAreas" index="4"]
 
 editor/display_folded = true
-position = Vector2( 2254.47, -3251.71 )
+position = Vector2( 2672.88, -3365.82 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
