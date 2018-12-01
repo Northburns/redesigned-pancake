@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://menus/menu.gd" type="Script" id=1]
 [ext_resource path="res://team-assets/backgrounds/nightsky.png" type="Texture" id=2]
 [ext_resource path="res://team-assets/title.png" type="Texture" id=3]
-[ext_resource path="res://team-assets/ufo/ufo1-nooccar.png" type="Texture" id=4]
-[ext_resource path="res://menus/menu-ufo.gd" type="Script" id=5]
-[ext_resource path="res://hud/font_kenvector_future_thin.tres" type="DynamicFont" id=6]
-[ext_resource path="res://team-assets/ufo/ufo2-nooccar.png" type="Texture" id=7]
+[ext_resource path="res://menus/TitleLogo.gd" type="Script" id=4]
+[ext_resource path="res://team-assets/ufo/ufo1-nooccar.png" type="Texture" id=5]
+[ext_resource path="res://menus/menu-ufo.gd" type="Script" id=6]
+[ext_resource path="res://hud/font_kenvector_future_thin.tres" type="DynamicFont" id=7]
+[ext_resource path="res://team-assets/ufo/ufo2-nooccar.png" type="Texture" id=8]
 
 [node name="Node" type="Node" index="0"]
 
@@ -25,13 +26,14 @@ _sections_unfolded = [ "Visibility" ]
 position = Vector2( 515.082, 211.014 )
 scale = Vector2( 1.4401, 1.4401 )
 texture = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="ufo1-nooccar" type="Sprite" parent="." index="2"]
 
 position = Vector2( 724.48, 607.684 )
 scale = Vector2( 0.362401, 0.362401 )
-texture = ExtResource( 4 )
-script = ExtResource( 5 )
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="Container" type="Container" parent="." index="3"]
 
@@ -81,7 +83,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -107,7 +109,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -198,6 +200,7 @@ text = "Open GitHub repo in browser"
 
 [node name="StartPlay" type="WindowDialog" parent="." index="5"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -221,7 +224,7 @@ _sections_unfolded = [ "Popup" ]
 
 position = Vector2( 467.368, 255.6 )
 scale = Vector2( 0.53101, 0.53101 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="StartThePlayNow" type="Button" parent="StartPlay" index="2"]
 

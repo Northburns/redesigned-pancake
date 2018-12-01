@@ -179,7 +179,7 @@ extents = Vector2( 5319.85, 1024 )
 custom_solver_bias = 0.0
 extents = Vector2( 1518.9, 2218.42 )
 
-[node name="household" type="Node2D"]
+[node name="household" type="Node2D" index="0"]
 
 [node name="Background" type="CanvasLayer" parent="." index="0"]
 
@@ -1701,6 +1701,7 @@ message_node_path = NodePath("../../GUI/Message")
 
 [node name="TileMap_invisible" type="TileMap" parent="Spatial" index="20"]
 
+visible = false
 mode = 0
 tile_set = ExtResource( 49 )
 cell_size = Vector2( 64, 64 )
