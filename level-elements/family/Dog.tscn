@@ -16,8 +16,6 @@
 [ext_resource path="res://team-assets/elbowsczy/bonbon/walk3.png" type="Texture" id=14]
 [ext_resource path="res://team-assets/elbowsczy/bonbon/walk4.png" type="Texture" id=15]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -42,11 +40,13 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[node name="EarthlingBase" index="0" instance=ExtResource( 1 )]
+[node name="EarthlingBase" instance=ExtResource( 1 )]
 
 speed = 300.0
 chase_speed_multiplier = 10
 audio_gap_idle = 0.0
+audio_gap_alert = 3.0
+audio_gap_chase = 2.0
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 
@@ -90,7 +90,6 @@ stream = ExtResource( 8 )
 position = Vector2( -27.5206, -306.576 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
 playing = true
 
 

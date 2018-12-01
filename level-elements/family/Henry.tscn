@@ -43,6 +43,9 @@ animations = [ {
 [node name="EarthlingBase" instance=ExtResource( 1 )]
 
 chase_strategy = 0
+audio_gap_idle = 3.0
+audio_gap_alert = 2.0
+audio_gap_chase = 3.2
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 

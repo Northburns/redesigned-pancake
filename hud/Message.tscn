@@ -292,7 +292,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0.425366, 0.425366 ) ]
 }
 
-[node name="Message" type="Container"]
+[node name="Message" type="Container" index="0"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -338,6 +338,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Container" index="0"]
 
+modulate = Color( 0.410156, 0.410156, 0.410156, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -353,7 +354,7 @@ patch_margin_left = 12
 patch_margin_top = 12
 patch_margin_right = 12
 patch_margin_bottom = 12
-_sections_unfolded = [ "Patch Margin" ]
+_sections_unfolded = [ "Patch Margin", "Visibility" ]
 
 [node name="Label" type="Label" parent="Container" index="1"]
 
@@ -399,7 +400,7 @@ blend_times = [  ]
 [node name="TextTimer" type="Timer" parent="." index="3"]
 
 process_mode = 1
-wait_time = 0.04
+wait_time = 0.02
 one_shot = false
 autostart = true
 _sections_unfolded = [ "Pause" ]

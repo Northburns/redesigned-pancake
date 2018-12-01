@@ -18,8 +18,6 @@
 [ext_resource path="res://team-assets/elbowsczy/rebecca/walk3.png" type="Texture" id=16]
 [ext_resource path="res://team-assets/elbowsczy/rebecca/walk4.png" type="Texture" id=17]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -49,6 +47,7 @@ animations = [ {
 living_floor = 2
 chase_strategy = 0
 audio_gap_idle = 0.0
+audio_gap_chase = 2.2
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 

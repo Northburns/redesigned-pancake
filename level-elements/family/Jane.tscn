@@ -18,8 +18,6 @@
 [ext_resource path="res://team-assets/elbowsczy/jane/walk3.png" type="Texture" id=16]
 [ext_resource path="res://team-assets/elbowsczy/jane/walk4.png" type="Texture" id=17]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -44,9 +42,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="EarthlingBase" index="0" instance=ExtResource( 1 )]
+[node name="EarthlingBase" instance=ExtResource( 1 )]
 
 living_floor = 2
+audio_gap_idle = 0.4
+audio_gap_alert = 2.0
+audio_gap_chase = 4.0
 escalates = false
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
@@ -103,7 +104,6 @@ stream = ExtResource( 10 )
 position = Vector2( 20, -440 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
 playing = true
 
 

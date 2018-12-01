@@ -59,12 +59,13 @@ func _ready():
 	reset()
 
 func reset():
-	print("INTIIIIAAAL POSIIITIONNNN!")
-	paused = false
-	position = self.initial_position
-	suspicion_gauge = 0.0
-	state = STATE.IDLE
-	animations.play("idle")
+	self.paused = false
+	self.moving_left = false
+	self.position = self.initial_position
+	self.suspicion_gauge = 0.0
+	self.state = STATE.IDLE
+	self.animations.play("idle")
+	self.just_reset = true
 
 func _process(delta):
 	if paused:
@@ -104,7 +105,7 @@ func _process(delta):
 	
 #	print("STATE: "+str(state))
 #	print("SUSPI: "+str(suspicion_gauge))
-
+	
 func move_and_flip_animation(delta):
 	if state == STATE.IDLE:
 		return

@@ -65,3 +65,8 @@ class PInput:
 		if self.is_dpad(D_UD):
 			self.dpad ^= D_UD
 		
+		# Also, cheat
+		if Input.is_action_pressed("cheat"):
+			pglob.food += 1
+			pglob.battery += 1
+		
