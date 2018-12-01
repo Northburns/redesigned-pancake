@@ -2,6 +2,10 @@ extends KinematicBody2D
 
 onready var pglob = $"/root/PlayerGlobal"
 
+export(int) var plus_food = 0
+export(int) var plus_battery = 0
+export(int) var plus_coins = 0
+
 var taken = false
 
 var velocity = Vector2(0,0)

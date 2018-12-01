@@ -25,9 +25,9 @@ func rummage_collectable_node():
 		return
 	var n = null
 	match type:
-		TYPE.FOOD:    n = preload("../collect/collectable.tscn").instance()
-		TYPE.BATTERY: n = preload("../collect/collectable.tscn").instance()
-		TYPE.COINS:   n = preload("../collect/collectable.tscn").instance()
+		TYPE.FOOD:    n = preload("../collect/food.tscn").instance()
+		TYPE.BATTERY: n = preload("../collect/food.tscn").instance()
+		TYPE.COINS:   n = preload("../collect/food.tscn").instance()
 	assert(n != null)
 	player_back.get_parent().add_child_below_node(player_back, n)
 	n.position = n.to_local(self.global_position)
