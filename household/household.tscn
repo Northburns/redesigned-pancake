@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://team-assets/backgrounds/nightsky.png" type="Texture" id=1]
 [ext_resource path="res://household/camera/camera_handler.gd" type="Script" id=2]
@@ -172,6 +172,16 @@ extents = Vector2( 4928, 320 )
 
 custom_solver_bias = 0.0
 extents = Vector2( 666.781, 409.087 )
+
+[sub_resource type="RectangleShape2D" id=21]
+
+custom_solver_bias = 0.0
+extents = Vector2( 5319.85, 1024 )
+
+[sub_resource type="RectangleShape2D" id=22]
+
+custom_solver_bias = 0.0
+extents = Vector2( 1518.9, 2218.42 )
 
 [node name="household" type="Node2D" index="0"]
 
@@ -1664,8 +1674,6 @@ color = Color( 0.417969, 0.417969, 0.417969, 1 )
 
 [node name="CameraAreas" type="Node2D" parent="Spatial" index="23"]
 
-editor/display_folded = true
-visible = false
 script = ExtResource( 50 )
 rummage_in_this = NodePath("../Yard/rummage_SPECIAL")
 
@@ -1784,6 +1792,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Study" type="Area2D" parent="Spatial/CameraAreas" index="4"]
 
+editor/display_folded = true
 position = Vector2( 2694, -3336 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -1812,6 +1821,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="KidRoom" type="Area2D" parent="Spatial/CameraAreas" index="5"]
 
+editor/display_folded = true
 position = Vector2( 8838, -3336 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -1869,6 +1879,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Duct_1" type="Area2D" parent="Spatial/CameraAreas" index="7"]
 
+editor/display_folded = true
 position = Vector2( 5894, -2376 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -1897,6 +1908,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Secret" type="Area2D" parent="Spatial/CameraAreas" index="8"]
 
+editor/display_folded = true
 position = Vector2( 7622, -1800 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -1921,6 +1933,63 @@ c_margin_left = 400.0
 
 position = Vector2( 128, 0 )
 shape = SubResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Roof" type="Area2D" parent="Spatial/CameraAreas" index="9"]
+
+editor/display_folded = true
+position = Vector2( 6155.9, -5337.14 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 524288
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 35 )
+_sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+c_padding_all = 0.0
+c_margin_top = 0.0
+c_margin_right = 256.0
+c_margin_bottom = 256.0
+c_margin_left = 256.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Roof" index="0"]
+
+position = Vector2( 1024, 0 )
+shape = SubResource( 21 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Backyard" type="Area2D" parent="Spatial/CameraAreas" index="10"]
+
+position = Vector2( 16450.9, -1690.4 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 524288
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 35 )
+_sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+c_padding_all = 0.0
+c_margin_top = 0.0
+c_margin_right = 0.0
+c_margin_bottom = 0.0
+c_margin_left = 128.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Backyard" index="0"]
+
+position = Vector2( -3117.26, -409.986 )
+shape = SubResource( 22 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="GUI" type="CanvasLayer" parent="." index="3"]
