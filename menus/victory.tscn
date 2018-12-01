@@ -5,7 +5,7 @@
 [ext_resource path="res://placeholder_art/kenney_gui_modded/glassPanel_cornerBR.png" type="Texture" id=3]
 [ext_resource path="res://hud/font_kenvector_future_thin.tres" type="DynamicFont" id=4]
 
-[node name="Container" type="Node" index="0"]
+[node name="Container" type="Node"]
 
 script = ExtResource( 1 )
 

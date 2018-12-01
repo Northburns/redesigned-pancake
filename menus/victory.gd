@@ -40,4 +40,4 @@ func _process(delta):
 func _on_Timer_timeout():
 	enter.visible = true
 	yield(self, "enter_pressed")
-	get_tree().quit()
+	get_tree().change_scene("res://menus/menu.tscn")

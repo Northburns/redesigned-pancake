@@ -160,5 +160,5 @@ func talk_to_ufo_to_fin(message_node):
 			], 2)
 	yield(message_node, "message_done")
 	# TODO QUIT THIS SCENE AND GO TO VICTORY SCENE!
-	get_tree().change_scene("res://path/to/scene.scn")
+	get_tree().change_scene("res://menus/victory.tscn")
 		
