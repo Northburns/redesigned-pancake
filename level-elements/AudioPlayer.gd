@@ -9,9 +9,10 @@ onready var action = $ActionPlayer
 
 func music(m, loop=true):
 	assert(m != null)
-	m.set_loop(loop)
-	musicp.stream = m
-	musicp.play()
+	if musicp.stream != m:
+		m.set_loop(loop)
+		musicp.stream = m
+		musicp.play()
 
 func music_stop():
 	musicp.stop()
