@@ -18,4 +18,5 @@ func _on_LinkButton_pressed():
 
 
 func _on_StartThePlayNow_pressed():
+	audio.music_stop()
 	get_tree().change_scene("res://household/household.tscn")

@@ -13,6 +13,9 @@ func music(m, loop=true):
 	musicp.stream = m
 	musicp.play()
 
+func music_stop():
+	musicp.stop()
+
 func player_speak_jump1():
 	match randi()%3:
 		0: player_speak(r_jump1_a)
