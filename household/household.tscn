@@ -506,7 +506,7 @@ texture = ExtResource( 24 )
 offset = Vector2( 0, 0 )
 texture_scale = 10.0
 color = Color( 1, 1, 1, 1 )
-energy = 1.0
+energy = 0.8
 mode = 0
 range_height = 0.0
 range_z_min = -1024
@@ -549,7 +549,6 @@ polygon = PoolVector2Array( -452.064, 521.287, -214.284, 220.345, 214.837, 220.3
 
 [node name="lamp3" type="Sprite" parent="Spatial/Kitchen" index="4"]
 
-editor/display_folded = true
 position = Vector2( 5752.14, -1719.68 )
 scale = Vector2( 0.552671, 0.552671 )
 texture = ExtResource( 23 )
@@ -569,7 +568,7 @@ texture = ExtResource( 24 )
 offset = Vector2( 0, 0 )
 texture_scale = 10.0
 color = Color( 1, 1, 1, 1 )
-energy = 1.0
+energy = 0.8
 mode = 0
 range_height = 0.0
 range_z_min = -1024
@@ -699,6 +698,8 @@ coins_level = 0
 
 [node name="LivingRoom" type="Node2D" parent="Spatial" index="5"]
 
+editor/display_folded = true
+
 [node name="Television" type="Sprite" parent="Spatial/LivingRoom" index="0"]
 
 editor/display_folded = true
@@ -824,6 +825,7 @@ coins_level = 0
 
 [node name="Hall_Low" type="Node2D" parent="Spatial" index="6"]
 
+editor/display_folded = true
 position = Vector2( -80, 120 )
 
 [node name="Rummage-Area4" parent="Spatial/Hall_Low" index="0" instance=ExtResource( 8 )]
@@ -847,6 +849,7 @@ target = NodePath("../../Hall_Up/Teleport-Area2")
 
 [node name="Hall_Up" type="Node2D" parent="Spatial" index="7"]
 
+editor/display_folded = true
 position = Vector2( -80, 120 )
 
 [node name="Teleport-Area2" parent="Spatial/Hall_Up" index="0" instance=ExtResource( 21 )]
@@ -899,7 +902,7 @@ texture = ExtResource( 24 )
 offset = Vector2( 0, 0 )
 texture_scale = 10.0
 color = Color( 1, 1, 1, 1 )
-energy = 1.0
+energy = 0.8
 mode = 0
 range_height = 0.0
 range_z_min = -1024
@@ -943,7 +946,7 @@ polygon = PoolVector2Array( -452.064, 521.287, -214.284, 220.345, 214.837, 220.3
 [node name="lamp5" type="Sprite" parent="Spatial/Hall_Up" index="4"]
 
 editor/display_folded = true
-position = Vector2( 9956.33, -4145.05 )
+position = Vector2( 10274.2, -4145.05 )
 scale = Vector2( 0.552671, 0.552671 )
 texture = ExtResource( 32 )
 __meta__ = {
@@ -962,7 +965,7 @@ texture = ExtResource( 24 )
 offset = Vector2( 0, 0 )
 texture_scale = 10.0
 color = Color( 1, 1, 1, 1 )
-energy = 1.0
+energy = 0.8
 mode = 0
 range_height = 0.0
 range_z_min = -1024
@@ -1003,7 +1006,69 @@ scale = Vector2( 0.552671, 0.552671 )
 build_mode = 0
 polygon = PoolVector2Array( -452.064, 521.287, -214.284, 220.345, 214.837, 220.345, 450.762, 518.501, 224.126, 210.128, -220.785, 210.128 )
 
-[node name="yucca" type="Sprite" parent="Spatial/Hall_Up" index="5"]
+[node name="lamp6" type="Sprite" parent="Spatial/Hall_Up" index="5"]
+
+position = Vector2( 6809.41, -4399.21 )
+scale = Vector2( 0.552671, 0.552671 )
+texture = ExtResource( 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Light2D" type="Light2D" parent="Spatial/Hall_Up/lamp6" index="0" groups=[
+"vision_light",
+]]
+
+position = Vector2( -1.4126, 263.144 )
+scale = Vector2( 1.80939, 1.80939 )
+enabled = true
+editor_only = false
+texture = ExtResource( 24 )
+offset = Vector2( 0, 0 )
+texture_scale = 10.0
+color = Color( 1, 1, 1, 1 )
+energy = 0.6
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Shadow" ]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Hall_Up/lamp6" index="1"]
+
+occluder = SubResource( 1 )
+light_mask = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Hall_Up/lamp6" index="2"]
+
+position = Vector2( -5940.46, 3191.84 )
+scale = Vector2( 1.80939, 1.80939 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spatial/Hall_Up/lamp6/StaticBody2D" index="0"]
+
+position = Vector2( 3283.13, -1764.04 )
+scale = Vector2( 0.552671, 0.552671 )
+build_mode = 0
+polygon = PoolVector2Array( -452.064, 521.287, -214.284, 220.345, 214.837, 220.345, 450.762, 518.501, 224.126, 210.128, -220.785, 210.128 )
+
+[node name="yucca" type="Sprite" parent="Spatial/Hall_Up" index="6"]
 
 editor/display_folded = true
 position = Vector2( 3798, -2944 )
@@ -1035,7 +1100,7 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -72.2283, 184.629, -107.381, -127.454, 104.39, -116.308, 48.6611, 185.486 )
 
-[node name="yucca2" type="Sprite" parent="Spatial/Hall_Up" index="6"]
+[node name="yucca2" type="Sprite" parent="Spatial/Hall_Up" index="7"]
 
 editor/display_folded = true
 position = Vector2( 2049.76, -2934.48 )
@@ -1067,53 +1132,85 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -72.2283, 184.629, -107.381, -127.454, 104.39, -116.308, 48.6611, 185.486 )
 
-[node name="rummage9" parent="Spatial/Hall_Up" index="7" instance=ExtResource( 8 )]
+[node name="yucca3" type="Sprite" parent="Spatial/Hall_Up" index="8"]
+
+editor/display_folded = true
+position = Vector2( 6497.51, -3123.1 )
+scale = Vector2( 2.67225, 2.67225 )
+texture = ExtResource( 33 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Hall_Up/yucca3" index="0"]
+
+position = Vector2( 1.67651, 38.553 )
+occluder = SubResource( 2 )
+light_mask = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Hall_Up/yucca3" index="1"]
+
+position = Vector2( 1.67651, 43.5817 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spatial/Hall_Up/yucca3/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -72.2283, 184.629, -107.381, -127.454, 104.39, -116.308, 48.6611, 185.486 )
+
+[node name="rummage9" parent="Spatial/Hall_Up" index="9" instance=ExtResource( 8 )]
 
 position = Vector2( 3473.82, -2606.18 )
 battery_level = 2
 coins_level = 1
 
-[node name="rummage10" parent="Spatial/Hall_Up" index="8" instance=ExtResource( 8 )]
+[node name="rummage10" parent="Spatial/Hall_Up" index="10" instance=ExtResource( 8 )]
 
 position = Vector2( 3801.88, -3139.73 )
 food_level = 0
 battery_level = 0
 coins_level = 2
 
-[node name="rummage14" parent="Spatial/Hall_Up" index="9" instance=ExtResource( 8 )]
+[node name="rummage14" parent="Spatial/Hall_Up" index="11" instance=ExtResource( 8 )]
 
 position = Vector2( 7681.53, -3383.24 )
 food_level = 1
 coins_level = 1
 
-[node name="rummage15" parent="Spatial/Hall_Up" index="10" instance=ExtResource( 8 )]
+[node name="rummage15" parent="Spatial/Hall_Up" index="12" instance=ExtResource( 8 )]
 
 position = Vector2( 7339.52, -2605.95 )
 food_level = 0
 battery_level = 0
 coins_level = 1
 
-[node name="rummage11" parent="Spatial/Hall_Up" index="11" instance=ExtResource( 8 )]
+[node name="rummage11" parent="Spatial/Hall_Up" index="13" instance=ExtResource( 8 )]
 
 position = Vector2( 4162.38, -4073.43 )
 battery_level = 0
 coins_level = 2
 
-[node name="rummage12" parent="Spatial/Hall_Up" index="12" instance=ExtResource( 8 )]
+[node name="rummage12" parent="Spatial/Hall_Up" index="14" instance=ExtResource( 8 )]
 
 position = Vector2( 1545.13, -2617 )
 food_level = 0
 battery_level = 2
 coins_level = 2
 
-[node name="rummage13" parent="Spatial/Hall_Up" index="13" instance=ExtResource( 8 )]
+[node name="rummage13" parent="Spatial/Hall_Up" index="15" instance=ExtResource( 8 )]
 
 position = Vector2( 5022.49, -2613.83 )
 food_level = 0
 battery_level = 0
 coins_level = 2
 
-[node name="chair3" type="Sprite" parent="Spatial/Hall_Up" index="14"]
+[node name="chair3" type="Sprite" parent="Spatial/Hall_Up" index="16"]
 
 position = Vector2( 8739.66, -3038.58 )
 scale = Vector2( 0.788604, 0.788604 )
@@ -1121,6 +1218,7 @@ texture = ExtResource( 34 )
 
 [node name="AirDucts" type="Node2D" parent="Spatial" index="8"]
 
+editor/display_folded = true
 position = Vector2( -80, 120 )
 
 [node name="airduct2" type="Sprite" parent="Spatial/AirDucts" index="0"]
@@ -1206,7 +1304,6 @@ position = Vector2( 14760, -60 )
 
 [node name="foliagePack_011" type="Sprite" parent="Spatial/Backyard" index="0"]
 
-editor/display_folded = true
 position = Vector2( -756.082, -2014.56 )
 scale = Vector2( 4.71131, 4.53581 )
 texture = ExtResource( 36 )
@@ -1222,7 +1319,7 @@ texture = ExtResource( 37 )
 offset = Vector2( 0, 0 )
 texture_scale = 0.5
 color = Color( 0, 0.742188, 1, 0.563529 )
-energy = 1.0
+energy = 1.4
 mode = 0
 range_height = 0.0
 range_z_min = -1024
@@ -1297,6 +1394,7 @@ _sections_unfolded = [ "Shadow" ]
 
 [node name="lamp1" type="Sprite" parent="Spatial/Backyard" index="1"]
 
+editor/display_folded = true
 position = Vector2( -2761.63, -996.629 )
 scale = Vector2( -0.517169, 0.517169 )
 texture = ExtResource( 9 )
@@ -1387,7 +1485,7 @@ coins_level = 0
 
 [node name="rummage25" parent="Spatial/Backyard" index="7" instance=ExtResource( 8 )]
 
-position = Vector2( -1490, -2106.27 )
+position = Vector2( -2922.14, -2944.42 )
 food_level = 0
 battery_level = 0
 coins_level = 0
