@@ -37,7 +37,7 @@ func _process(delta):
 	set_bar(bar_batt, pglob.battery, pglob.battery_max)
 	
 	# Time left
-	label_time.text = str(pglob.time_left)
+	label_time.text = str(pglob.coins)
 	
 	# Danger is when escalation is 2+
 	set_danger( pglob.escalation >= 2 )

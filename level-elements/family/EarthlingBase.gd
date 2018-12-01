@@ -59,6 +59,7 @@ func _ready():
 	reset()
 
 func reset():
+	print("INTIIIIAAAL POSIIITIONNNN!")
 	paused = false
 	position = self.initial_position
 	suspicion_gauge = 0.0

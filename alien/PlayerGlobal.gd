@@ -19,7 +19,6 @@ var debug_draw = false
 var in_shadows = false
 
 var current_act = 1
-var time_left = 6500
 
 const RESOURCES_ACT2 = 40
 const RESOURCES_ACT3 = 150
@@ -30,6 +29,9 @@ var food = 0
 var food_max = 10
 var battery = 0
 var battery_max = 10
+
+var skill_doublejump = false
+var skill_levitate = false
 
 var escalation = 0
 
@@ -85,31 +87,67 @@ func escalate_music(level):
 #
 
 func message_begin(message_node):
+	skill_doublejump = false
+	skill_levitate = false
 	food_max = RESOURCES_ACT2
 	battery_max = RESOURCES_ACT2
 	message_node.do_texts([
-			"Oh my!\n\nI have noquamls",
-			"What is this?"
-			], 1)
+			"Nooccar!... Nooccar! Can you hear me?",
+			"Is that you? Thank the stars you're ok!",
+			"It's me, your ship's AI. We crashed on this wierd planet.",
+			"I'm in bad shape. Please find me. Bring supplies.",
+			"I need batteries to fix myself for space travel.\n\nYou, as a biomechanic traveller, will need food.",
+			"Maybe this wierd planet has both. Go forth and expore the perimeter!",
+			"...",
+			"Walk = Arrowkeys\n\nJump = Z or Y or Space\n\nInteract = X or H",
+			"Good luck, Nooccar!"
+			])
 	
 func talk_to_ufo(message_node):
 	if has_enough_resources():
 		match current_act:
-			1: talk_to_ufo_act1(message_node)
-			2: talk_to_ufo_act2(message_node)
-			3: talk_to_ufo_act3(message_node)
+			1: talk_to_ufo_to_act2(message_node)
+			2: talk_to_ufo_to_act3(message_node)
+			3: talk_to_ufo_to_fin(message_node)
 	else:
 		message_node.do_texts([
 				"You're still missing food and batteries, Nooccar.",
 				"Please, we must get out of this planet. Chatting idly doesn't do us much good!",
-				"You can do it! Explore the earhlings' dwelling."])
+				"You can do it, Nooccar! Explore the earhlings' dwelling."])
 
-func talk_to_ufo_act1(message_node):
-	pass
+func talk_to_ufo_to_act2(message_node):
+	message_node.do_texts([
+			"Nooccar, how'd you find all this? Impressive!",
+			"You know, with all these batteries I could... augment you. Hold still!",
+			"***",
+			"Ok, you can now DOUBLE JUMP! Just jump in mid-air.",
+			"With this power you can reach more places. Find more resources, we need to get home!",
+			"I believe in you, Nooccar!"
+			], 2)
+	skill_doublejump = true
+	between_acts()
+	
+	
+func talk_to_ufo_to_act3(message_node):
+	message_node.do_texts([
+			"Your double jumping is most magnificent!",
+			"We don't quite have enough batteries for liftoff, though...",
+			"But look what I found: your old DRONE!",
+			"***",
+			"Activate drone like this: after double jump, press'n' hold jump. Move with arrow keys.",
+			"You are very skillful, Nooccar!"
+			], 3)
+	skill_levitate = true
+	between_acts()
+	
 
-func talk_to_ufo_act2(message_node):
-	pass
-
-func talk_to_ufo_act3(message_node):
+func talk_to_ufo_to_fin(message_node):
+	message_node.do_texts([
+			"You did it, Nooccar! With these resources, we can patch the ship up.",
+			"We'll be on route to home in no time.",
+			"Hey, hold this wrench, will ya?",
+			"***",
+			"Let's go! I couldn't ask for a better pilot, Nooccar <3"
+			], 3)
 	pass
 		

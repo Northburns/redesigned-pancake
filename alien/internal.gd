@@ -43,6 +43,8 @@ func _ready():
 	pglob.escalate_music(1)
 	
 func _process(delta):
+	additional_jumps_max = 1 if pglob.skill_doublejump else 0
+	levitate_allowed = pglob.skill_levitate
 	update_shadow_state()
 
 func update_shadow_state():
