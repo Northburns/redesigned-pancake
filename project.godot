@@ -10,9 +10,9 @@ config_version=3
 
 [application]
 
-config/name="Redesigned Pancake"
-run/main_scene="res://household/household.tscn"
-config/icon="res://icon.png"
+config/name="Shipwrecked Space Scoundrel"
+run/main_scene="res://menus/menu.tscn"
+config/icon="res://team-assets/splash.png"
 
 [autoload]
 
