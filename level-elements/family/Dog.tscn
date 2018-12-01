@@ -57,6 +57,10 @@ shape = SubResource( 1 )
 
 position = Vector2( -3.99451, -348.501 )
 
+[node name="AudioListings" parent="." index="3"]
+
+editor/display_folded = false
+
 [node name="idle_1" parent="AudioListings" index="0"]
 
 stream = ExtResource( 2 )
@@ -91,5 +95,6 @@ position = Vector2( -27.5206, -306.576 )
 frames = SubResource( 2 )
 animation = "idle"
 playing = true
+_sections_unfolded = [ "Transform" ]
 
 

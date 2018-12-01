@@ -1,4 +1,62 @@
-[gd_scene format=2]
+[gd_scene load_steps=58 format=2]
+
+[ext_resource path="res://menus/EarthlingAnimator.gd" type="Script" id=1]
+[ext_resource path="res://level-elements/family/Dog.tscn" type="PackedScene" id=2]
+[ext_resource path="res://level-elements/family/Henry.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level-elements/family/Rebecca.tscn" type="PackedScene" id=4]
+[ext_resource path="res://level-elements/family/Jane.tscn" type="PackedScene" id=5]
+[ext_resource path="res://menus/SoundButtonContainer.gd" type="Script" id=6]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hop1_mixd.wav" type="AudioStream" id=7]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hop2_mixd.wav" type="AudioStream" id=8]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hop3_mixd.wav" type="AudioStream" id=9]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_wheeeee_mixd.wav" type="AudioStream" id=10]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_wheheeee_mixd.wav" type="AudioStream" id=11]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hiiop_mixd.wav" type="AudioStream" id=12]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hmm1_mixd.wav" type="AudioStream" id=13]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hmm2_mixd.wav" type="AudioStream" id=14]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_haa_mixd.wav" type="AudioStream" id=15]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_wuhuu_mixd.wav" type="AudioStream" id=16]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_yess_mixd.wav" type="AudioStream" id=17]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_eat1_mixd.wav" type="AudioStream" id=18]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_eat2_mixd.wav" type="AudioStream" id=19]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_eat3_mixd.wav" type="AudioStream" id=20]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_omnom1_mixd.wav" type="AudioStream" id=21]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_omnom2_mixd.wav" type="AudioStream" id=22]
+[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_kuors_mixd.wav" type="AudioStream" id=23]
+[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_murrr1_mixd.wav" type="AudioStream" id=24]
+[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_nuuh_mixd.wav" type="AudioStream" id=25]
+[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_urmurmur1_mixd.wav" type="AudioStream" id=26]
+[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_urmurmur2_mixd.wav" type="AudioStream" id=27]
+[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_HAU_mixd.wav" type="AudioStream" id=28]
+[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_haukkumurrr_mixd.wav" type="AudioStream" id=29]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_himself1_mixd.wav" type="AudioStream" id=30]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_himself2_mixd.wav" type="AudioStream" id=31]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_hearingthings_mixd.wav" type="AudioStream" id=32]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_who1_mixd.wav" type="AudioStream" id=33]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_who2_mixd.wav" type="AudioStream" id=34]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_away1_mixd.wav" type="AudioStream" id=35]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_away2_mixd.wav" type="AudioStream" id=36]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_away3_mixd.wav" type="AudioStream" id=37]
+[ext_resource path="res://team-assets/sounds/sfx/rebecca_working.wav" type="AudioStream" id=38]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_who1_mixd.wav" type="AudioStream" id=39]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_who2_mixd.wav" type="AudioStream" id=40]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_alert1_mixd.wav" type="AudioStream" id=41]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_alert2_mixd.wav" type="AudioStream" id=42]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_eek1_mixd.wav" type="AudioStream" id=43]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_eek2_mixd.wav" type="AudioStream" id=44]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_fight1_mixd.wav" type="AudioStream" id=45]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_fight2_mixd.wav" type="AudioStream" id=46]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_herself1_mixd.wav" type="AudioStream" id=47]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_herself2_mixd.wav" type="AudioStream" id=48]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_who1_mixd.wav" type="AudioStream" id=49]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_who2_mixd.wav" type="AudioStream" id=50]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_dad1_mixd.wav" type="AudioStream" id=51]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_dad2_mixd.wav" type="AudioStream" id=52]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_dad3_mixd.wav" type="AudioStream" id=53]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_mom1_mixd.wav" type="AudioStream" id=54]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_mom2_mixd.wav" type="AudioStream" id=55]
+[ext_resource path="res://team-assets/sounds/sfx/roboty.wav" type="AudioStream" id=56]
+[ext_resource path="res://team-assets/sounds/sfx/upgrades.wav" type="AudioStream" id=57]
 
 [node name="Container" type="Container" index="0"]
 
@@ -19,10 +77,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 215.0
-margin_top = 137.0
-margin_right = 571.0
-margin_bottom = 443.0
+margin_left = 5.0
+margin_top = 46.0
+margin_right = 640.0
+margin_bottom = 752.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -31,9 +89,12 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 tab_align = 1
 tabs_visible = true
+_sections_unfolded = [ "custom_icons", "custom_styles" ]
 
 [node name="Nooccar" type="Tabs" parent="TabContainer" index="0"]
 
+editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -70,7 +131,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Tabs" type="Tabs" parent="TabContainer" index="1"]
+[node name="BonBon" type="Tabs" parent="TabContainer" index="1"]
 
 visible = false
 anchor_left = 0.0
@@ -90,13 +151,453 @@ size_flags_vertical = 1
 tab_align = 1
 scrolling_enabled = true
 
-[node name="Label" type="Label" parent="TabContainer/Tabs" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/BonBon" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+script = ExtResource( 1 )
+
+[node name="idle" type="Button" parent="TabContainer/BonBon/HBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
+margin_right = 36.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "idle"
+flat = false
+align = 1
+
+[node name="wakeup" type="Button" parent="TabContainer/BonBon/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_right = 100.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "wakeup"
+flat = false
+align = 1
+
+[node name="walk" type="Button" parent="TabContainer/BonBon/HBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 104.0
+margin_right = 144.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "walk"
+flat = false
+align = 1
+
+[node name="earthling" parent="TabContainer/BonBon/HBoxContainer" index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 387.812, 479.778 )
+_sections_unfolded = [ "Pause", "Transform" ]
+
+[node name="Henry" type="Tabs" parent="TabContainer" index="2"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+tab_align = 1
+scrolling_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Henry" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+script = ExtResource( 1 )
+
+[node name="idle" type="Button" parent="TabContainer/Henry/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 36.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "idle"
+flat = false
+align = 1
+
+[node name="wakeup" type="Button" parent="TabContainer/Henry/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_right = 100.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "wakeup"
+flat = false
+align = 1
+
+[node name="walk" type="Button" parent="TabContainer/Henry/HBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 104.0
+margin_right = 144.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "walk"
+flat = false
+align = 1
+
+[node name="EarthlingBase" parent="TabContainer/Henry/HBoxContainer" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 426.341, 449.34 )
+scale = Vector2( 0.372931, 0.372931 )
+
+[node name="Rebecca" type="Tabs" parent="TabContainer" index="3"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+tab_align = 1
+scrolling_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Rebecca" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+script = ExtResource( 1 )
+
+[node name="idle" type="Button" parent="TabContainer/Rebecca/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 36.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "idle"
+flat = false
+align = 1
+
+[node name="wakeup" type="Button" parent="TabContainer/Rebecca/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_right = 100.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "wakeup"
+flat = false
+align = 1
+
+[node name="walk" type="Button" parent="TabContainer/Rebecca/HBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 104.0
+margin_right = 144.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "walk"
+flat = false
+align = 1
+
+[node name="EarthlingBase" parent="TabContainer/Rebecca/HBoxContainer" index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 374.61, 452.654 )
+scale = Vector2( 0.35834, 0.35834 )
+
+[node name="Jane" type="Tabs" parent="TabContainer" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+tab_align = 1
+scrolling_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Jane" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+script = ExtResource( 1 )
+
+[node name="idle" type="Button" parent="TabContainer/Jane/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 36.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "idle"
+flat = false
+align = 1
+
+[node name="wakeup" type="Button" parent="TabContainer/Jane/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_right = 100.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "wakeup"
+flat = false
+align = 1
+
+[node name="walk" type="Button" parent="TabContainer/Jane/HBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 104.0
+margin_right = 144.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "walk"
+flat = false
+align = 1
+
+[node name="EarthlingBase" parent="TabContainer/Jane/HBoxContainer" index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 370.077, 450.638 )
+
+[node name="SFX" type="VBoxContainer" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 659.0
+margin_top = 196.0
+margin_right = 1012.0
+margin_bottom = 756.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Nooccar" type="Label" parent="SFX" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 353.0
 margin_bottom = 14.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -104,9 +605,2012 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Y"
+text = "Nooccar"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="GridContainer" type="GridContainer" parent="SFX" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 18.0
+margin_right = 353.0
+margin_bottom = 158.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+columns = 3
+script = ExtResource( 6 )
+
+[node name="Jump1" type="Button" parent="SFX/GridContainer" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Jump1" index="0"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Jump2" type="Button" parent="SFX/GridContainer" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_right = 44.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Jump2" index="0"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Jump3" type="Button" parent="SFX/GridContainer" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_right = 68.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Jump3" index="0"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DoubleJump1" type="Button" parent="SFX/GridContainer" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 20.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/DoubleJump1" index="0"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DoubleJump2" type="Button" parent="SFX/GridContainer" index="4"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 44.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/DoubleJump2" index="0"]
+
+stream = ExtResource( 11 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Levitate" type="Button" parent="SFX/GridContainer" index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 24.0
+margin_right = 68.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Levitate" index="0"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Hmm1" type="Button" parent="SFX/GridContainer" index="6"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 48.0
+margin_right = 20.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Hmm1" index="0"]
+
+stream = ExtResource( 13 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Hmm2" type="Button" parent="SFX/GridContainer" index="7"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_top = 48.0
+margin_right = 44.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Hmm2" index="0"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Rummage1" type="Button" parent="SFX/GridContainer" index="8"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 48.0
+margin_right = 68.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Rummage1" index="0"]
+
+stream = ExtResource( 15 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Rummage2" type="Button" parent="SFX/GridContainer" index="9"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 72.0
+margin_right = 20.0
+margin_bottom = 92.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Rummage2" index="0"]
+
+stream = ExtResource( 16 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Rummage3" type="Button" parent="SFX/GridContainer" index="10"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_top = 72.0
+margin_right = 44.0
+margin_bottom = 92.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Rummage3" index="0"]
+
+stream = ExtResource( 17 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Omnom1" type="Button" parent="SFX/GridContainer" index="11"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 92.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Omnom1" index="0"]
+
+stream = ExtResource( 18 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Omnom2" type="Button" parent="SFX/GridContainer" index="12"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 96.0
+margin_right = 20.0
+margin_bottom = 116.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Omnom2" index="0"]
+
+stream = ExtResource( 19 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Omnom3" type="Button" parent="SFX/GridContainer" index="13"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_top = 96.0
+margin_right = 44.0
+margin_bottom = 116.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Omnom3" index="0"]
+
+stream = ExtResource( 20 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Omnom4" type="Button" parent="SFX/GridContainer" index="14"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 96.0
+margin_right = 68.0
+margin_bottom = 116.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Omnom4" index="0"]
+
+stream = ExtResource( 21 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Omnom5" type="Button" parent="SFX/GridContainer" index="15"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 120.0
+margin_right = 20.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Omnom5" index="0"]
+
+stream = ExtResource( 22 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="AI_stopped_talking" type="Button" parent="SFX/GridContainer" index="16"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_top = 120.0
+margin_right = 44.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/AI_stopped_talking" index="0"]
+
+stream = ExtResource( 15 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="BonBon" type="Label" parent="SFX" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 162.0
+margin_right = 353.0
+margin_bottom = 176.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "BonBon"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="GridContainer2" type="GridContainer" parent="SFX" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 180.0
+margin_right = 353.0
+margin_bottom = 248.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+columns = 3
+script = ExtResource( 6 )
+
+[node name="Idle1" type="Button" parent="SFX/GridContainer2" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer2/Idle1" index="0"]
+
+stream = ExtResource( 23 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Alert1" type="Button" parent="SFX/GridContainer2" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_right = 44.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer2/Alert1" index="0"]
+
+stream = ExtResource( 24 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Alert2" type="Button" parent="SFX/GridContainer2" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_right = 68.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer2/Alert2" index="0"]
+
+stream = ExtResource( 25 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Alert3" type="Button" parent="SFX/GridContainer2" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 20.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer2/Alert3" index="0"]
+
+stream = ExtResource( 26 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Alert4" type="Button" parent="SFX/GridContainer2" index="4"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 44.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer2/Alert4" index="0"]
+
+stream = ExtResource( 27 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase1" type="Button" parent="SFX/GridContainer2" index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 24.0
+margin_right = 68.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer2/Chase1" index="0"]
+
+stream = ExtResource( 28 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase2" type="Button" parent="SFX/GridContainer2" index="6"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 48.0
+margin_right = 20.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer2/Chase2" index="0"]
+
+stream = ExtResource( 29 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Henry" type="Label" parent="SFX" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 252.0
+margin_right = 353.0
+margin_bottom = 266.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Henry"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="GridContainer3" type="GridContainer" parent="SFX" index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 270.0
+margin_right = 353.0
+margin_bottom = 338.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+columns = 3
+script = ExtResource( 6 )
+
+[node name="Idle1" type="Button" parent="SFX/GridContainer3" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Idle1" index="0"]
+
+stream = ExtResource( 30 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Idle2" type="Button" parent="SFX/GridContainer3" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_right = 44.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Idle2" index="0"]
+
+stream = ExtResource( 31 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Alert1" type="Button" parent="SFX/GridContainer3" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_right = 68.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Alert1" index="0"]
+
+stream = ExtResource( 32 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Alert2" type="Button" parent="SFX/GridContainer3" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 20.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Alert2" index="0"]
+
+stream = ExtResource( 33 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Alert3" type="Button" parent="SFX/GridContainer3" index="4"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 44.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Alert3" index="0"]
+
+stream = ExtResource( 34 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase1" type="Button" parent="SFX/GridContainer3" index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 24.0
+margin_right = 68.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Chase1" index="0"]
+
+stream = ExtResource( 35 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase2" type="Button" parent="SFX/GridContainer3" index="6"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 48.0
+margin_right = 20.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Chase2" index="0"]
+
+stream = ExtResource( 36 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase3" type="Button" parent="SFX/GridContainer3" index="7"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_top = 48.0
+margin_right = 44.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Chase3" index="0"]
+
+stream = ExtResource( 37 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Rebecca" type="Label" parent="SFX" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 342.0
+margin_right = 353.0
+margin_bottom = 356.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Rebecca"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="GridContainer4" type="GridContainer" parent="SFX" index="7"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 360.0
+margin_right = 353.0
+margin_bottom = 428.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+columns = 3
+script = ExtResource( 6 )
+
+[node name="Idle1" type="Button" parent="SFX/GridContainer4" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Idle1" index="0"]
+
+stream = ExtResource( 38 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Alert1" type="Button" parent="SFX/GridContainer4" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_right = 44.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Alert1" index="0"]
+
+stream = ExtResource( 39 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Alert2" type="Button" parent="SFX/GridContainer4" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_right = 68.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Alert2" index="0"]
+
+stream = ExtResource( 40 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase1" type="Button" parent="SFX/GridContainer4" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 20.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Chase1" index="0"]
+
+stream = ExtResource( 41 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase2" type="Button" parent="SFX/GridContainer4" index="4"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 44.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Chase2" index="0"]
+
+stream = ExtResource( 42 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase3" type="Button" parent="SFX/GridContainer4" index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 24.0
+margin_right = 68.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Chase3" index="0"]
+
+stream = ExtResource( 43 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase4" type="Button" parent="SFX/GridContainer4" index="6"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 48.0
+margin_right = 20.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Chase4" index="0"]
+
+stream = ExtResource( 44 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase5" type="Button" parent="SFX/GridContainer4" index="7"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_top = 48.0
+margin_right = 44.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Chase5" index="0"]
+
+stream = ExtResource( 45 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase6" type="Button" parent="SFX/GridContainer4" index="8"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 48.0
+margin_right = 68.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Chase6" index="0"]
+
+stream = ExtResource( 46 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Jane" type="Label" parent="SFX" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 432.0
+margin_right = 353.0
+margin_bottom = 446.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Jane"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="GridContainer5" type="GridContainer" parent="SFX" index="9"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 450.0
+margin_right = 353.0
+margin_bottom = 518.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+columns = 3
+script = ExtResource( 6 )
+
+[node name="Idle1" type="Button" parent="SFX/GridContainer5" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Idle1" index="0"]
+
+stream = ExtResource( 47 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Idle2" type="Button" parent="SFX/GridContainer5" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_right = 44.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Idle2" index="0"]
+
+stream = ExtResource( 48 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Alert1" type="Button" parent="SFX/GridContainer5" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_right = 68.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Alert1" index="0"]
+
+stream = ExtResource( 49 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Alert2" type="Button" parent="SFX/GridContainer5" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 20.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Alert2" index="0"]
+
+stream = ExtResource( 50 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase1" type="Button" parent="SFX/GridContainer5" index="4"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 44.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Chase1" index="0"]
+
+stream = ExtResource( 51 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase2" type="Button" parent="SFX/GridContainer5" index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 24.0
+margin_right = 68.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Chase2" index="0"]
+
+stream = ExtResource( 52 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase3" type="Button" parent="SFX/GridContainer5" index="6"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 48.0
+margin_right = 20.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Chase3" index="0"]
+
+stream = ExtResource( 53 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase4" type="Button" parent="SFX/GridContainer5" index="7"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_top = 48.0
+margin_right = 44.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Chase4" index="0"]
+
+stream = ExtResource( 54 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Chase5" type="Button" parent="SFX/GridContainer5" index="8"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 48.0
+margin_right = 68.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Chase5" index="0"]
+
+stream = ExtResource( 55 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="AI" type="Label" parent="SFX" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 522.0
+margin_right = 353.0
+margin_bottom = 536.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "AI"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="GridContainer6" type="GridContainer" parent="SFX" index="11"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 540.0
+margin_right = 353.0
+margin_bottom = 560.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+columns = 3
+script = ExtResource( 6 )
+
+[node name="Talk" type="Button" parent="SFX/GridContainer6" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer6/Talk" index="0"]
+
+stream = ExtResource( 56 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="UpgradeInstall" type="Button" parent="SFX/GridContainer6" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_right = 44.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "X"
+flat = false
+align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer6/UpgradeInstall" index="0"]
+
+stream = ExtResource( 57 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="dummy" type="Node2D" parent="." index="2" groups=[
+"player",
+]]
+
+[node name="VisibilityPoint" type="Position2D" parent="dummy" index="0"]
 
 
