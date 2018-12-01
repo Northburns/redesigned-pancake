@@ -54,58 +54,58 @@
 [ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=52]
 [ext_resource path="res://hud/Message.tscn" type="PackedScene" id=53]
 
-[sub_resource type="OccluderPolygon2D" id=14]
+[sub_resource type="OccluderPolygon2D" id=1]
 
 closed = true
 cull_mode = 0
 polygon = PoolVector2Array( -179.215, -148.058, 151.697, -147.19, 153.774, -159.751, -180.674, -159.733 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 166.255, 15.9299 )
 
-[sub_resource type="OccluderPolygon2D" id=1]
+[sub_resource type="OccluderPolygon2D" id=3]
 
 closed = false
 cull_mode = 0
 polygon = PoolVector2Array( -448.255, 518.211, -212.331, 221.913, 214.933, 220.984, 449.927, 518.211 )
 
-[sub_resource type="OccluderPolygon2D" id=2]
+[sub_resource type="OccluderPolygon2D" id=4]
 
 closed = true
 cull_mode = 2
 polygon = PoolVector2Array( 49.5413, 182.324, 99.8909, -115.975, -113.858, -126.424, -71.1082, 187.074 )
 
-[sub_resource type="OccluderPolygon2D" id=3]
+[sub_resource type="OccluderPolygon2D" id=5]
 
 closed = false
 cull_mode = 1
 polygon = PoolVector2Array( -9.50586, -1128.64, 31.9063, -1154.41, 42.8672, -763.85, 32.0918, -430.854 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 163.26, 274.688 )
 
-[sub_resource type="OccluderPolygon2D" id=18]
+[sub_resource type="OccluderPolygon2D" id=7]
 
 closed = true
 cull_mode = 0
 polygon = PoolVector2Array( -223.207, -237.458, 216.453, -240.84, 216.453, -107.251, 158.959, -112.324, 153.886, 310.427, -180.933, 356.083, -175.859, -114.015, -223.207, -117.397 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
 extents = Vector2( 75.6831, 172.442 )
 
-[sub_resource type="OccluderPolygon2D" id=17]
+[sub_resource type="OccluderPolygon2D" id=9]
 
 closed = true
 cull_mode = 0
 polygon = PoolVector2Array( -26.7524, 33.0251, 57.2646, -174.952, 22.832, -205.253, 79.3027, -201.121, -36.3936, 72.968, -101.128, 92.2505 )
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=10]
 
 resource_name = "blink"
 length = 2.4
@@ -124,62 +124,62 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=11]
 
 custom_solver_bias = 0.0
 extents = Vector2( 640, 512 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=12]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2688, 1020 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=13]
 
 custom_solver_bias = 0.0
 extents = Vector2( 1792, 1020 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=14]
 
 custom_solver_bias = 0.0
 extents = Vector2( 640, 704 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=15]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2560, 1024 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=16]
 
 custom_solver_bias = 0.0
 extents = Vector2( 1920, 1024 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=17]
 
 custom_solver_bias = 0.0
 extents = Vector2( 896, 1024 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=18]
 
 custom_solver_bias = 0.0
 extents = Vector2( 4928, 320 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=19]
 
 custom_solver_bias = 0.0
 extents = Vector2( 1024, 409.087 )
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=20]
 
 custom_solver_bias = 0.0
 extents = Vector2( 5319.85, 1024 )
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=21]
 
 custom_solver_bias = 0.0
 extents = Vector2( 1518.9, 2218.42 )
 
-[node name="household" type="Node2D" index="0"]
+[node name="household" type="Node2D"]
 
 [node name="Background" type="CanvasLayer" parent="." index="0"]
 
@@ -322,7 +322,7 @@ texture = ExtResource( 9 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Yard/lamp0" index="0"]
 
-occluder = SubResource( 14 )
+occluder = SubResource( 1 )
 light_mask = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Yard/lamp0" index="1"]
@@ -338,7 +338,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/Yard/lamp0/StaticBody2D" index="0"]
 
 position = Vector2( -2.97168, -166.405 )
-shape = SubResource( 15 )
+shape = SubResource( 2 )
 
 [node name="PorchLight" type="Light2D" parent="Spatial/Yard/lamp0" index="2" groups=[
 "vision_light",
@@ -525,7 +525,7 @@ _sections_unfolded = [ "Shadow" ]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Kitchen/lamp2" index="1"]
 
-occluder = SubResource( 1 )
+occluder = SubResource( 3 )
 light_mask = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Kitchen/lamp2" index="2"]
@@ -587,7 +587,7 @@ _sections_unfolded = [ "Shadow" ]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Kitchen/lamp3" index="1"]
 
-occluder = SubResource( 1 )
+occluder = SubResource( 3 )
 light_mask = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Kitchen/lamp3" index="2"]
@@ -618,7 +618,7 @@ texture = ExtResource( 25 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Kitchen/thuja" index="0"]
 
-occluder = SubResource( 2 )
+occluder = SubResource( 4 )
 light_mask = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Kitchen/thuja" index="1"]
@@ -645,7 +645,7 @@ texture = ExtResource( 25 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Kitchen/thuja2" index="0"]
 
-occluder = SubResource( 2 )
+occluder = SubResource( 4 )
 light_mask = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Kitchen/thuja2" index="1"]
@@ -745,7 +745,7 @@ _sections_unfolded = [ "Shadow", "Transform" ]
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/LivingRoom/Television" index="1"]
 
 position = Vector2( -470.146, 146.214 )
-occluder = SubResource( 3 )
+occluder = SubResource( 5 )
 light_mask = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/LivingRoom/Television" index="2"]
@@ -921,7 +921,7 @@ _sections_unfolded = [ "Shadow" ]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Hall_Up/lamp4" index="1"]
 
-occluder = SubResource( 1 )
+occluder = SubResource( 3 )
 light_mask = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Hall_Up/lamp4" index="2"]
@@ -984,7 +984,7 @@ _sections_unfolded = [ "Shadow" ]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Hall_Up/lamp5" index="1"]
 
-occluder = SubResource( 1 )
+occluder = SubResource( 3 )
 light_mask = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Hall_Up/lamp5" index="2"]
@@ -1046,7 +1046,7 @@ _sections_unfolded = [ "Shadow" ]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Hall_Up/lamp6" index="1"]
 
-occluder = SubResource( 1 )
+occluder = SubResource( 3 )
 light_mask = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Hall_Up/lamp6" index="2"]
@@ -1081,7 +1081,7 @@ __meta__ = {
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Hall_Up/yucca" index="0"]
 
 position = Vector2( 1.67651, 38.553 )
-occluder = SubResource( 2 )
+occluder = SubResource( 4 )
 light_mask = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Hall_Up/yucca" index="1"]
@@ -1113,7 +1113,7 @@ __meta__ = {
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Hall_Up/yucca2" index="0"]
 
 position = Vector2( 1.67651, 38.553 )
-occluder = SubResource( 2 )
+occluder = SubResource( 4 )
 light_mask = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Hall_Up/yucca2" index="1"]
@@ -1145,7 +1145,7 @@ __meta__ = {
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Hall_Up/yucca3" index="0"]
 
 position = Vector2( 1.67651, 38.553 )
-occluder = SubResource( 2 )
+occluder = SubResource( 4 )
 light_mask = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Hall_Up/yucca3" index="1"]
@@ -1402,7 +1402,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Backyard/lamp1" index="0"]
 
-occluder = SubResource( 14 )
+occluder = SubResource( 1 )
 light_mask = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Backyard/lamp1" index="1"]
@@ -1418,7 +1418,7 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/Backyard/lamp1/StaticBody2D" index="0"]
 
 position = Vector2( -2.97168, -166.405 )
-shape = SubResource( 15 )
+shape = SubResource( 2 )
 
 [node name="PorchLight" type="Light2D" parent="Spatial/Backyard/lamp1" index="2" groups=[
 "vision_light",
@@ -1517,12 +1517,12 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/Roof/chimney/StaticBody2D" index="0"]
 
 position = Vector2( 2.24268, 29.168 )
-shape = SubResource( 19 )
+shape = SubResource( 6 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Roof/chimney" index="1"]
 
 position = Vector2( 6.21533, -6.21509 )
-occluder = SubResource( 18 )
+occluder = SubResource( 7 )
 light_mask = 1
 
 [node name="dish" type="Sprite" parent="Spatial/Roof" index="1"]
@@ -1545,11 +1545,11 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/Roof/dish/StaticBody2D" index="0"]
 
 position = Vector2( 27.0342, 36.0549 )
-shape = SubResource( 16 )
+shape = SubResource( 8 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Spatial/Roof/dish" index="1"]
 
-occluder = SubResource( 17 )
+occluder = SubResource( 9 )
 light_mask = 1
 
 [node name="light" type="Light2D" parent="Spatial/Roof/dish" index="2" groups=[
@@ -1589,7 +1589,7 @@ autoplay = "blink"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/blink = SubResource( 20 )
+anims/blink = SubResource( 10 )
 blend_times = [  ]
 
 [node name="Teleport-Area2" parent="Spatial/Roof" index="2" instance=ExtResource( 21 )]
@@ -1763,7 +1763,7 @@ c_margin_left = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/FrontYard_SPECIAL" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 11 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Kitchen" type="Area2D" parent="Spatial/CameraAreas" index="1"]
@@ -1791,7 +1791,7 @@ c_margin_left = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Kitchen" index="0"]
 
-shape = SubResource( 6 )
+shape = SubResource( 12 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="LivingRoom" type="Area2D" parent="Spatial/CameraAreas" index="2"]
@@ -1820,7 +1820,7 @@ c_margin_left = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/LivingRoom" index="0"]
 
 position = Vector2( 64, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 13 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Hall_Down" type="Area2D" parent="Spatial/CameraAreas" index="3"]
@@ -1847,7 +1847,7 @@ c_margin_left = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Hall_Down" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Study" type="Area2D" parent="Spatial/CameraAreas" index="4"]
@@ -1876,7 +1876,7 @@ c_margin_left = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Study" index="0"]
 
 position = Vector2( 1024, 0 )
-shape = SubResource( 9 )
+shape = SubResource( 15 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="KidRoom" type="Area2D" parent="Spatial/CameraAreas" index="5"]
@@ -1905,7 +1905,7 @@ c_margin_left = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/KidRoom" index="0"]
 
 position = Vector2( 1024, 0 )
-shape = SubResource( 10 )
+shape = SubResource( 16 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Hall_Up" type="Area2D" parent="Spatial/CameraAreas" index="6"]
@@ -1934,7 +1934,7 @@ c_margin_left = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Hall_Up" index="0"]
 
 position = Vector2( 640, 0 )
-shape = SubResource( 11 )
+shape = SubResource( 17 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Duct_1" type="Area2D" parent="Spatial/CameraAreas" index="7"]
@@ -1963,7 +1963,7 @@ c_margin_left = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Duct_1" index="0"]
 
 position = Vector2( 1024, 256 )
-shape = SubResource( 12 )
+shape = SubResource( 18 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Secret" type="Area2D" parent="Spatial/CameraAreas" index="8"]
@@ -1991,7 +1991,7 @@ c_margin_left = 400.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Secret" index="0"]
 
 position = Vector2( 128, 0 )
-shape = SubResource( 13 )
+shape = SubResource( 19 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Roof" type="Area2D" parent="Spatial/CameraAreas" index="9"]
@@ -2020,7 +2020,7 @@ c_margin_left = 256.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Roof" index="0"]
 
 position = Vector2( 1024, 0 )
-shape = SubResource( 21 )
+shape = SubResource( 20 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Backyard" type="Area2D" parent="Spatial/CameraAreas" index="10"]
@@ -2049,7 +2049,7 @@ c_margin_left = 128.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spatial/CameraAreas/Backyard" index="0"]
 
 position = Vector2( -3117.26, -409.986 )
-shape = SubResource( 22 )
+shape = SubResource( 21 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="GUI" type="CanvasLayer" parent="." index="3"]
