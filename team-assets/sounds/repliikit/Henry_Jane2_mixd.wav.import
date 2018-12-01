@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Henry_Jane2_mixd.wav-18398797a96bfd0233dca5f39f5cf8cb.sample"
+
+[deps]
+
+source_file="res://team-assets/sounds/repliikit/Henry_Jane2_mixd.wav"
+dest_files=[ "res://.import/Henry_Jane2_mixd.wav-18398797a96bfd0233dca5f39f5cf8cb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

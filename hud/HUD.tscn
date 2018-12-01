@@ -1,0 +1,386 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://hud/HUD.gd" type="Script" id=1]
+[ext_resource path="res://placeholder_art/kenney_gui_modded/glassPanel_cornerBR.png" type="Texture" id=2]
+[ext_resource path="res://hud/bar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://hud/bar_batteries.tscn" type="PackedScene" id=4]
+[ext_resource path="res://team-assets/pixel_000.png" type="Texture" id=5]
+[ext_resource path="res://hud/font_kenvector_future_thin.tres" type="DynamicFont" id=6]
+[ext_resource path="res://hud/TimeLabel.gd" type="Script" id=7]
+[ext_resource path="res://hud/DangerLabel.gd" type="Script" id=8]
+[ext_resource path="res://hud/FPS.gd" type="Script" id=9]
+
+[node name="HUD" type="Container"]
+
+pause_mode = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = 23.0
+margin_top = 38.0
+margin_right = -181.0
+margin_bottom = 674.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+rebecca = null
+jane = null
+bonbon = null
+henry = null
+
+[node name="glass" type="Container" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 182.0
+margin_bottom = 503.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Size Flags" ]
+
+[node name="bg" type="NinePatchRect" parent="glass" index="0"]
+
+modulate = Color( 0.5625, 0.5625, 0.5625, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -85.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+_sections_unfolded = [ "Axis Stretch", "Patch Margin", "Size Flags", "Visibility" ]
+
+[node name="bars" type="HBoxContainer" parent="glass" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 165.0
+margin_bottom = 235.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 0
+_sections_unfolded = [ "Anchor", "Margin", "Size Flags", "Theme" ]
+
+[node name="BarFood" parent="glass/bars" index="0" instance=ExtResource( 3 )]
+
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 73.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Size Flags", "Theme" ]
+
+[node name="BarBatteries" parent="glass/bars" index="1" instance=ExtResource( 4 )]
+
+anchor_bottom = 0.0
+margin_left = 77.0
+margin_top = 0.0
+margin_right = 150.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Size Flags" ]
+
+[node name="HSeparator" type="HSeparator" parent="glass" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 247.0
+margin_right = 172.0
+margin_bottom = 259.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Sprite" type="Sprite" parent="glass" index="3"]
+
+position = Vector2( 94.0199, 330.069 )
+scale = Vector2( 19.255, 19.2671 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="glass" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 23.0
+margin_top = 261.0
+margin_right = 65.0
+margin_bottom = 279.0
+rect_rotation = -3.03811
+rect_pivot_offset = Vector2( 20, 10 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+text = "$"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 7 )
+_sections_unfolded = [ "Rect", "Theme", "custom_fonts" ]
+
+[node name="TimeLeft" type="Label" parent="glass" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 61.0
+margin_top = 255.0
+margin_right = 163.0
+margin_bottom = 273.0
+rect_rotation = 4.12199
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+text = "6542"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="HSeparator2" type="HSeparator" parent="glass" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 15.0
+margin_top = 278.0
+margin_right = 171.0
+margin_bottom = 290.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="grid" type="HSeparator" parent="glass" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 15.0
+margin_top = 354.0
+margin_right = 171.0
+margin_bottom = 366.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="VSeparator" type="VSeparator" parent="glass/grid" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 75.0
+margin_top = -35.0
+margin_right = 79.0
+margin_bottom = 57.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Rebecca" type="Label" parent="glass/grid" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -19.0
+margin_top = -40.0
+margin_right = 83.0
+margin_bottom = -22.0
+rect_rotation = 18.0576
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+text = "6542"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="Jane" type="Label" parent="glass/grid" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = -4.0
+margin_right = 152.0
+margin_bottom = 14.0
+rect_rotation = -18.7425
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+text = "6542"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="Bonbon" type="Label" parent="glass/grid" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -28.0
+margin_top = 24.0
+margin_right = 74.0
+margin_bottom = 42.0
+rect_rotation = -0.653054
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+text = "6542"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="Henry" type="Label" parent="glass/grid" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 55.0
+margin_top = 33.0
+margin_right = 157.0
+margin_bottom = 51.0
+rect_rotation = -7.86304
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+text = "6542"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="glass" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 5.0
+margin_top = 46.5
+margin_right = 5.0
+margin_bottom = 64.5
+rect_rotation = 6.45672
+rect_pivot_offset = Vector2( 95, 10 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+text = "Danger!"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect", "Theme", "custom_fonts" ]
+
+[node name="FPS" type="Label" parent="." index="1"]
+
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = -40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 9 )
+
+

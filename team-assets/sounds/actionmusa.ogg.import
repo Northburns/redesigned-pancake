@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/actionmusa.ogg-850db089f5903bea2002ff2f7a425912.oggstr"
+
+[deps]
+
+source_file="res://team-assets/sounds/actionmusa.ogg"
+dest_files=[ "res://.import/actionmusa.ogg-850db089f5903bea2002ff2f7a425912.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

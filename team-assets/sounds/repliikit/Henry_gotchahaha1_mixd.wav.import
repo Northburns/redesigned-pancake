@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Henry_gotchahaha1_mixd.wav-cbf4ba6140099d86d42d8260c416e21b.sample"
+
+[deps]
+
+source_file="res://team-assets/sounds/repliikit/Henry_gotchahaha1_mixd.wav"
+dest_files=[ "res://.import/Henry_gotchahaha1_mixd.wav-cbf4ba6140099d86d42d8260c416e21b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=false
+compress/mode=0

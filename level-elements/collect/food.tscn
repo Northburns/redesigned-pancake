@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://level-elements/collect/collectable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://team-assets/collectibles/chicken1.png" type="Texture" id=2]
+[ext_resource path="res://team-assets/collectibles/chicken2.png" type="Texture" id=3]
+[ext_resource path="res://team-assets/collectibles/donut.png" type="Texture" id=4]
+[ext_resource path="res://team-assets/collectibles/pizza.png" type="Texture" id=5]
+
+[node name="KinematicBody2D" instance=ExtResource( 1 )]
+
+plus_food = 1
+type = "food"
+
+[node name="sprite" parent="." index="0"]
+
+visible = false
+
+[node name="Light2D" parent="images" index="0"]
+
+color = Color( 0.886719, 0.398114, 0.0415649, 1 )
+
+[node name="chicken1" type="Sprite" parent="images" index="1"]
+
+position = Vector2( 18.4624, 0.91095 )
+scale = Vector2( 0.156156, 0.156156 )
+texture = ExtResource( 2 )
+
+[node name="chicken2" type="Sprite" parent="images" index="2"]
+
+position = Vector2( -20, 0 )
+scale = Vector2( 0.14777, 0.14777 )
+texture = ExtResource( 3 )
+
+[node name="donut" type="Sprite" parent="images" index="3"]
+
+scale = Vector2( 0.112869, 0.112869 )
+texture = ExtResource( 4 )
+
+[node name="pizza" type="Sprite" parent="images" index="4"]
+
+scale = Vector2( 0.109249, 0.109249 )
+texture = ExtResource( 5 )
+
+

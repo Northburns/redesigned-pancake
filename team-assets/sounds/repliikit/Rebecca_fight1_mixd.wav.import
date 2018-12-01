@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Rebecca_fight1_mixd.wav-09f0777b3ad57e1a5199f3f2684e1ae6.sample"
+
+[deps]
+
+source_file="res://team-assets/sounds/repliikit/Rebecca_fight1_mixd.wav"
+dest_files=[ "res://.import/Rebecca_fight1_mixd.wav-09f0777b3ad57e1a5199f3f2684e1ae6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

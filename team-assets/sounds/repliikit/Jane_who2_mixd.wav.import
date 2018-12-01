@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Jane_who2_mixd.wav-3e132f75157b70c9ff266a9fe0f7b410.sample"
+
+[deps]
+
+source_file="res://team-assets/sounds/repliikit/Jane_who2_mixd.wav"
+dest_files=[ "res://.import/Jane_who2_mixd.wav-3e132f75157b70c9ff266a9fe0f7b410.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
