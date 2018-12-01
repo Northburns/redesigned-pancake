@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/airduct.png-2a5e9a7c0bee62006b6c7259dcfb6fb9.stex"
+path="res://.import/yucca.png-e9091cf5e67ff9030bac0d1aa375754d.stex"
 
 [deps]
 
-source_file="res://team-assets/backgrounds/airduct.png"
-dest_files=[ "res://.import/airduct.png-2a5e9a7c0bee62006b6c7259dcfb6fb9.stex" ]
+source_file="res://team-assets/furniture/yucca.png"
+dest_files=[ "res://.import/yucca.png-e9091cf5e67ff9030bac0d1aa375754d.stex" ]
 
 [params]
 
@@ -15,7 +15,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=2
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false

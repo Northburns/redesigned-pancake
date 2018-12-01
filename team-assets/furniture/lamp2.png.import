@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/airduct.png-2a5e9a7c0bee62006b6c7259dcfb6fb9.stex"
+path="res://.import/lamp2.png-387da99e301da499d8dc68cbf4e108ee.stex"
 
 [deps]
 
-source_file="res://team-assets/backgrounds/airduct.png"
-dest_files=[ "res://.import/airduct.png-2a5e9a7c0bee62006b6c7259dcfb6fb9.stex" ]
+source_file="res://team-assets/furniture/lamp2.png"
+dest_files=[ "res://.import/lamp2.png-387da99e301da499d8dc68cbf4e108ee.stex" ]
 
 [params]
 
@@ -15,7 +15,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=2
+flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
