@@ -214,29 +214,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Background" index="1"]
-
-layer = -1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-scroll_offset = Vector2( 0, 0 )
-scroll_base_offset = Vector2( 0, 0 )
-scroll_base_scale = Vector2( 1, 1 )
-scroll_limit_begin = Vector2( 0, 0 )
-scroll_limit_end = Vector2( 0, 0 )
-scroll_ignore_camera_zoom = true
-_sections_unfolded = [ "Scroll" ]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Background/ParallaxBackground" index="0"]
-
-position = Vector2( 1792, -1024 )
-motion_scale = Vector2( 0.1, 0.1 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
-_sections_unfolded = [ "Motion", "Transform" ]
-
 [node name="camera_handler" type="Node" parent="." index="1"]
 
 pause_mode = 2
@@ -1793,7 +1770,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Study" type="Area2D" parent="Spatial/CameraAreas" index="4"]
 
 editor/display_folded = true
-position = Vector2( 2694, -3336 )
+position = Vector2( 2254.47, -3251.71 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

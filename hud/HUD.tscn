@@ -1,14 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://hud/HUD.gd" type="Script" id=1]
 [ext_resource path="res://placeholder_art/kenney_gui_modded/glassPanel_cornerBR.png" type="Texture" id=2]
 [ext_resource path="res://hud/bar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://hud/bar_batteries.tscn" type="PackedScene" id=4]
-[ext_resource path="res://hud/font_kenvector_future_thin.tres" type="DynamicFont" id=5]
-[ext_resource path="res://hud/TimeLabel.gd" type="Script" id=6]
-[ext_resource path="res://hud/DangerLabel.gd" type="Script" id=7]
+[ext_resource path="res://team-assets/pixel_000.png" type="Texture" id=5]
+[ext_resource path="res://hud/font_kenvector_future_thin.tres" type="DynamicFont" id=6]
+[ext_resource path="res://hud/TimeLabel.gd" type="Script" id=7]
+[ext_resource path="res://hud/DangerLabel.gd" type="Script" id=8]
 
-[node name="HUD" type="Container"]
+[node name="HUD" type="Container" index="0"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -127,7 +128,13 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="glass" index="3"]
+[node name="Sprite" type="Sprite" parent="glass" index="3"]
+
+position = Vector2( 94.0199, 330.069 )
+scale = Vector2( 19.255, 19.2671 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="glass" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -144,15 +151,15 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 text = "Time"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Rect", "Theme", "custom_fonts" ]
 
-[node name="TimeLeft" type="Label" parent="glass" index="4"]
+[node name="TimeLeft" type="Label" parent="glass" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -169,7 +176,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 text = "6542"
 align = 2
 percent_visible = 1.0
@@ -177,7 +184,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Theme", "custom_fonts" ]
 
-[node name="HSeparator2" type="HSeparator" parent="glass" index="5"]
+[node name="HSeparator2" type="HSeparator" parent="glass" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -194,7 +201,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="grid" type="HSeparator" parent="glass" index="6"]
+[node name="grid" type="HSeparator" parent="glass" index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -245,7 +252,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 text = "6542"
 align = 2
 percent_visible = 1.0
@@ -270,7 +277,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 text = "6542"
 align = 2
 percent_visible = 1.0
@@ -295,7 +302,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 text = "6542"
 align = 2
 percent_visible = 1.0
@@ -320,7 +327,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 text = "6542"
 align = 2
 percent_visible = 1.0
@@ -328,7 +335,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Theme", "custom_fonts" ]
 
-[node name="Label2" type="Label" parent="glass" index="7"]
+[node name="Label2" type="Label" parent="glass" index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.5
@@ -345,13 +352,13 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 text = "Danger!"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Rect", "Theme", "custom_fonts" ]
 
 
