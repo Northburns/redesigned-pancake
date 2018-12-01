@@ -104,6 +104,7 @@ stream = ExtResource( 10 )
 position = Vector2( 20, -440 )
 frames = SubResource( 2 )
 animation = "idle"
+frame = 1
 playing = true
 
 

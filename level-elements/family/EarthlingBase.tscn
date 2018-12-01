@@ -4,7 +4,7 @@
 [ext_resource path="res://team-assets/sounds/repliikit/Henry_gotcha2_mixd.wav" type="AudioStream" id=2]
 [ext_resource path="res://level-elements/family/AudioListings.gd" type="Script" id=3]
 
-[node name="EarthlingBase" type="Node2D" groups=[
+[node name="EarthlingBase" type="Node2D" index="0" groups=[
 "earthling",
 ]]
 
@@ -51,7 +51,7 @@ stream = ExtResource( 2 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
-max_distance = 4000.0
+max_distance = 2500.0
 attenuation = 1.0
 bus = "Earthlings"
 area_mask = 1

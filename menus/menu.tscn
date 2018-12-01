@@ -9,7 +9,7 @@
 [ext_resource path="res://hud/font_kenvector_future_thin.tres" type="DynamicFont" id=7]
 [ext_resource path="res://team-assets/ufo/ufo2-nooccar.png" type="Texture" id=8]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 script = ExtResource( 1 )
 

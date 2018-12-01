@@ -28,7 +28,7 @@ var m = """Score
 
 func _ready():
 	enter.visible = false
-	audio.music(audio.m_hiscore)
+	audio.music(audio.m_hiscore, false)
 	
 	var txt = m % [ pglob.escalation_count, pglob.food, pglob.battery, pglob.coins ]
 	label.text = txt

@@ -7,9 +7,9 @@ onready var musicp = $MusicPlayer
 onready var player = $RaccoonPlayer
 onready var action = $ActionPlayer
 
-func music(m):
+func music(m, loop=true):
 	assert(m != null)
-	m.set_loop(true)
+	m.set_loop(loop)
 	musicp.stream = m
 	musicp.play()
 

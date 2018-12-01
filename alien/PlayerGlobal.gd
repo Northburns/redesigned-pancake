@@ -50,14 +50,17 @@ func find_player_back():
 	assert(playerback.size() == 1)
 	return playerback[0]
 
-func between_acts():
+func super_cooldown():
 	# Reset earthlings
 	for e in get_tree().get_nodes_in_group("earthling"):
 		# FIXME: They're not resetting :D
 		e.call_deferred("reset")
 	# Reset escalation
-	escalation = 1
+	escalation = 0
 	escalate_music(1)
+
+func between_acts():
+	super_cooldown()
 	# Act++
 	current_act += 1
 	# Resource max
@@ -113,6 +116,9 @@ func message_begin(message_node):
 			])
 	
 func talk_to_ufo(message_node):
+	# I just want that the player can chill by talking to the UFO :)
+	super_cooldown()
+	
 	if has_enough_resources():
 		match current_act:
 			1: talk_to_ufo_to_act2(message_node)
@@ -122,7 +128,7 @@ func talk_to_ufo(message_node):
 		message_node.do_texts([
 				"You're still missing food and batteries, Nooccar.",
 				"Please, we must get out of this planet. Chatting idly doesn't do us much good!",
-				"You can do it, Nooccar! Explore the earhlings' dwelling."])
+				"You can do it, Nooccar! Explore the earthlings' dwelling."])
 
 func talk_to_ufo_to_act2(message_node):
 	message_node.do_texts([
