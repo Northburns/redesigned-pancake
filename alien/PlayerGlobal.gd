@@ -54,7 +54,6 @@ func escalate_music(level):
 func message_begin(message_node):
 	message_node.do_texts([
 			"Oh my!\n\nI have noquamls",
-			"What is this?",
-			"FFFFFF FFFFF FFFF FFFFFF FF FFF F F  FFFFFFF FFFFFFFFF FFFFFFFF FFFFFFFFFFFFFFFFFF"
+			"What is this?"
 			], 1)
 	

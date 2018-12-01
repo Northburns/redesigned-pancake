@@ -25,6 +25,7 @@ light_rotation_speed = 1.5
 
 [node name="area" type="Area2D" parent="." index="0"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -42,6 +43,7 @@ shape = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="." index="1"]
 
+editor/display_folded = true
 enabled = true
 editor_only = false
 texture = ExtResource( 3 )

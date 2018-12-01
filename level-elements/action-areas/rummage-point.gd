@@ -28,9 +28,11 @@ func rummage_collectable_node():
 		TYPE.FOOD:    n = preload("../collect/collectable.tscn").instance()
 		TYPE.BATTERY: n = preload("../collect/collectable.tscn").instance()
 		TYPE.COINS:   n = preload("../collect/collectable.tscn").instance()
-	n.position = self.position
+	assert(n != null)
+	print("POS: " + str(to_global(n.position)))
 	player_back.get_parent().add_child_below_node(player_back, n)
-	
+	n.position = n.to_local(self.global_position)
+
 	n.init_random()
 	
 	
