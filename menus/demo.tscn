@@ -1,62 +1,75 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=63 format=2]
 
-[ext_resource path="res://menus/EarthlingAnimator.gd" type="Script" id=1]
-[ext_resource path="res://level-elements/family/Dog.tscn" type="PackedScene" id=2]
-[ext_resource path="res://level-elements/family/Henry.tscn" type="PackedScene" id=3]
-[ext_resource path="res://level-elements/family/Rebecca.tscn" type="PackedScene" id=4]
-[ext_resource path="res://level-elements/family/Jane.tscn" type="PackedScene" id=5]
-[ext_resource path="res://menus/SoundButtonContainer.gd" type="Script" id=6]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hop1_mixd.wav" type="AudioStream" id=7]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hop2_mixd.wav" type="AudioStream" id=8]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hop3_mixd.wav" type="AudioStream" id=9]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_wheeeee_mixd.wav" type="AudioStream" id=10]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_wheheeee_mixd.wav" type="AudioStream" id=11]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hiiop_mixd.wav" type="AudioStream" id=12]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hmm1_mixd.wav" type="AudioStream" id=13]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hmm2_mixd.wav" type="AudioStream" id=14]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_haa_mixd.wav" type="AudioStream" id=15]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_wuhuu_mixd.wav" type="AudioStream" id=16]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_yess_mixd.wav" type="AudioStream" id=17]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_eat1_mixd.wav" type="AudioStream" id=18]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_eat2_mixd.wav" type="AudioStream" id=19]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_eat3_mixd.wav" type="AudioStream" id=20]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_omnom1_mixd.wav" type="AudioStream" id=21]
-[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_omnom2_mixd.wav" type="AudioStream" id=22]
-[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_kuors_mixd.wav" type="AudioStream" id=23]
-[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_murrr1_mixd.wav" type="AudioStream" id=24]
-[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_nuuh_mixd.wav" type="AudioStream" id=25]
-[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_urmurmur1_mixd.wav" type="AudioStream" id=26]
-[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_urmurmur2_mixd.wav" type="AudioStream" id=27]
-[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_HAU_mixd.wav" type="AudioStream" id=28]
-[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_haukkumurrr_mixd.wav" type="AudioStream" id=29]
-[ext_resource path="res://team-assets/sounds/repliikit/Henry_himself1_mixd.wav" type="AudioStream" id=30]
-[ext_resource path="res://team-assets/sounds/repliikit/Henry_himself2_mixd.wav" type="AudioStream" id=31]
-[ext_resource path="res://team-assets/sounds/repliikit/Henry_hearingthings_mixd.wav" type="AudioStream" id=32]
-[ext_resource path="res://team-assets/sounds/repliikit/Henry_who1_mixd.wav" type="AudioStream" id=33]
-[ext_resource path="res://team-assets/sounds/repliikit/Henry_who2_mixd.wav" type="AudioStream" id=34]
-[ext_resource path="res://team-assets/sounds/repliikit/Henry_away1_mixd.wav" type="AudioStream" id=35]
-[ext_resource path="res://team-assets/sounds/repliikit/Henry_away2_mixd.wav" type="AudioStream" id=36]
-[ext_resource path="res://team-assets/sounds/repliikit/Henry_away3_mixd.wav" type="AudioStream" id=37]
-[ext_resource path="res://team-assets/sounds/sfx/rebecca_working.wav" type="AudioStream" id=38]
-[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_who1_mixd.wav" type="AudioStream" id=39]
-[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_who2_mixd.wav" type="AudioStream" id=40]
-[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_alert1_mixd.wav" type="AudioStream" id=41]
-[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_alert2_mixd.wav" type="AudioStream" id=42]
-[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_eek1_mixd.wav" type="AudioStream" id=43]
-[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_eek2_mixd.wav" type="AudioStream" id=44]
-[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_fight1_mixd.wav" type="AudioStream" id=45]
-[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_fight2_mixd.wav" type="AudioStream" id=46]
-[ext_resource path="res://team-assets/sounds/repliikit/Jane_herself1_mixd.wav" type="AudioStream" id=47]
-[ext_resource path="res://team-assets/sounds/repliikit/Jane_herself2_mixd.wav" type="AudioStream" id=48]
-[ext_resource path="res://team-assets/sounds/repliikit/Jane_who1_mixd.wav" type="AudioStream" id=49]
-[ext_resource path="res://team-assets/sounds/repliikit/Jane_who2_mixd.wav" type="AudioStream" id=50]
-[ext_resource path="res://team-assets/sounds/repliikit/Jane_dad1_mixd.wav" type="AudioStream" id=51]
-[ext_resource path="res://team-assets/sounds/repliikit/Jane_dad2_mixd.wav" type="AudioStream" id=52]
-[ext_resource path="res://team-assets/sounds/repliikit/Jane_dad3_mixd.wav" type="AudioStream" id=53]
-[ext_resource path="res://team-assets/sounds/repliikit/Jane_mom1_mixd.wav" type="AudioStream" id=54]
-[ext_resource path="res://team-assets/sounds/repliikit/Jane_mom2_mixd.wav" type="AudioStream" id=55]
-[ext_resource path="res://team-assets/sounds/sfx/roboty.wav" type="AudioStream" id=56]
-[ext_resource path="res://team-assets/sounds/sfx/upgrades.wav" type="AudioStream" id=57]
+[ext_resource path="res://menus/NooccarAnimator.gd" type="Script" id=1]
+[ext_resource path="res://alien/animation.tscn" type="PackedScene" id=2]
+[ext_resource path="res://menus/EarthlingAnimator.gd" type="Script" id=3]
+[ext_resource path="res://level-elements/family/Dog.tscn" type="PackedScene" id=4]
+[ext_resource path="res://level-elements/family/Henry.tscn" type="PackedScene" id=5]
+[ext_resource path="res://level-elements/family/Rebecca.tscn" type="PackedScene" id=6]
+[ext_resource path="res://level-elements/family/Jane.tscn" type="PackedScene" id=7]
+[ext_resource path="res://team-assets/AI/ai1.png" type="Texture" id=8]
+[ext_resource path="res://team-assets/AI/ai2.png" type="Texture" id=9]
+[ext_resource path="res://menus/SoundButtonContainer.gd" type="Script" id=10]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hop1_mixd.wav" type="AudioStream" id=11]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hop2_mixd.wav" type="AudioStream" id=12]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hop3_mixd.wav" type="AudioStream" id=13]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_wheeeee_mixd.wav" type="AudioStream" id=14]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_wheheeee_mixd.wav" type="AudioStream" id=15]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hiiop_mixd.wav" type="AudioStream" id=16]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hmm1_mixd.wav" type="AudioStream" id=17]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_hmm2_mixd.wav" type="AudioStream" id=18]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_haa_mixd.wav" type="AudioStream" id=19]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_wuhuu_mixd.wav" type="AudioStream" id=20]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_yess_mixd.wav" type="AudioStream" id=21]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_eat1_mixd.wav" type="AudioStream" id=22]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_eat2_mixd.wav" type="AudioStream" id=23]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_eat3_mixd.wav" type="AudioStream" id=24]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_omnom1_mixd.wav" type="AudioStream" id=25]
+[ext_resource path="res://team-assets/sounds/repliikit/Nooccar_omnom2_mixd.wav" type="AudioStream" id=26]
+[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_kuors_mixd.wav" type="AudioStream" id=27]
+[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_murrr1_mixd.wav" type="AudioStream" id=28]
+[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_nuuh_mixd.wav" type="AudioStream" id=29]
+[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_urmurmur1_mixd.wav" type="AudioStream" id=30]
+[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_urmurmur2_mixd.wav" type="AudioStream" id=31]
+[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_HAU_mixd.wav" type="AudioStream" id=32]
+[ext_resource path="res://team-assets/sounds/repliikit/Bonbon_haukkumurrr_mixd.wav" type="AudioStream" id=33]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_himself1_mixd.wav" type="AudioStream" id=34]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_himself2_mixd.wav" type="AudioStream" id=35]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_hearingthings_mixd.wav" type="AudioStream" id=36]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_who1_mixd.wav" type="AudioStream" id=37]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_who2_mixd.wav" type="AudioStream" id=38]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_away1_mixd.wav" type="AudioStream" id=39]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_away2_mixd.wav" type="AudioStream" id=40]
+[ext_resource path="res://team-assets/sounds/repliikit/Henry_away3_mixd.wav" type="AudioStream" id=41]
+[ext_resource path="res://team-assets/sounds/sfx/rebecca_working.wav" type="AudioStream" id=42]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_who1_mixd.wav" type="AudioStream" id=43]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_who2_mixd.wav" type="AudioStream" id=44]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_alert1_mixd.wav" type="AudioStream" id=45]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_alert2_mixd.wav" type="AudioStream" id=46]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_eek1_mixd.wav" type="AudioStream" id=47]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_eek2_mixd.wav" type="AudioStream" id=48]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_fight1_mixd.wav" type="AudioStream" id=49]
+[ext_resource path="res://team-assets/sounds/repliikit/Rebecca_fight2_mixd.wav" type="AudioStream" id=50]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_herself1_mixd.wav" type="AudioStream" id=51]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_herself2_mixd.wav" type="AudioStream" id=52]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_who1_mixd.wav" type="AudioStream" id=53]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_who2_mixd.wav" type="AudioStream" id=54]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_dad1_mixd.wav" type="AudioStream" id=55]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_dad2_mixd.wav" type="AudioStream" id=56]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_dad3_mixd.wav" type="AudioStream" id=57]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_mom1_mixd.wav" type="AudioStream" id=58]
+[ext_resource path="res://team-assets/sounds/repliikit/Jane_mom2_mixd.wav" type="AudioStream" id=59]
+[ext_resource path="res://team-assets/sounds/sfx/roboty.wav" type="AudioStream" id=60]
+[ext_resource path="res://team-assets/sounds/sfx/upgrades.wav" type="AudioStream" id=61]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Container" type="Container" index="0"]
 
@@ -93,8 +106,6 @@ _sections_unfolded = [ "custom_icons", "custom_styles" ]
 
 [node name="Nooccar" type="Tabs" parent="TabContainer" index="0"]
 
-editor/display_folded = true
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -112,27 +123,150 @@ size_flags_vertical = 1
 tab_align = 1
 scrolling_enabled = true
 
-[node name="Label" type="Label" parent="TabContainer/Nooccar" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Nooccar" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 40.0
-margin_bottom = 14.0
+margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 2
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "x"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+size_flags_vertical = 1
+alignment = 0
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="TabContainer/Nooccar/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 37.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "rest"
+flat = false
+align = 1
+
+[node name="Button2" type="Button" parent="TabContainer/Nooccar/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 41.0
+margin_right = 81.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "walk"
+flat = false
+align = 1
+
+[node name="Button3" type="Button" parent="TabContainer/Nooccar/HBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 85.0
+margin_right = 116.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "dig"
+flat = false
+align = 1
+
+[node name="Button4" type="Button" parent="TabContainer/Nooccar/HBoxContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 120.0
+margin_right = 165.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "jump"
+flat = false
+align = 1
+
+[node name="Button6" type="Button" parent="TabContainer/Nooccar/HBoxContainer" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 169.0
+margin_right = 229.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "levitate"
+flat = false
+align = 1
+
+[node name="Nooccar" parent="TabContainer/Nooccar/HBoxContainer" index="5" instance=ExtResource( 2 )]
+
+position = Vector2( 364.497, 367.159 )
+scale = Vector2( 0.383155, 0.383155 )
 
 [node name="BonBon" type="Tabs" parent="TabContainer" index="1"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -164,7 +298,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
-script = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="idle" type="Button" parent="TabContainer/BonBon/HBoxContainer" index="0"]
 
@@ -237,13 +371,14 @@ text = "walk"
 flat = false
 align = 1
 
-[node name="earthling" parent="TabContainer/BonBon/HBoxContainer" index="3" instance=ExtResource( 2 )]
+[node name="earthling" parent="TabContainer/BonBon/HBoxContainer" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 387.812, 479.778 )
 _sections_unfolded = [ "Pause", "Transform" ]
 
 [node name="Henry" type="Tabs" parent="TabContainer" index="2"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -275,7 +410,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
-script = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="idle" type="Button" parent="TabContainer/Henry/HBoxContainer" index="0"]
 
@@ -348,7 +483,7 @@ text = "walk"
 flat = false
 align = 1
 
-[node name="EarthlingBase" parent="TabContainer/Henry/HBoxContainer" index="3" instance=ExtResource( 3 )]
+[node name="EarthlingBase" parent="TabContainer/Henry/HBoxContainer" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 426.341, 449.34 )
 scale = Vector2( 0.372931, 0.372931 )
@@ -386,7 +521,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
-script = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="idle" type="Button" parent="TabContainer/Rebecca/HBoxContainer" index="0"]
 
@@ -459,13 +594,15 @@ text = "walk"
 flat = false
 align = 1
 
-[node name="EarthlingBase" parent="TabContainer/Rebecca/HBoxContainer" index="3" instance=ExtResource( 4 )]
+[node name="EarthlingBase" parent="TabContainer/Rebecca/HBoxContainer" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 374.61, 452.654 )
 scale = Vector2( 0.35834, 0.35834 )
 
 [node name="Jane" type="Tabs" parent="TabContainer" index="4"]
 
+editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -496,7 +633,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
-script = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="idle" type="Button" parent="TabContainer/Jane/HBoxContainer" index="0"]
 
@@ -569,9 +706,38 @@ text = "walk"
 flat = false
 align = 1
 
-[node name="EarthlingBase" parent="TabContainer/Jane/HBoxContainer" index="3" instance=ExtResource( 5 )]
+[node name="EarthlingBase" parent="TabContainer/Jane/HBoxContainer" index="3" instance=ExtResource( 7 )]
 
 position = Vector2( 370.077, 450.638 )
+
+[node name="AI" type="Tabs" parent="TabContainer" index="5"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+tab_align = 1
+scrolling_enabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="TabContainer/AI" index="0"]
+
+position = Vector2( 311.291, 356.173 )
+scale = Vector2( 0.514411, 0.514411 )
+frames = SubResource( 1 )
+animation = "default"
+playing = true
 
 [node name="SFX" type="VBoxContainer" parent="." index="1"]
 
@@ -627,7 +793,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 columns = 3
-script = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="Jump1" type="Button" parent="SFX/GridContainer" index="0"]
 
@@ -655,7 +821,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Jump1" index="0"]
 
-stream = ExtResource( 7 )
+stream = ExtResource( 11 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -689,7 +855,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Jump2" index="0"]
 
-stream = ExtResource( 8 )
+stream = ExtResource( 12 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -723,7 +889,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Jump3" index="0"]
 
-stream = ExtResource( 9 )
+stream = ExtResource( 13 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -757,7 +923,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/DoubleJump1" index="0"]
 
-stream = ExtResource( 10 )
+stream = ExtResource( 14 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -792,7 +958,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/DoubleJump2" index="0"]
 
-stream = ExtResource( 11 )
+stream = ExtResource( 15 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -827,7 +993,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Levitate" index="0"]
 
-stream = ExtResource( 12 )
+stream = ExtResource( 16 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -861,7 +1027,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Hmm1" index="0"]
 
-stream = ExtResource( 13 )
+stream = ExtResource( 17 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -896,7 +1062,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Hmm2" index="0"]
 
-stream = ExtResource( 14 )
+stream = ExtResource( 18 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -931,7 +1097,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Rummage1" index="0"]
 
-stream = ExtResource( 15 )
+stream = ExtResource( 19 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -965,7 +1131,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Rummage2" index="0"]
 
-stream = ExtResource( 16 )
+stream = ExtResource( 20 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1000,7 +1166,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Rummage3" index="0"]
 
-stream = ExtResource( 17 )
+stream = ExtResource( 21 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1035,7 +1201,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Omnom1" index="0"]
 
-stream = ExtResource( 18 )
+stream = ExtResource( 22 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1069,7 +1235,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Omnom2" index="0"]
 
-stream = ExtResource( 19 )
+stream = ExtResource( 23 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1104,7 +1270,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Omnom3" index="0"]
 
-stream = ExtResource( 20 )
+stream = ExtResource( 24 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1139,7 +1305,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Omnom4" index="0"]
 
-stream = ExtResource( 21 )
+stream = ExtResource( 25 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1173,7 +1339,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/Omnom5" index="0"]
 
-stream = ExtResource( 22 )
+stream = ExtResource( 26 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1207,7 +1373,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer/AI_stopped_talking" index="0"]
 
-stream = ExtResource( 15 )
+stream = ExtResource( 19 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1251,7 +1417,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 columns = 3
-script = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="Idle1" type="Button" parent="SFX/GridContainer2" index="0"]
 
@@ -1279,7 +1445,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer2/Idle1" index="0"]
 
-stream = ExtResource( 23 )
+stream = ExtResource( 27 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1313,7 +1479,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer2/Alert1" index="0"]
 
-stream = ExtResource( 24 )
+stream = ExtResource( 28 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1347,7 +1513,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer2/Alert2" index="0"]
 
-stream = ExtResource( 25 )
+stream = ExtResource( 29 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1381,7 +1547,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer2/Alert3" index="0"]
 
-stream = ExtResource( 26 )
+stream = ExtResource( 30 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1416,7 +1582,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer2/Alert4" index="0"]
 
-stream = ExtResource( 27 )
+stream = ExtResource( 31 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1451,7 +1617,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer2/Chase1" index="0"]
 
-stream = ExtResource( 28 )
+stream = ExtResource( 32 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1485,7 +1651,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer2/Chase2" index="0"]
 
-stream = ExtResource( 29 )
+stream = ExtResource( 33 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1529,7 +1695,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 columns = 3
-script = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="Idle1" type="Button" parent="SFX/GridContainer3" index="0"]
 
@@ -1557,7 +1723,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Idle1" index="0"]
 
-stream = ExtResource( 30 )
+stream = ExtResource( 34 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1591,7 +1757,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Idle2" index="0"]
 
-stream = ExtResource( 31 )
+stream = ExtResource( 35 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1625,7 +1791,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Alert1" index="0"]
 
-stream = ExtResource( 32 )
+stream = ExtResource( 36 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1659,7 +1825,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Alert2" index="0"]
 
-stream = ExtResource( 33 )
+stream = ExtResource( 37 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1694,7 +1860,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Alert3" index="0"]
 
-stream = ExtResource( 34 )
+stream = ExtResource( 38 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1729,7 +1895,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Chase1" index="0"]
 
-stream = ExtResource( 35 )
+stream = ExtResource( 39 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1763,7 +1929,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Chase2" index="0"]
 
-stream = ExtResource( 36 )
+stream = ExtResource( 40 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1798,7 +1964,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer3/Chase3" index="0"]
 
-stream = ExtResource( 37 )
+stream = ExtResource( 41 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1842,7 +2008,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 columns = 3
-script = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="Idle1" type="Button" parent="SFX/GridContainer4" index="0"]
 
@@ -1870,7 +2036,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Idle1" index="0"]
 
-stream = ExtResource( 38 )
+stream = ExtResource( 42 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1904,7 +2070,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Alert1" index="0"]
 
-stream = ExtResource( 39 )
+stream = ExtResource( 43 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1938,7 +2104,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Alert2" index="0"]
 
-stream = ExtResource( 40 )
+stream = ExtResource( 44 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1972,7 +2138,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Chase1" index="0"]
 
-stream = ExtResource( 41 )
+stream = ExtResource( 45 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2007,7 +2173,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Chase2" index="0"]
 
-stream = ExtResource( 42 )
+stream = ExtResource( 46 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2042,7 +2208,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Chase3" index="0"]
 
-stream = ExtResource( 43 )
+stream = ExtResource( 47 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2076,7 +2242,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Chase4" index="0"]
 
-stream = ExtResource( 44 )
+stream = ExtResource( 48 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2111,7 +2277,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Chase5" index="0"]
 
-stream = ExtResource( 45 )
+stream = ExtResource( 49 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2146,7 +2312,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer4/Chase6" index="0"]
 
-stream = ExtResource( 46 )
+stream = ExtResource( 50 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2190,7 +2356,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 columns = 3
-script = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="Idle1" type="Button" parent="SFX/GridContainer5" index="0"]
 
@@ -2218,7 +2384,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Idle1" index="0"]
 
-stream = ExtResource( 47 )
+stream = ExtResource( 51 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2252,7 +2418,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Idle2" index="0"]
 
-stream = ExtResource( 48 )
+stream = ExtResource( 52 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2286,7 +2452,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Alert1" index="0"]
 
-stream = ExtResource( 49 )
+stream = ExtResource( 53 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2320,7 +2486,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Alert2" index="0"]
 
-stream = ExtResource( 50 )
+stream = ExtResource( 54 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2355,7 +2521,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Chase1" index="0"]
 
-stream = ExtResource( 51 )
+stream = ExtResource( 55 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2390,7 +2556,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Chase2" index="0"]
 
-stream = ExtResource( 52 )
+stream = ExtResource( 56 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2424,7 +2590,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Chase3" index="0"]
 
-stream = ExtResource( 53 )
+stream = ExtResource( 57 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2459,7 +2625,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Chase4" index="0"]
 
-stream = ExtResource( 54 )
+stream = ExtResource( 58 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2494,7 +2660,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer5/Chase5" index="0"]
 
-stream = ExtResource( 55 )
+stream = ExtResource( 59 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2538,7 +2704,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 columns = 3
-script = ExtResource( 6 )
+script = ExtResource( 10 )
 
 [node name="Talk" type="Button" parent="SFX/GridContainer6" index="0"]
 
@@ -2566,7 +2732,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer6/Talk" index="0"]
 
-stream = ExtResource( 56 )
+stream = ExtResource( 60 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2600,7 +2766,7 @@ align = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX/GridContainer6/UpgradeInstall" index="0"]
 
-stream = ExtResource( 57 )
+stream = ExtResource( 61 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
