@@ -5,6 +5,9 @@
 
 [node name="KinematicBody2D" instance=ExtResource( 1 )]
 
+plus_battery = 1
+type = "battery"
+
 [node name="sprite" parent="." index="0"]
 
 visible = false

@@ -17,14 +17,13 @@ class PState:
 	var audio
 	var message_node
 	
-	func _init(internal, pinput, pbody, panim, pglob, audio, message_node):
+	func _init(internal, pinput, pbody, panim, pglob, audio):
 		self.i = internal
 		self.pinput = pinput
 		self.pbody = pbody
 		self.panim = panim
 		self.pglob = pglob
 		self.audio = audio
-		self.message_node = message_node
 		
 		s_floor.activate()
 	
@@ -63,7 +62,8 @@ class PState:
 	const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
 
 	
-	func do_it_all(pglob, delta):
+	func do_it_all(pglob, message_node, delta):
+		self.message_node = message_node
 		pinput.read_input(pglob)
 		self.anim_defaults(pinput, panim)
 		pbody.frame_start()
@@ -83,6 +83,8 @@ class PState:
 			s_teleporting.activate(i.action_area)
 		elif i.action_area.is_in_group("rummage") and i.action_area.available:
 			s_rummaging.activate(i.action_area)
+		elif i.action_area.is_in_group("ufo"):
+			pglob.talk_to_ufo(message_node)
 		else:
 			# Any better way to induce a crash?..
 			print("Unkown action area type.")
@@ -96,3 +98,9 @@ class PState:
 		if state == s_floor or state == s_jumping:
 			collectible.queue_free()
 			audio.player_speak_omnom()
+			match collectible.type:
+				"food": pglob.food += collectible.plus_food
+				"battery": pglob.battery += collectible.plus_battery
+				"coin": pglob.coins += collectible.plus_coins
+				_: assert(false)
+			

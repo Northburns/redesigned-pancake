@@ -7,8 +7,8 @@ export(NodePath) var henry
 
 onready var pglob = $"/root/PlayerGlobal"
 
-onready var bar_food = $glass/bars/BarFood
-onready var bar_batt = $glass/bars/BarBatteries
+onready var bar_food = $glass/bars/BarFood/TextureProgress
+onready var bar_batt = $glass/bars/BarBatteries/TextureProgress
 
 onready var label_time = $glass/TimeLeft
 onready var label_danger = $glass/Label2
@@ -33,6 +33,8 @@ func _ready():
 func _process(delta):
 	# Food, Batteris
 	# TODO
+	set_bar(bar_food, pglob.food, pglob.food_max)
+	set_bar(bar_batt, pglob.battery, pglob.battery_max)
 	
 	# Time left
 	label_time.text = str(pglob.time_left)
@@ -45,7 +47,11 @@ func _process(delta):
 	set_p(label_jane, node_jane)
 	set_p(label_bonbon, node_bonbon)
 	set_p(label_henry, node_henry)
-	
+
+func set_bar(bar, value, maximum):
+	bar.value = value
+	bar.max_value = maximum
+	bar.min_value = 0
 
 func set_p(label, earthling_node):
 	var n = round ( 100.0 * earthling_node.suspicion_percentage() )

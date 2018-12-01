@@ -9,6 +9,7 @@
 [node name="KinematicBody2D" instance=ExtResource( 1 )]
 
 plus_food = 1
+type = "food"
 
 [node name="sprite" parent="." index="0"]
 

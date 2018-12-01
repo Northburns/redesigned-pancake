@@ -5,6 +5,7 @@ onready var pglob = $"/root/PlayerGlobal"
 export(int) var plus_food = 0
 export(int) var plus_battery = 0
 export(int) var plus_coins = 0
+export var type = "" # Should use enum, but deadline is so soon! :(
 
 var taken = false
 

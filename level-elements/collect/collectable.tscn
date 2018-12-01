@@ -26,6 +26,7 @@ _sections_unfolded = [ "Collision", "collision" ]
 plus_food = 0
 plus_battery = 0
 plus_coins = 0
+type = ""
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 

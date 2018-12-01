@@ -7,6 +7,9 @@
 
 [node name="KinematicBody2D" instance=ExtResource( 1 )]
 
+plus_coins = 1
+type = "coin"
+
 [node name="sprite" parent="." index="0"]
 
 visible = false

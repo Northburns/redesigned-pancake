@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://team-assets/backgrounds/nightsky.png" type="Texture" id=1]
 [ext_resource path="res://household/camera/camera_handler.gd" type="Script" id=2]
@@ -37,21 +37,22 @@
 [ext_resource path="res://team-assets/furniture/airduct2.png" type="Texture" id=35]
 [ext_resource path="res://team-assets/ufo/tree.png" type="Texture" id=36]
 [ext_resource path="res://placeholder_art/kenney_particles/light_02.png" type="Texture" id=37]
-[ext_resource path="res://team-assets/furniture/chimney.png" type="Texture" id=38]
-[ext_resource path="res://team-assets/furniture/satellitedish.png" type="Texture" id=39]
-[ext_resource path="res://household/Tileset.tres" type="TileSet" id=40]
-[ext_resource path="res://level-elements/family/Dog.tscn" type="PackedScene" id=41]
-[ext_resource path="res://team-assets/elbowsczy/henry/sofa0.png" type="Texture" id=42]
-[ext_resource path="res://level-elements/family/Henry.tscn" type="PackedScene" id=43]
-[ext_resource path="res://team-assets/elbowsczy/rebecca/desk0.png" type="Texture" id=44]
-[ext_resource path="res://level-elements/family/Rebecca.tscn" type="PackedScene" id=45]
-[ext_resource path="res://level-elements/family/Jane.tscn" type="PackedScene" id=46]
-[ext_resource path="res://alien/alien.tscn" type="PackedScene" id=47]
-[ext_resource path="res://household/Tileset_walls.tres" type="TileSet" id=48]
-[ext_resource path="res://household/CameraAreas.gd" type="Script" id=49]
-[ext_resource path="res://household/camera/CameraArea.gd" type="Script" id=50]
-[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=51]
-[ext_resource path="res://hud/Message.tscn" type="PackedScene" id=52]
+[ext_resource path="res://level-elements/action-areas/ufo-point.tscn" type="PackedScene" id=38]
+[ext_resource path="res://team-assets/furniture/chimney.png" type="Texture" id=39]
+[ext_resource path="res://team-assets/furniture/satellitedish.png" type="Texture" id=40]
+[ext_resource path="res://household/Tileset.tres" type="TileSet" id=41]
+[ext_resource path="res://level-elements/family/Dog.tscn" type="PackedScene" id=42]
+[ext_resource path="res://team-assets/elbowsczy/henry/sofa0.png" type="Texture" id=43]
+[ext_resource path="res://level-elements/family/Henry.tscn" type="PackedScene" id=44]
+[ext_resource path="res://team-assets/elbowsczy/rebecca/desk0.png" type="Texture" id=45]
+[ext_resource path="res://level-elements/family/Rebecca.tscn" type="PackedScene" id=46]
+[ext_resource path="res://level-elements/family/Jane.tscn" type="PackedScene" id=47]
+[ext_resource path="res://alien/alien.tscn" type="PackedScene" id=48]
+[ext_resource path="res://household/Tileset_walls.tres" type="TileSet" id=49]
+[ext_resource path="res://household/CameraAreas.gd" type="Script" id=50]
+[ext_resource path="res://household/camera/CameraArea.gd" type="Script" id=51]
+[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=52]
+[ext_resource path="res://hud/Message.tscn" type="PackedScene" id=53]
 
 [sub_resource type="OccluderPolygon2D" id=14]
 
@@ -141,7 +142,7 @@ extents = Vector2( 1792, 1020 )
 [sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
-extents = Vector2( 640, 768 )
+extents = Vector2( 640, 704 )
 
 [sub_resource type="RectangleShape2D" id=9]
 
@@ -166,7 +167,7 @@ extents = Vector2( 4928, 320 )
 [sub_resource type="RectangleShape2D" id=13]
 
 custom_solver_bias = 0.0
-extents = Vector2( 666.781, 409.087 )
+extents = Vector2( 1024, 409.087 )
 
 [sub_resource type="RectangleShape2D" id=21]
 
@@ -178,7 +179,7 @@ extents = Vector2( 5319.85, 1024 )
 custom_solver_bias = 0.0
 extents = Vector2( 1518.9, 2218.42 )
 
-[node name="household" type="Node2D"]
+[node name="household" type="Node2D" index="0"]
 
 [node name="Background" type="CanvasLayer" parent="." index="0"]
 
@@ -823,7 +824,6 @@ coins_level = 0
 
 [node name="Hall_Low" type="Node2D" parent="Spatial" index="6"]
 
-editor/display_folded = true
 position = Vector2( -80, 120 )
 
 [node name="Rummage-Area4" parent="Spatial/Hall_Low" index="0" instance=ExtResource( 8 )]
@@ -1392,6 +1392,10 @@ food_level = 0
 battery_level = 0
 coins_level = 0
 
+[node name="Ufo-Point" parent="Spatial/Backyard" index="8" instance=ExtResource( 38 )]
+
+position = Vector2( -1096.09, -2118.29 )
+
 [node name="Roof" type="Node2D" parent="Spatial" index="10"]
 
 position = Vector2( 12491.7, 713.894 )
@@ -1400,7 +1404,7 @@ position = Vector2( 12491.7, 713.894 )
 
 position = Vector2( -5896.84, -5561.37 )
 scale = Vector2( 1.27643, 1.27643 )
-texture = ExtResource( 38 )
+texture = ExtResource( 39 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Roof/chimney" index="0"]
 
@@ -1427,7 +1431,7 @@ light_mask = 1
 
 position = Vector2( -3977.61, -5565.02 )
 scale = Vector2( 1.80655, 1.80655 )
-texture = ExtResource( 39 )
+texture = ExtResource( 40 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Spatial/Roof/dish" index="0"]
 
@@ -1496,10 +1500,38 @@ position = Vector2( -5890.76, -5947.38 )
 scale = Vector2( 1.08087, 1.08087 )
 target = NodePath("../../AirDucts/ToChimney")
 
+[node name="rummage26" parent="Spatial/Roof" index="3" instance=ExtResource( 8 )]
+
+position = Vector2( -4133.22, -5261.24 )
+food_level = 0
+battery_level = 2
+coins_level = 2
+
+[node name="rummage27" parent="Spatial/Roof" index="4" instance=ExtResource( 8 )]
+
+position = Vector2( -5610.18, -5261.24 )
+food_level = 0
+battery_level = 2
+coins_level = 2
+
+[node name="rummage28" parent="Spatial/Roof" index="5" instance=ExtResource( 8 )]
+
+position = Vector2( -6223.87, -5261.24 )
+food_level = 0
+battery_level = 2
+coins_level = 2
+
+[node name="rummage29" parent="Spatial/Roof" index="6" instance=ExtResource( 8 )]
+
+position = Vector2( -3695.71, -5261.24 )
+food_level = 0
+battery_level = 2
+coins_level = 2
+
 [node name="TileMap" type="TileMap" parent="Spatial" index="11"]
 
 mode = 0
-tile_set = ExtResource( 40 )
+tile_set = ExtResource( 41 )
 cell_size = Vector2( 128, 128 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -1520,7 +1552,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="BonBon" parent="Spatial" index="12" instance=ExtResource( 41 )]
+[node name="BonBon" parent="Spatial" index="12" instance=ExtResource( 42 )]
 
 position = Vector2( 4690.99, -102.067 )
 scale = Vector2( 0.75, 0.75 )
@@ -1530,12 +1562,12 @@ chase_speed_multiplier = 5
 
 position = Vector2( 9455.78, -708.736 )
 scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 42 )
+texture = ExtResource( 43 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Henry" parent="Spatial" index="14" instance=ExtResource( 43 )]
+[node name="Henry" parent="Spatial" index="14" instance=ExtResource( 44 )]
 
 position = Vector2( 9478, -95 )
 scale = Vector2( 0.75, 0.75 )
@@ -1544,17 +1576,17 @@ scale = Vector2( 0.75, 0.75 )
 
 position = Vector2( 4842.82, -3023.47 )
 scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 44 )
+texture = ExtResource( 45 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Rebecca" parent="Spatial" index="16" instance=ExtResource( 45 )]
+[node name="Rebecca" parent="Spatial" index="16" instance=ExtResource( 46 )]
 
 position = Vector2( 4850, -2408 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="Jane" parent="Spatial" index="17" instance=ExtResource( 46 )]
+[node name="Jane" parent="Spatial" index="17" instance=ExtResource( 47 )]
 
 position = Vector2( 9480, -2448 )
 scale = Vector2( 0.75, 0.75 )
@@ -1563,7 +1595,7 @@ scale = Vector2( 0.75, 0.75 )
 "player_back",
 ]]
 
-[node name="player" parent="Spatial" index="19" instance=ExtResource( 47 )]
+[node name="player" parent="Spatial" index="19" instance=ExtResource( 48 )]
 
 position = Vector2( -640, -30 )
 scale = Vector2( 1.75, 1.75 )
@@ -1573,7 +1605,7 @@ message_node_path = NodePath("../../GUI/Message")
 
 visible = false
 mode = 0
-tile_set = ExtResource( 48 )
+tile_set = ExtResource( 49 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -1602,7 +1634,7 @@ color = Color( 0.417969, 0.417969, 0.417969, 1 )
 
 editor/display_folded = true
 visible = false
-script = ExtResource( 49 )
+script = ExtResource( 50 )
 rummage_in_this = NodePath("../Yard/rummage_SPECIAL")
 
 [node name="FrontYard_SPECIAL" type="Area2D" parent="Spatial/CameraAreas" index="0"]
@@ -1617,7 +1649,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 50 )
+script = ExtResource( 51 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -1645,7 +1677,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 50 )
+script = ExtResource( 51 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -1673,7 +1705,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 50 )
+script = ExtResource( 51 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -1692,8 +1724,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Hall_Down" type="Area2D" parent="Spatial/CameraAreas" index="3"]
 
-editor/display_folded = true
-position = Vector2( 7750, -776 )
+position = Vector2( 7750, -712 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -1702,7 +1733,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 50 )
+script = ExtResource( 51 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -1730,7 +1761,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 50 )
+script = ExtResource( 51 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -1759,7 +1790,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 50 )
+script = ExtResource( 51 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -1788,7 +1819,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 50 )
+script = ExtResource( 51 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -1817,7 +1848,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 50 )
+script = ExtResource( 51 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -1836,8 +1867,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Secret" type="Area2D" parent="Spatial/CameraAreas" index="8"]
 
-editor/display_folded = true
-position = Vector2( 7622, -1800 )
+position = Vector2( 7686, -1672 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -1846,7 +1876,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 50 )
+script = ExtResource( 51 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -1875,7 +1905,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 50 )
+script = ExtResource( 51 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -1894,6 +1924,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Backyard" type="Area2D" parent="Spatial/CameraAreas" index="10"]
 
+editor/display_folded = true
 position = Vector2( 16450.9, -1690.4 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -1903,7 +1934,7 @@ angular_damp = 1.0
 collision_layer = 524288
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 50 )
+script = ExtResource( 51 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -1928,7 +1959,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="HUD" parent="GUI" index="0" instance=ExtResource( 51 )]
+[node name="HUD" parent="GUI" index="0" instance=ExtResource( 52 )]
 
 anchor_bottom = 1.0
 margin_left = 0.0
@@ -1940,7 +1971,7 @@ jane = NodePath("../../Spatial/Jane")
 bonbon = NodePath("../../Spatial/BonBon")
 henry = NodePath("../../Spatial/Henry")
 
-[node name="Message" parent="GUI" index="1" instance=ExtResource( 52 )]
+[node name="Message" parent="GUI" index="1" instance=ExtResource( 53 )]
 
 [connection signal="body_exited" from="Spatial/CameraAreas/FrontYard_SPECIAL" to="Spatial/CameraAreas" method="_on_FrontYard_SPECIAL_body_exited"]
 
